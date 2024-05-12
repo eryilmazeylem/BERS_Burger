@@ -2,11 +2,17 @@
 {
     public abstract class Urun
     {
-
-        public int Ad { get; set; }
+        public string Ad { get; set; }
 
         public decimal Fiyat { get; set; }
 
+        public string Aciklama { get; set; }
+
+
+        public string PicturePath { get; set; }
+
+
+        public int Adet { get; set; }
 
     }
 }

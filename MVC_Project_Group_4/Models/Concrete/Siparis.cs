@@ -7,16 +7,23 @@ namespace MVC_Project_Group_4.Models.Concrete
     
         public int SiparisID { get; set; }
 
-        public Menu Menu { get; set; }
-
-        public ICollection<EkstraMalzeme> EkstraMalzemeler { get; set; }
+        public string SiparisDetayAciklama { get; set; }
 
         public Boy Boy { get; set; }
-
+        
         public int Adet { get; set; }
 
+        
 
-        public decimal Toplam               
+
+        public ICollection<SiparisMenu>? SiparisMenu { get; set; }
+
+        public Uye? Uye { get; set; }
+
+
+
+        /*
+        public decimal ToplamFiyat              
         {
             get                             
             {
@@ -24,7 +31,7 @@ namespace MVC_Project_Group_4.Models.Concrete
 
                 if (Boy == Boy.Orta)
                 {
-                    toplam += Menu.Fiyat * 1.1m; 
+                    toplam +=  * 1.1m; 
 
                 }
                 else if (Boy == Boy.Buyuk)
@@ -87,6 +94,11 @@ namespace MVC_Project_Group_4.Models.Concrete
             }
 
             return ekstraMalzemeler;
+
         }
+        */
     }
 }
+
+
+        

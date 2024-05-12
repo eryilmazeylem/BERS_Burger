@@ -2,7 +2,7 @@
 {
     public class LoginVM
     {
-        //public int ID { get; set; }
+        public int ID { get; set; }
 
         public string EMail { get; set; }
 

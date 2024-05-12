@@ -2,18 +2,14 @@
 
 namespace MVC_Project_Group_4.Models.Concrete
 {
-    public class EkstraMalzeme : Urun
+    public class Tatli : Urun
     {
-        public int EkstraMalzemeID { get; set; }
+        public int TatliID { get; set; }
 
        
-
-
-
 
         public ICollection<MenuDetay>? MenuDetay { get; set; }
 
         public ICollection<SiparisDetay>? SiparisDetay { get; set; }
-
     }
 }

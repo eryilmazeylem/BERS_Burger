@@ -31,9 +31,35 @@ namespace MVC_Project_Group_4.Data.Context
         }
 
 
+        public DbSet<LoginVM> LoginVM { get; set; } = default!;
 
-        public DbSet<LoginVM> LoginVM { get; set; }
-        public DbSet<LoginVM> RegisterVM { get; set; }
+        public DbSet<RegisterVM> RegisterVM { get; set; } = default!;
+
+
+        public DbSet<Menu> Menuler { get; set; }
+
+        public DbSet<Icecek> Icecekler { get; set; }
+
+        public DbSet<Tatli> Tatlilar { get; set; }
+
+        public DbSet<Hamburger> Hamburgerler { get; set; }
+
+        public DbSet<EkstraMalzeme> EkstraMalzemeler { get; set; }
+
+        public DbSet<Siparis> Siparisler { get; set; }
+
+
+        public DbSet<SiparisDetay> SiparisDetaylari { get; set; }
+
+        public DbSet<MenuDetay> MenuDetaylari { get; set; }
+
+        public DbSet<SiparisMenu> SiparisMenuleri { get; set; }
+
+
+
+
+
+    
 
         
 

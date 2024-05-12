@@ -1,13 +1,15 @@
 ﻿using MVC_Project_Group_4.Models.Abstract;
+using System.Security.Cryptography;
 
 namespace MVC_Project_Group_4.Models.Concrete
 {
-    public class EkstraMalzeme : Urun
+    public class Hamburger : Urun
     {
-        public int EkstraMalzemeID { get; set; }
+        public int HamburgerID { get; set; }
 
-       
 
+
+        public List<EkstraMalzeme>? MalzemeListesi { get; set; } // buna bakılacak
 
 
 
