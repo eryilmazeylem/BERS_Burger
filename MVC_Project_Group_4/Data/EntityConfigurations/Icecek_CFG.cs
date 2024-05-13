@@ -15,11 +15,11 @@ namespace MVC_Project_Group_4.Data.EntityConfigurations
             builder.Property(x => x.Fiyat).HasColumnType("money").IsRequired();
 
             builder.HasData(
-                new Icecek() { IcecekID = 1, Ad = "Coca-Cola", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "" },
-                new Icecek() { IcecekID = 2, Ad = "Coca-Cola-Zero", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "" },
-                new Icecek() { IcecekID = 3, Ad = "Fanta", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "" },
-                new Icecek() { IcecekID = 4, Ad = "Sprite", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "" },
-                new Icecek() { IcecekID = 5, Ad = "Ayran", Adet = 1, Fiyat = 30, Aciklama = "Büyük Ayran", PicturePath = "" }
+                new Icecek() { IcecekID = 1, Ad = "Coca-Cola", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "~/wwwroot/Pictures/Icecekler/Coca_cola.jpg" },
+                new Icecek() { IcecekID = 2, Ad = "Coca-Cola-Zero", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "~/wwwroot/Pictures/Icecekler/Coca_cola_zero.jpg" },
+                new Icecek() { IcecekID = 3, Ad = "Fanta", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "~/wwwroot/Pictures/Icecekler/Fanta.jpg" },
+                new Icecek() { IcecekID = 4, Ad = "Sprite", Adet = 1, Fiyat = 30, Aciklama = "Kutu İçecek", PicturePath = "~/wwwroot/Pictures/Icecekler/Sprite.jpg" },
+                new Icecek() { IcecekID = 5, Ad = "Ayran", Adet = 1, Fiyat = 30, Aciklama = "Büyük Ayran", PicturePath = "~/wwwroot/Pictures/Icecekler/Buyuk_Ayran.jpg" }
                 
                 
                 );

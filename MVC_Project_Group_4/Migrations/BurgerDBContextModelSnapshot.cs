@@ -297,7 +297,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Coca-Cola",
                             Adet = 1,
                             Fiyat = 30m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Icecekler/Coca_cola.jpg"
                         },
                         new
                         {
@@ -306,7 +306,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Coca-Cola-Zero",
                             Adet = 1,
                             Fiyat = 30m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Icecekler/Coca_cola_zero.jpg"
                         },
                         new
                         {
@@ -315,7 +315,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Fanta",
                             Adet = 1,
                             Fiyat = 30m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Icecekler/Fanta.jpg"
                         },
                         new
                         {
@@ -324,7 +324,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Sprite",
                             Adet = 1,
                             Fiyat = 30m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Icecekler/Sprite.jpg"
                         },
                         new
                         {
@@ -333,7 +333,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Ayran",
                             Adet = 1,
                             Fiyat = 30m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Icecekler/Buyuk_Ayran.jpg"
                         });
                 });
 
@@ -378,7 +378,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Klasik Burger Menu",
                             Adet = 1,
                             Fiyat = 350m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Menuler/Klasik_burger_menu.jpg"
                         },
                         new
                         {
@@ -387,7 +387,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Pastırmalı Burger Menu",
                             Adet = 1,
                             Fiyat = 350m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Menuler/Benim_3_lum.jpg"
                         },
                         new
                         {
@@ -396,7 +396,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "2'li Fırsat Menü",
                             Adet = 1,
                             Fiyat = 350m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Menuler/Bjk_Menusu.jpg"
                         },
                         new
                         {
@@ -405,7 +405,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "3'lü Jumbo Menü",
                             Adet = 1,
                             Fiyat = 450m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Menuler/3_lu_big_king.jpg"
                         },
                         new
                         {
@@ -414,7 +414,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "CheeseBurger & SoğanHalkası Menü",
                             Adet = 1,
                             Fiyat = 300m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Menuler/chicken_menu.jpg"
                         });
                 });
 
@@ -492,14 +492,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "1c41cf4f-f9c1-4946-830a-e81523218a46",
+                            ConcurrencyStamp = "8437410a-59a4-4be3-b053-8baa15826783",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "45e52f2a-9581-466c-8c8a-dd47e91fd70a",
+                            ConcurrencyStamp = "d0e6e1d2-715e-4b63-8c4a-62809f676a19",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -642,7 +642,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Sufle",
                             Adet = 1,
                             Fiyat = 50m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Tatlilar/Cikolatali_sufle.jpg"
                         },
                         new
                         {
@@ -651,7 +651,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Elmalı Tatlı",
                             Adet = 1,
                             Fiyat = 35m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Tatlilar/Elmali_tatli.jpg"
                         },
                         new
                         {
@@ -660,7 +660,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Çikolatalı Cookie",
                             Adet = 1,
                             Fiyat = 35m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Tatlilar/Cikolatali_cookie.jpg"
                         },
                         new
                         {
@@ -669,7 +669,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Sütlaç",
                             Adet = 1,
                             Fiyat = 40m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Tatlilar/Sutlac.jpg"
                         },
                         new
                         {
@@ -678,7 +678,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "İrmik Helvası",
                             Adet = 1,
                             Fiyat = 35m,
-                            PicturePath = ""
+                            PicturePath = "~/wwwroot/Pictures/Tatlilar/irmikhelvasi.jpg"
                         });
                 });
 
@@ -759,15 +759,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "31625cb3-c787-4d2c-9ab3-b540b9b5b572",
+                            ConcurrencyStamp = "6f73b8a1-bb7e-445a-9d73-410f286cff33",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAENkukitIfnNACCw6gx8yBQGTaodsWwjOCRhM1+2bHINu/CY1CsnAM+I0lf9P1QFIGg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIvWksqLKGiCsKV48QfwkZO+iBn0YAK5cu/hQfpIZemSG7zntLaFqSlbUcnwDuHziw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b94d7732-6313-47dd-8b37-39ab73a0c1ae",
+                            SecurityStamp = "2e38a68d-0e01-41ae-8fcb-f0435e69d631",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
