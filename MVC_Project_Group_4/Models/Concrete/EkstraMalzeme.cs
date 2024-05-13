@@ -14,5 +14,8 @@ namespace MVC_Project_Group_4.Models.Concrete
 
         public ICollection<SiparisDetay>? SiparisDetay { get; set; }
 
+
+        //public Hamburger? Hamburger { get; set; }
+
     }
 }

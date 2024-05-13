@@ -15,12 +15,22 @@ namespace MVC_Project_Group_4.Data.EntityConfigurations
             builder.Property(x => x.Fiyat).HasColumnType("money").IsRequired();
 
             builder.HasData(
-                new Hamburger() { HamburgerID = 1, Ad = "CheeseBurger", Adet = 1, Fiyat = 150, Aciklama = "120g Burger köftesi ile cheddar peynirinin muhteşem uyumu...", PicturePath = ""  },
-                new Hamburger() { HamburgerID = 2, Ad = "BigKing", Adet = 1, Fiyat = 180, Aciklama = "150g Dana Burger köftesi + Göbek Salata + domates + turşu + BigKing Sos", PicturePath = "" },
-                new Hamburger() { HamburgerID = 3, Ad = "Whooper", Adet = 1, Fiyat = 180, Aciklama = "120g Dana Eti + Göbek Salata + domates + turşu + soğan", PicturePath = "" },
-                new Hamburger() { HamburgerID = 4, Ad = "TripleWhooper", Adet = 1, Fiyat = 300, Aciklama = "360g Burger Göbek Salata + domates + turşu + soğan", PicturePath = "" },
-                new Hamburger() { HamburgerID = 5, Ad = "Jr BigMac", Adet = 1, Fiyat = 100, Aciklama = "90g Burger köftesi + domates + mayonez + ketçap + turşu", PicturePath = "" },
-                new Hamburger() { HamburgerID = 6, Ad = "Pastırmalı Burger", Adet = 1, Fiyat = 230, Aciklama = "150g Burger köftesi + Pastırma + domates + mayonez + ketçap + turşu", PicturePath = "" }
+                new Hamburger() { HamburgerID = 1, Ad = "CheeseBurger", Adet = 1, Fiyat = 150, Aciklama = "120g Burger köftesi ile cheddar peynirinin muhteşem uyumu...", PicturePath = "~/wwwroot/Pictures/Hamburgerler/CheeseBurger.jpg", },
+
+
+                new Hamburger() { HamburgerID = 2, Ad = "BigKing", Adet = 1, Fiyat = 180, Aciklama = "150g Dana Burger köftesi + Göbek Salata + domates + turşu + BigKing Sos", PicturePath = "~/wwwroot/Pictures/Hamburgerler/Big_King.jpg" },
+
+
+                new Hamburger() { HamburgerID = 3, Ad = "Whooper", Adet = 1, Fiyat = 180, Aciklama = "120g Dana Eti + Göbek Salata + domates + turşu + soğan", PicturePath = "~/wwwroot/Pictures/Hamburgerler/Whoper.jpg" },
+
+
+                new Hamburger() { HamburgerID = 4, Ad = "TripleWhooper", Adet = 1, Fiyat = 300, Aciklama = "360g Burger Göbek Salata + domates + turşu + soğan", PicturePath = "~/wwwroot/Pictures/Hamburgerler/Triple_Whopper.jpg" },
+
+
+                new Hamburger() { HamburgerID = 5, Ad = "Jr BigMac", Adet = 1, Fiyat = 100, Aciklama = "90g Burger köftesi + domates + mayonez + ketçap + turşu", PicturePath = "~/wwwroot/Pictures/Hamburgerler/jr_bigmac.jpg" },
+
+
+                new Hamburger() { HamburgerID = 6, Ad = "Pastırmalı Burger", Adet = 1, Fiyat = 230, Aciklama = "150g Burger köftesi + Pastırma + domates + mayonez + ketçap + turşu", PicturePath = "~/wwwroot/Pictures/Hamburgerler/Pastırmalı_burger.jpg" }
             );
         }
     }

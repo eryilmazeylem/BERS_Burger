@@ -4,6 +4,7 @@ using MVC_Project_Group_4.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Project_Group_4.Migrations
 {
     [DbContext(typeof(BurgerDBContext))]
-    partial class BurgerDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240513121633_INITDB3")]
+    partial class INITDB3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,7 +66,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Marul",
                             Adet = 1,
                             Fiyat = 2.5m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/marul.jpg"
+                            PicturePath = " "
                         },
                         new
                         {
@@ -72,7 +75,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Domates",
                             Adet = 1,
                             Fiyat = 3.5m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Domates.jpg "
+                            PicturePath = " "
                         },
                         new
                         {
@@ -81,7 +84,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Turşu",
                             Adet = 1,
                             Fiyat = 2.5m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Tursu.jpg "
+                            PicturePath = " "
                         },
                         new
                         {
@@ -90,7 +93,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Soğan",
                             Adet = 1,
                             Fiyat = 1.2m,
-                            PicturePath = " ~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/sogan.jpg"
+                            PicturePath = " "
                         },
                         new
                         {
@@ -99,7 +102,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Mayonez",
                             Adet = 1,
                             Fiyat = 0.5m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Mayonez.jpg "
+                            PicturePath = " "
                         },
                         new
                         {
@@ -108,7 +111,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Ketçap",
                             Adet = 1,
                             Fiyat = 0.5m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Ketcap.jpg "
+                            PicturePath = " "
                         },
                         new
                         {
@@ -117,7 +120,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Tırtıklı Patates Kızartması",
                             Adet = 1,
                             Fiyat = 20m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Tirtikli_patates_kizartmasi.jpg "
+                            PicturePath = " "
                         },
                         new
                         {
@@ -126,7 +129,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "6'lı Soğan Halkası",
                             Adet = 1,
                             Fiyat = 30m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Sogan_Halkasi.jpg "
+                            PicturePath = " "
                         },
                         new
                         {
@@ -135,7 +138,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Barbekü Sos",
                             Adet = 1,
                             Fiyat = 1m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Barbaku_sos.jpg"
+                            PicturePath = " "
                         },
                         new
                         {
@@ -144,7 +147,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Ranch Sos",
                             Adet = 1,
                             Fiyat = 1m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Ranche_sos.jpg"
+                            PicturePath = " "
                         },
                         new
                         {
@@ -153,7 +156,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Mini Salata",
                             Adet = 1,
                             Fiyat = 10m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Mini_Salata.jpg"
+                            PicturePath = " "
                         },
                         new
                         {
@@ -162,7 +165,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Pastırma",
                             Adet = 3,
                             Fiyat = 50m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Pastirma.jpg"
+                            PicturePath = ""
                         });
                 });
 
@@ -492,14 +495,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "1c41cf4f-f9c1-4946-830a-e81523218a46",
+                            ConcurrencyStamp = "0e808479-d005-437c-90b2-a020ea7c8296",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "45e52f2a-9581-466c-8c8a-dd47e91fd70a",
+                            ConcurrencyStamp = "3c3ce716-0ed1-4a8d-a64c-b203c3ced988",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -759,15 +762,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "31625cb3-c787-4d2c-9ab3-b540b9b5b572",
+                            ConcurrencyStamp = "b1d24168-709b-48e6-94dd-612baf1fce67",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAENkukitIfnNACCw6gx8yBQGTaodsWwjOCRhM1+2bHINu/CY1CsnAM+I0lf9P1QFIGg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEVnFaKEPazb94vWYCunsFiCgKHjp3lDiqS5/Niwq0tWJcCD7J+xWqQJ3kFi+mubmw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b94d7732-6313-47dd-8b37-39ab73a0c1ae",
+                            SecurityStamp = "cc899bdf-3263-4683-8b52-117a48c3ad05",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
