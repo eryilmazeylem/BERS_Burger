@@ -12,6 +12,7 @@ namespace MVC_Project_Group_4.Models.Concrete
         public Boy Boy { get; set; }
         
         public int Adet { get; set; }
+        public DateTime SiparisTarihi {  get; set; }
 
         
 

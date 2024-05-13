@@ -10,7 +10,6 @@ namespace MVC_Project_Group_4.Models.Concrete
 
 
 
-
         public ICollection<MenuDetay>? MenuDetay { get; set; }
 
         public ICollection<SiparisDetay>? SiparisDetay { get; set; }

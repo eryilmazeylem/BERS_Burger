@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MVC_Project_Group_4.Models.Concrete;
 
-namespace MVC_Project_Group_4.Data.EntityConfigurations
+namespace MVC_Project_Group_4.Data.IEntityTypeConfiguration
 {
     public class Uye_CFG : IEntityTypeConfiguration<Uye>
     {
