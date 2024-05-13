@@ -56,15 +56,32 @@ namespace MVC_Project_Group_4.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EkstraMalzemeler",
+                columns: table => new
+                {
+                    EkstraMalzemeID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ad = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Fiyat = table.Column<decimal>(type: "money", nullable: false),
+                    Aciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    PicturePath = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    Adet = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EkstraMalzemeler", x => x.EkstraMalzemeID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Hamburgerler",
                 columns: table => new
                 {
                     HamburgerID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PicturePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Ad = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Fiyat = table.Column<decimal>(type: "money", nullable: false),
+                    Aciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    PicturePath = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
                     Adet = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -78,10 +95,10 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     IcecekID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PicturePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Ad = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Fiyat = table.Column<decimal>(type: "money", nullable: false),
+                    Aciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    PicturePath = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
                     Adet = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -109,10 +126,10 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     MenuID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PicturePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Ad = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Fiyat = table.Column<decimal>(type: "money", nullable: false),
+                    Aciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    PicturePath = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
                     Adet = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -142,10 +159,10 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     TatliID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PicturePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Ad = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Fiyat = table.Column<decimal>(type: "money", nullable: false),
+                    Aciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    PicturePath = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
                     Adet = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -265,9 +282,10 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     SiparisID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SiparisDetayAciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SiparisDetayAciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
                     Boy = table.Column<int>(type: "int", nullable: false),
                     Adet = table.Column<int>(type: "int", nullable: false),
+                    SiparisTarihi = table.Column<DateTime>(type: "datetime", nullable: false),
                     UyeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -278,55 +296,6 @@ namespace MVC_Project_Group_4.Migrations
                         column: x => x.UyeId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EkstraMalzemeler",
-                columns: table => new
-                {
-                    EkstraMalzemeID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    HamburgerID = table.Column<int>(type: "int", nullable: true),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PicturePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Adet = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EkstraMalzemeler", x => x.EkstraMalzemeID);
-                    table.ForeignKey(
-                        name: "FK_EkstraMalzemeler_Hamburgerler_HamburgerID",
-                        column: x => x.HamburgerID,
-                        principalTable: "Hamburgerler",
-                        principalColumn: "HamburgerID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SiparisMenuleri",
-                columns: table => new
-                {
-                    SiparisMenuID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MenuID = table.Column<int>(type: "int", nullable: false),
-                    SiparisID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SiparisMenuleri", x => x.SiparisMenuID);
-                    table.ForeignKey(
-                        name: "FK_SiparisMenuleri_Menuler_MenuID",
-                        column: x => x.MenuID,
-                        principalTable: "Menuler",
-                        principalColumn: "MenuID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SiparisMenuleri_Siparisler_SiparisID",
-                        column: x => x.SiparisID,
-                        principalTable: "Siparisler",
-                        principalColumn: "SiparisID",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -423,19 +392,113 @@ namespace MVC_Project_Group_4.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SiparisMenuleri",
+                columns: table => new
+                {
+                    SiparisMenuID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MenuID = table.Column<int>(type: "int", nullable: false),
+                    SiparisID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SiparisMenuleri", x => x.SiparisMenuID);
+                    table.ForeignKey(
+                        name: "FK_SiparisMenuleri_Menuler_MenuID",
+                        column: x => x.MenuID,
+                        principalTable: "Menuler",
+                        principalColumn: "MenuID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SiparisMenuleri_Siparisler_SiparisID",
+                        column: x => x.SiparisID,
+                        principalTable: "Siparisler",
+                        principalColumn: "SiparisID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "2d271454-274f-4f9f-89a1-ab9ffe053612", "Yonetici", "YONETICI" },
-                    { 2, "2c7f2f8e-ffae-432a-8750-36e869248122", "Uye", "UYE" }
+                    { 1, "00f00aff-db64-4a95-8e48-570dbf33e388", "Yonetici", "YONETICI" },
+                    { 2, "0cc49315-65cc-41fa-8ab9-e0c4c3feaa39", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "3b0647d9-5620-4ac1-b1d1-71418abc65c0", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAECnBdzPDQOjYgxZmihDCa8BBsXzeEfm0WERQ7qKwYE6GpcI8B2loDrO/3cn2uu3QGw==", null, false, "db397fa8-e342-4ba3-9590-0746d92ed68e", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "b7d19a67-c0cd-45ff-8bc9-6af0eb3e3f42", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEL98eUbPFAAP3eri4DdKJB5RxfRRj3JvLWKY7uRZdRM7WHOmifiobQZjmFt6iUjAOw==", null, false, "59ec8ff6-47a2-4bae-914f-9d19513f5d72", false, "super@deneme.com" });
+
+            migrationBuilder.InsertData(
+                table: "EkstraMalzemeler",
+                columns: new[] { "EkstraMalzemeID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
+                values: new object[,]
+                {
+                    { 1, "Taza Marul", "Marul", 1, 2.5m, " " },
+                    { 2, "Ayaş domatesi", "Domates", 1, 3.5m, " " },
+                    { 3, "Kornişon Turşusu", "Turşu", 1, 2.5m, " " },
+                    { 4, "Karamelize Soğan", "Soğan", 1, 1.2m, " " },
+                    { 5, "1 paket mayonez", "Mayonez", 1, 0.5m, " " },
+                    { 6, "1 paket ketçap", "Ketçap", 1, 0.5m, " " },
+                    { 7, "Özel Baharat Soslu Tırtıklı Patates Kızartması", "Tırtıklı Patates Kızartması", 1, 20m, " " },
+                    { 8, "6 Adet Kızarmış Soğan Halkası", "6'lı Soğan Halkası", 1, 30m, " " },
+                    { 9, "1 paket Barbekü Sos", "Barbekü Sos", 1, 1m, " " },
+                    { 10, "1 paket Ranch Sos", "Ranch Sos", 1, 1m, " " },
+                    { 11, "Mevsim Yeşillikleri ile yapılmış taze salata", "Mini Salata", 1, 10m, " " },
+                    { 12, "Dana Pastırma", "Pastırma", 3, 50m, "" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Hamburgerler",
+                columns: new[] { "HamburgerID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
+                values: new object[,]
+                {
+                    { 1, "120g Burger köftesi ile cheddar peynirinin muhteşem uyumu...", "CheeseBurger", 1, 150m, "" },
+                    { 2, "150g Dana Burger köftesi + Göbek Salata + domates + turşu + BigKing Sos", "BigKing", 1, 180m, "" },
+                    { 3, "120g Dana Eti + Göbek Salata + domates + turşu + soğan", "Whooper", 1, 180m, "" },
+                    { 4, "360g Burger Göbek Salata + domates + turşu + soğan", "TripleWhooper", 1, 300m, "" },
+                    { 5, "90g Burger köftesi + domates + mayonez + ketçap + turşu", "Jr BigMac", 1, 100m, "" },
+                    { 6, "150g Burger köftesi + Pastırma + domates + mayonez + ketçap + turşu", "Pastırmalı Burger", 1, 230m, "" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Icecekler",
+                columns: new[] { "IcecekID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
+                values: new object[,]
+                {
+                    { 1, "Kutu İçecek", "Coca-Cola", 1, 30m, "" },
+                    { 2, "Kutu İçecek", "Coca-Cola-Zero", 1, 30m, "" },
+                    { 3, "Kutu İçecek", "Fanta", 1, 30m, "" },
+                    { 4, "Kutu İçecek", "Sprite", 1, 30m, "" },
+                    { 5, "Büyük Ayran", "Ayran", 1, 30m, "" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Menuler",
+                columns: new[] { "MenuID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
+                values: new object[,]
+                {
+                    { 1, "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek", "Klasik Burger Menu", 1, 350m, "" },
+                    { 2, "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek", "Pastırmalı Burger Menu", 1, 350m, "" },
+                    { 3, "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek", "2'li Fırsat Menü", 1, 350m, "" },
+                    { 4, "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek", "3'lü Jumbo Menü", 1, 450m, "" },
+                    { 5, "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek", "CheeseBurger & SoğanHalkası Menü", 1, 300m, "" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Tatlilar",
+                columns: new[] { "TatliID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
+                values: new object[,]
+                {
+                    { 1, "Çikolatalı ve dondurmalı enfes sufle", "Sufle", 1, 50m, "" },
+                    { 2, "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir", "Elmalı Tatlı", 1, 35m, "" },
+                    { 3, "Çikolata parçacıklı muhteşem kurabiyelerimiz", "Çikolatalı Cookie", 1, 35m, "" },
+                    { 4, "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", "Sütlaç", 1, 40m, "" },
+                    { 5, "Dondurmalı İrmik helvası", "İrmik Helvası", 1, 35m, "" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -480,11 +543,6 @@ namespace MVC_Project_Group_4.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EkstraMalzemeler_HamburgerID",
-                table: "EkstraMalzemeler",
-                column: "HamburgerID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MenuDetaylari_EkstraMalzemeID",
@@ -592,6 +650,9 @@ namespace MVC_Project_Group_4.Migrations
                 name: "EkstraMalzemeler");
 
             migrationBuilder.DropTable(
+                name: "Hamburgerler");
+
+            migrationBuilder.DropTable(
                 name: "Icecekler");
 
             migrationBuilder.DropTable(
@@ -602,9 +663,6 @@ namespace MVC_Project_Group_4.Migrations
 
             migrationBuilder.DropTable(
                 name: "Siparisler");
-
-            migrationBuilder.DropTable(
-                name: "Hamburgerler");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

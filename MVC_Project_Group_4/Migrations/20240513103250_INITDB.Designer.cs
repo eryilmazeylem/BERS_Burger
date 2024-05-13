@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Project_Group_4.Migrations
 {
     [DbContext(typeof(BurgerDBContext))]
-    [Migration("20240512144754_INITDB")]
+    [Migration("20240513103250_INITDB")]
     partial class INITDB
     {
         /// <inheritdoc />
@@ -35,30 +35,138 @@ namespace MVC_Project_Group_4.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Ad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<int>("Adet")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("HamburgerID")
-                        .HasColumnType("int");
+                        .HasColumnType("money");
 
                     b.Property<string>("PicturePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.HasKey("EkstraMalzemeID");
 
-                    b.HasIndex("HamburgerID");
-
                     b.ToTable("EkstraMalzemeler");
+
+                    b.HasData(
+                        new
+                        {
+                            EkstraMalzemeID = 1,
+                            Aciklama = "Taza Marul",
+                            Ad = "Marul",
+                            Adet = 1,
+                            Fiyat = 2.5m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 2,
+                            Aciklama = "Ayaş domatesi",
+                            Ad = "Domates",
+                            Adet = 1,
+                            Fiyat = 3.5m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 3,
+                            Aciklama = "Kornişon Turşusu",
+                            Ad = "Turşu",
+                            Adet = 1,
+                            Fiyat = 2.5m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 4,
+                            Aciklama = "Karamelize Soğan",
+                            Ad = "Soğan",
+                            Adet = 1,
+                            Fiyat = 1.2m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 5,
+                            Aciklama = "1 paket mayonez",
+                            Ad = "Mayonez",
+                            Adet = 1,
+                            Fiyat = 0.5m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 6,
+                            Aciklama = "1 paket ketçap",
+                            Ad = "Ketçap",
+                            Adet = 1,
+                            Fiyat = 0.5m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 7,
+                            Aciklama = "Özel Baharat Soslu Tırtıklı Patates Kızartması",
+                            Ad = "Tırtıklı Patates Kızartması",
+                            Adet = 1,
+                            Fiyat = 20m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 8,
+                            Aciklama = "6 Adet Kızarmış Soğan Halkası",
+                            Ad = "6'lı Soğan Halkası",
+                            Adet = 1,
+                            Fiyat = 30m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 9,
+                            Aciklama = "1 paket Barbekü Sos",
+                            Ad = "Barbekü Sos",
+                            Adet = 1,
+                            Fiyat = 1m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 10,
+                            Aciklama = "1 paket Ranch Sos",
+                            Ad = "Ranch Sos",
+                            Adet = 1,
+                            Fiyat = 1m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 11,
+                            Aciklama = "Mevsim Yeşillikleri ile yapılmış taze salata",
+                            Ad = "Mini Salata",
+                            Adet = 1,
+                            Fiyat = 10m,
+                            PicturePath = " "
+                        },
+                        new
+                        {
+                            EkstraMalzemeID = 12,
+                            Aciklama = "Dana Pastırma",
+                            Ad = "Pastırma",
+                            Adet = 3,
+                            Fiyat = 50m,
+                            PicturePath = ""
+                        });
                 });
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.Hamburger", b =>
@@ -71,25 +179,84 @@ namespace MVC_Project_Group_4.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Ad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<int>("Adet")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("money");
 
                     b.Property<string>("PicturePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.HasKey("HamburgerID");
 
                     b.ToTable("Hamburgerler");
+
+                    b.HasData(
+                        new
+                        {
+                            HamburgerID = 1,
+                            Aciklama = "120g Burger köftesi ile cheddar peynirinin muhteşem uyumu...",
+                            Ad = "CheeseBurger",
+                            Adet = 1,
+                            Fiyat = 150m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            HamburgerID = 2,
+                            Aciklama = "150g Dana Burger köftesi + Göbek Salata + domates + turşu + BigKing Sos",
+                            Ad = "BigKing",
+                            Adet = 1,
+                            Fiyat = 180m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            HamburgerID = 3,
+                            Aciklama = "120g Dana Eti + Göbek Salata + domates + turşu + soğan",
+                            Ad = "Whooper",
+                            Adet = 1,
+                            Fiyat = 180m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            HamburgerID = 4,
+                            Aciklama = "360g Burger Göbek Salata + domates + turşu + soğan",
+                            Ad = "TripleWhooper",
+                            Adet = 1,
+                            Fiyat = 300m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            HamburgerID = 5,
+                            Aciklama = "90g Burger köftesi + domates + mayonez + ketçap + turşu",
+                            Ad = "Jr BigMac",
+                            Adet = 1,
+                            Fiyat = 100m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            HamburgerID = 6,
+                            Aciklama = "150g Burger köftesi + Pastırma + domates + mayonez + ketçap + turşu",
+                            Ad = "Pastırmalı Burger",
+                            Adet = 1,
+                            Fiyat = 230m,
+                            PicturePath = ""
+                        });
                 });
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.Icecek", b =>
@@ -102,25 +269,75 @@ namespace MVC_Project_Group_4.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Ad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<int>("Adet")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("money");
 
                     b.Property<string>("PicturePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.HasKey("IcecekID");
 
                     b.ToTable("Icecekler");
+
+                    b.HasData(
+                        new
+                        {
+                            IcecekID = 1,
+                            Aciklama = "Kutu İçecek",
+                            Ad = "Coca-Cola",
+                            Adet = 1,
+                            Fiyat = 30m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            IcecekID = 2,
+                            Aciklama = "Kutu İçecek",
+                            Ad = "Coca-Cola-Zero",
+                            Adet = 1,
+                            Fiyat = 30m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            IcecekID = 3,
+                            Aciklama = "Kutu İçecek",
+                            Ad = "Fanta",
+                            Adet = 1,
+                            Fiyat = 30m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            IcecekID = 4,
+                            Aciklama = "Kutu İçecek",
+                            Ad = "Sprite",
+                            Adet = 1,
+                            Fiyat = 30m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            IcecekID = 5,
+                            Aciklama = "Büyük Ayran",
+                            Ad = "Ayran",
+                            Adet = 1,
+                            Fiyat = 30m,
+                            PicturePath = ""
+                        });
                 });
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.Menu", b =>
@@ -133,25 +350,75 @@ namespace MVC_Project_Group_4.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Ad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<int>("Adet")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("money");
 
                     b.Property<string>("PicturePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.HasKey("MenuID");
 
                     b.ToTable("Menuler");
+
+                    b.HasData(
+                        new
+                        {
+                            MenuID = 1,
+                            Aciklama = "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek",
+                            Ad = "Klasik Burger Menu",
+                            Adet = 1,
+                            Fiyat = 350m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            MenuID = 2,
+                            Aciklama = "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek",
+                            Ad = "Pastırmalı Burger Menu",
+                            Adet = 1,
+                            Fiyat = 350m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            MenuID = 3,
+                            Aciklama = "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek",
+                            Ad = "2'li Fırsat Menü",
+                            Adet = 1,
+                            Fiyat = 350m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            MenuID = 4,
+                            Aciklama = "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek",
+                            Ad = "3'lü Jumbo Menü",
+                            Adet = 1,
+                            Fiyat = 450m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            MenuID = 5,
+                            Aciklama = "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek",
+                            Ad = "CheeseBurger & SoğanHalkası Menü",
+                            Adet = 1,
+                            Fiyat = 300m,
+                            PicturePath = ""
+                        });
                 });
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.MenuDetay", b =>
@@ -228,14 +495,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "2d271454-274f-4f9f-89a1-ab9ffe053612",
+                            ConcurrencyStamp = "00f00aff-db64-4a95-8e48-570dbf33e388",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "2c7f2f8e-ffae-432a-8750-36e869248122",
+                            ConcurrencyStamp = "0cc49315-65cc-41fa-8ab9-e0c4c3feaa39",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -257,7 +524,11 @@ namespace MVC_Project_Group_4.Migrations
 
                     b.Property<string>("SiparisDetayAciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
+
+                    b.Property<DateTime>("SiparisTarihi")
+                        .HasColumnType("datetime");
 
                     b.Property<int?>("UyeId")
                         .HasColumnType("int");
@@ -343,25 +614,75 @@ namespace MVC_Project_Group_4.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Ad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar");
 
                     b.Property<int>("Adet")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("money");
 
                     b.Property<string>("PicturePath")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar");
 
                     b.HasKey("TatliID");
 
                     b.ToTable("Tatlilar");
+
+                    b.HasData(
+                        new
+                        {
+                            TatliID = 1,
+                            Aciklama = "Çikolatalı ve dondurmalı enfes sufle",
+                            Ad = "Sufle",
+                            Adet = 1,
+                            Fiyat = 50m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            TatliID = 2,
+                            Aciklama = "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir",
+                            Ad = "Elmalı Tatlı",
+                            Adet = 1,
+                            Fiyat = 35m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            TatliID = 3,
+                            Aciklama = "Çikolata parçacıklı muhteşem kurabiyelerimiz",
+                            Ad = "Çikolatalı Cookie",
+                            Adet = 1,
+                            Fiyat = 35m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            TatliID = 4,
+                            Aciklama = "Leziz fırınlanmış sütlaça hayır diyemezsiniz...",
+                            Ad = "Sütlaç",
+                            Adet = 1,
+                            Fiyat = 40m,
+                            PicturePath = ""
+                        },
+                        new
+                        {
+                            TatliID = 5,
+                            Aciklama = "Dondurmalı İrmik helvası",
+                            Ad = "İrmik Helvası",
+                            Adet = 1,
+                            Fiyat = 35m,
+                            PicturePath = ""
+                        });
                 });
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.Uye", b =>
@@ -441,15 +762,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "3b0647d9-5620-4ac1-b1d1-71418abc65c0",
+                            ConcurrencyStamp = "b7d19a67-c0cd-45ff-8bc9-6af0eb3e3f42",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECnBdzPDQOjYgxZmihDCa8BBsXzeEfm0WERQ7qKwYE6GpcI8B2loDrO/3cn2uu3QGw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL98eUbPFAAP3eri4DdKJB5RxfRRj3JvLWKY7uRZdRM7WHOmifiobQZjmFt6iUjAOw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "db397fa8-e342-4ba3-9590-0746d92ed68e",
+                            SecurityStamp = "59ec8ff6-47a2-4bae-914f-9d19513f5d72",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
@@ -613,13 +934,6 @@ namespace MVC_Project_Group_4.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.EkstraMalzeme", b =>
-                {
-                    b.HasOne("MVC_Project_Group_4.Models.Concrete.Hamburger", null)
-                        .WithMany("MalzemeListesi")
-                        .HasForeignKey("HamburgerID");
                 });
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.MenuDetay", b =>
@@ -792,8 +1106,6 @@ namespace MVC_Project_Group_4.Migrations
 
             modelBuilder.Entity("MVC_Project_Group_4.Models.Concrete.Hamburger", b =>
                 {
-                    b.Navigation("MalzemeListesi");
-
                     b.Navigation("MenuDetay");
 
                     b.Navigation("SiparisDetay");

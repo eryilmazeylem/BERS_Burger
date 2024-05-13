@@ -13,6 +13,15 @@ namespace MVC_Project_Group_4.Data.IEntityTypeConfiguration
             builder.Property(x => x.PicturePath).HasColumnType("varchar").HasMaxLength(300);
             builder.Property(x => x.Aciklama).HasColumnType("varchar").HasMaxLength(300);
             builder.Property(x => x.Fiyat).HasColumnType("money").IsRequired();
+
+            builder.HasData(
+                new Menu() { MenuID = 1, Ad = "Klasik Burger Menu", Adet = 1, Fiyat = 350, Aciklama = "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek", PicturePath = "" },
+                new Menu() { MenuID = 2, Ad = "Pastırmalı Burger Menu", Adet = 1, Fiyat = 350, Aciklama = "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek" , PicturePath = "" },
+                new Menu() { MenuID = 3, Ad = "2'li Fırsat Menü", Adet = 1, Fiyat = 350, Aciklama = "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek", PicturePath = "" },
+                new Menu() { MenuID = 4, Ad = "3'lü Jumbo Menü", Adet = 1, Fiyat = 450, Aciklama = "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek", PicturePath = "" },
+                new Menu() { MenuID = 5, Ad = "CheeseBurger & SoğanHalkası Menü", Adet = 1, Fiyat = 300, Aciklama = "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek", PicturePath = "" }
+            
+            );
         }
     }
 }
