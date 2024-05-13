@@ -14,6 +14,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\UyePaneli\Data\" />
+    <Folder Include="Areas\UyePaneli\Models\" />
+    <Folder Include="Areas\YoneticiPaneli\Data\" />
+    <Folder Include="Areas\YoneticiPaneli\Models\" />
   </ItemGroup>
 
 </Project>
