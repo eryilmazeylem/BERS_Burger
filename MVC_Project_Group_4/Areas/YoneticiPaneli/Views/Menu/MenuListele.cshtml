@@ -5,7 +5,14 @@
 }
 
 <h1>MenuListele</h1>
-
+@if (TempData["infoguncelle"] is not null)
+{
+    <div class="alert alert-success text-center mb-2"> @TempData["infoguncelle"]</div>
+}
+@if (TempData["infosil"] is not null)
+{
+    <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
+}
 <p>
     <a asp-action="MenuEkle" class="btn btn-primary">Yeni Menü Ekle</a>
 </p>
@@ -48,6 +55,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Aciklama)
+               
             </td>
             <td>
               @*   @Html.DisplayFor(modelItem => item.PicturePath) *@
@@ -57,9 +65,13 @@
                 @Html.DisplayFor(modelItem => item.Adet)
             </td>
             <td>
-                @Html.ActionLink("Güncelle", "MenuGuncelle", new { id=item.MenuID }) |
-               
-                @Html.ActionLink("Sil", "MenuSil", new { id=item.MenuID })
+                @* @Html.ActionLink("Güncelle", "MenuGuncelle", new { id=item.MenuID }) | *@
+                    <a class="btn btn-warning" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuGuncelle" >Güncelle</a>
+              
+            </td>
+            <td>
+                    @*  @Html.ActionLink("Sil", "MenuSil", new { id=item.MenuID } ) *@
+                    <a class="btn btn-danger" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuSil" onclick="return confirm('Emin misiniz?')">Sil</a>
             </td>
         </tr>
 }

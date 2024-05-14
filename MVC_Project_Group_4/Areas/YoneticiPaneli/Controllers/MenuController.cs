@@ -89,17 +89,73 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             fi.Delete();
 
             db.Menuler.Remove(menu);
-            db.SaveChanges();
+            try
+            {
+                if (db.SaveChanges() > 0)
+                {
+                    TempData["infosil"] = "Menü başarıyla silindi.";
+                    db.SaveChanges();
+                    return RedirectToAction(nameof(MenuListele));
+                }
+            }
+            catch (Exception)
+            {
+
+                TempData["infosil"] = "Menü silinirken hata oluştu!";
+            }
+            
 
             return RedirectToAction(nameof(MenuListele));
         }
 
-        //public IActionResult MenuGuncelle(int id)
-        //{
-        //    MenuEkleVM vM= new MenuEkleVM();    
-            
+  
 
+        public IActionResult MenuGuncelle(int id)
+        {
+            MenuEkleVM menu = db.Menuler.Where(x => x.MenuID.Equals(id)).Select(
+            x => new MenuEkleVM()
+            {
+                Aciklama = x.Aciklama,
+                Ad = x.Ad,
+                Adet = x.Adet,
+                Fiyat = x.Fiyat,
+                //REsim  kısmı eklenecek
+
+            }).FirstOrDefault();
+          
+       
+            return View(menu);
+        }
+
+        [HttpPost]
+        public IActionResult MenuGuncelle(MenuEkleVM menuEkle,int id)
+        {
+
+            Menu menu = db.Menuler.FirstOrDefault(x=>x.MenuID.Equals(id));
+            menu.Ad= menuEkle.Ad;
+            menu.Adet= menuEkle.Adet;
+            menu.Aciklama=menuEkle.Aciklama;
+            menu.Fiyat= menuEkle.Fiyat;
             
-        //}
+            //Resim kısmı eklenecek
+            try
+            {
+                if (db.SaveChanges() > 0)
+                {
+                    TempData["infoguncelle"] = "Menü başarıyla güncellendi.";
+                    db.SaveChanges();
+                    return RedirectToAction(nameof(MenuListele));
+                }
+            }
+            catch(Exception) {
+
+                TempData["infoguncelle"] = "Menü güncellenirken hata oluştu!";
+            }
+          
+            return RedirectToAction(nameof(MenuListele));
+
+
+
+        }
     }
 }
