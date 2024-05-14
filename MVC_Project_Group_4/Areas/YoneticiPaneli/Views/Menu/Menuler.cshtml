@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC_Project_Group_4.Models.ViewModels.MenuVM>
+﻿@model IEnumerable<MVC_Project_Group_4.Models.Concrete.Menu>
 
 @{
     ViewData["Title"] = "Menuler";
@@ -12,12 +12,49 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PicturePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adet)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+               @*  @Html.DisplayFor(modelItem => item.PicturePath) *@
+                    <img src="~/Pictures/Menuler/@item.PicturePath" width="120px" height="90px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adet)
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

@@ -8,10 +8,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
     {
         private readonly BurgerDBContext db;
 
-        public MenuController()
-        {
-        }
-
+   
         public MenuController(BurgerDBContext dbContext)
         {
             this.db = dbContext;
@@ -19,6 +16,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -26,7 +24,8 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult Menuler()
         {
-            return View();
+
+            return View(db.Menuler.ToList());
         }
     }
 }
