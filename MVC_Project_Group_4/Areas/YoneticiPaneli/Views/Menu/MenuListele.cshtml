@@ -57,9 +57,9 @@
                 @Html.DisplayFor(modelItem => item.Adet)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Güncelle", "MenuGuncelle", new { id=item.MenuID }) |
+               
+                @Html.ActionLink("Sil", "MenuSil", new { id=item.MenuID })
             </td>
         </tr>
 }

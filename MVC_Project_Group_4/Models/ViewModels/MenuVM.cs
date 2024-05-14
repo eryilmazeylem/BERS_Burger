@@ -11,5 +11,7 @@ namespace MVC_Project_Group_4.Models.ViewModels
         public SelectList Tatlilar { get; set; }
         public SelectList Icecekler { get; set; }
 
+        public List<Menu> Menuler { get; set; }
+
     }
 }

@@ -80,5 +80,26 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             return View(menuVM);
             
         }
+
+        public IActionResult MenuSil(int id)
+        {
+            var menu=db.Menuler.FirstOrDefault(x=>x.MenuID.Equals(id));
+
+            FileInfo fi = new FileInfo("wwwroot/Pictures/Menuler/" + menu.PicturePath);
+            fi.Delete();
+
+            db.Menuler.Remove(menu);
+            db.SaveChanges();
+
+            return RedirectToAction(nameof(MenuListele));
+        }
+
+        //public IActionResult MenuGuncelle(int id)
+        //{
+        //    MenuEkleVM vM= new MenuEkleVM();    
+            
+
+            
+        //}
     }
 }
