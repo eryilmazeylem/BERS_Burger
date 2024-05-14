@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Project_Group_4.Migrations
 {
     [DbContext(typeof(BurgerDBContext))]
-    [Migration("20240514112826_InitDB")]
-    partial class InitDB
+    [Migration("20240514191824_INITDB")]
+    partial class INITDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -495,14 +495,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "561e7c65-aa64-46d1-a7b7-e6d00f77ea1a",
+                            ConcurrencyStamp = "b0ae25e0-638f-401c-82b6-129c7492ed31",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "a563f7a5-c033-4c0a-a346-3e1cebd6895c",
+                            ConcurrencyStamp = "6bf72df0-5fb0-4276-879f-40bbb71ba647",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -762,15 +762,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "d377d0fd-7873-4b35-a09f-6ec18a4b6340",
+                            ConcurrencyStamp = "f58a2819-ff54-4542-b078-3906cda67985",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOrhUSlLAHY25VKzwHIMZg8/E5zpC3Ex9M8hdGBAgo1OQAI2wa0lcOO9cRjBVrxbNg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDywmih/19vG7bpKDOl10s+VxbiliLanGtJgPSRhpqq+3M3qyrEyOSRzj3zznMTCvw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "460dc8c8-ef27-4554-954a-db8ee007c9f7",
+                            SecurityStamp = "0502cf7b-3297-4234-bf14-18e68ab2a4ed",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });

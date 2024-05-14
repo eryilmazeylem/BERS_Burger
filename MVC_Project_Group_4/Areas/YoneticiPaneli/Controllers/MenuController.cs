@@ -18,6 +18,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
         {
             this.db = dbContext;
         }
+        MenuVM vm = new MenuVM();
 
         public IActionResult Index()
         {
@@ -29,19 +30,19 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult MenuListele()
         {
-
-            return View(db.Menuler.Include(x=>x.MenuDetay).ToList());
+            vm.Menuler = db.Menuler.Include(x => x.MenuDetay).ThenInclude(x=>x.EkstraMalzeme).Include(x=>x.MenuDetay).ThenInclude(x=>x.Hamburger).ToList();
+            return View(vm);
         }
 
         public IActionResult MenuEkle()
         {
-            MenuVM menuVM = new MenuVM();
-            menuVM.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
-            menuVM.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
-            menuVM.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
-            menuVM.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
+            
+            vm.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
+            vm.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
+            vm.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
+            vm.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
 
-            return View(menuVM);
+            return View(vm);
         }
 
         [HttpPost]
@@ -72,12 +73,12 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
                 return RedirectToAction(nameof(MenuListele));
             }
 
-            MenuVM menuVM = new MenuVM();
-            menuVM.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
-            menuVM.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
-            menuVM.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
-            menuVM.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
-            return View(menuVM);
+            
+            vm.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
+            vm.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
+            vm.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
+            vm.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
+            return View(vm);
             
         }
 
@@ -87,6 +88,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
             FileInfo fi = new FileInfo("wwwroot/Pictures/Menuler/" + menu.PicturePath);
             fi.Delete();
+            
 
             db.Menuler.Remove(menu);
             try
@@ -112,19 +114,19 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult MenuGuncelle(int id)
         {
-            MenuEkleVM menu = db.Menuler.Where(x => x.MenuID.Equals(id)).Select(
-            x => new MenuEkleVM()
+            MenuEkleVM vm = db.Menuler.Where(x => x.MenuID.Equals(id))
+                .Select(x => new MenuEkleVM()
             {
                 Aciklama = x.Aciklama,
                 Ad = x.Ad,
                 Adet = x.Adet,
                 Fiyat = x.Fiyat,
-                //REsim  kısmı eklenecek
+                
 
             }).FirstOrDefault();
-          
+
        
-            return View(menu);
+            return View(vm);
         }
 
         [HttpPost]
@@ -132,12 +134,31 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
         {
 
             Menu menu = db.Menuler.FirstOrDefault(x=>x.MenuID.Equals(id));
+
             menu.Ad= menuEkle.Ad;
             menu.Adet= menuEkle.Adet;
             menu.Aciklama=menuEkle.Aciklama;
             menu.Fiyat= menuEkle.Fiyat;
-            
-            //Resim kısmı eklenecek
+
+            FileInfo fi = new FileInfo("wwwroot/Pictures/Menuler/" + menu.PicturePath);
+            fi.Delete();
+
+            Guid guid = Guid.NewGuid();
+
+            string dosyaAdi = guid.ToString();
+
+            dosyaAdi += menuEkle.PicturePath.FileName;
+
+            string dosyaYolu = "wwwRoot/Pictures/Menuler/";
+
+            menu.PicturePath = dosyaAdi;
+
+            FileStream fs = new FileStream(dosyaYolu + dosyaAdi, FileMode.Create);
+
+            menuEkle.PicturePath.CopyTo(fs);
+
+            fs.Close();
+
             try
             {
                 if (db.SaveChanges() > 0)

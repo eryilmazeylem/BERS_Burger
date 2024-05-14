@@ -15,6 +15,9 @@ namespace MVC_Project_Group_4.Models.ViewModels
 
 
         public int Adet { get; set; }
+
+
+
         [Display(Name = "Hamburger")]
         public int HamburgerID { get; set; }
         [Display(Name = "Ekstra Malzeme")]

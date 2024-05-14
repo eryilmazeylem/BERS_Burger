@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Project_Group_4.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDB : Migration
+    public partial class INITDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -423,14 +423,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "561e7c65-aa64-46d1-a7b7-e6d00f77ea1a", "Yonetici", "YONETICI" },
-                    { 2, "a563f7a5-c033-4c0a-a346-3e1cebd6895c", "Uye", "UYE" }
+                    { 1, "b0ae25e0-638f-401c-82b6-129c7492ed31", "Yonetici", "YONETICI" },
+                    { 2, "6bf72df0-5fb0-4276-879f-40bbb71ba647", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "d377d0fd-7873-4b35-a09f-6ec18a4b6340", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEOrhUSlLAHY25VKzwHIMZg8/E5zpC3Ex9M8hdGBAgo1OQAI2wa0lcOO9cRjBVrxbNg==", null, false, "460dc8c8-ef27-4554-954a-db8ee007c9f7", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "f58a2819-ff54-4542-b078-3906cda67985", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEDywmih/19vG7bpKDOl10s+VxbiliLanGtJgPSRhpqq+3M3qyrEyOSRzj3zznMTCvw==", null, false, "0502cf7b-3297-4234-bf14-18e68ab2a4ed", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",

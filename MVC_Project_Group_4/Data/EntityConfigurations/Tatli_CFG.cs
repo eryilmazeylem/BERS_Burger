@@ -15,15 +15,15 @@ namespace MVC_Project_Group_4.Data.EntityConfigurations
             builder.Property(x => x.Fiyat).HasColumnType("money").IsRequired();
 
             builder.HasData(
-                new Tatli() { TatliID = 1, Ad = "Sufle", Adet = 1, Fiyat = 50, Aciklama = "Çikolatalı ve dondurmalı enfes sufle", PicturePath = "~/wwwroot/Pictures/Tatlilar/Cikolatali_sufle.jpg" },
+                new Tatli() { TatliID = 1, Ad = "Sufle", Adet = 1, Fiyat = 50, Aciklama = "Çikolatalı ve dondurmalı enfes sufle", PicturePath = "Cikolatali_sufle.jpg" },
 
-                new Tatli() { TatliID = 2, Ad = "Elmalı Tatlı", Adet = 1, Fiyat = 35, Aciklama = "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir", PicturePath = "~/wwwroot/Pictures/Tatlilar/Elmali_tatli.jpg" },
+                new Tatli() { TatliID = 2, Ad = "Elmalı Tatlı", Adet = 1, Fiyat = 35, Aciklama = "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir", PicturePath = "Elmali_tatli.jpg" },
 
-                new Tatli() { TatliID = 3, Ad = "Çikolatalı Cookie", Adet = 1, Fiyat = 35, Aciklama = "Çikolata parçacıklı muhteşem kurabiyelerimiz", PicturePath = "~/wwwroot/Pictures/Tatlilar/Cikolatali_cookie.jpg" },
+                new Tatli() { TatliID = 3, Ad = "Çikolatalı Cookie", Adet = 1, Fiyat = 35, Aciklama = "Çikolata parçacıklı muhteşem kurabiyelerimiz", PicturePath = "Cikolatali_cookie.jpg" },
 
-                new Tatli() { TatliID = 4, Ad = "Sütlaç", Adet = 1, Fiyat = 40, Aciklama = "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", PicturePath = "~/wwwroot/Pictures/Tatlilar/Sutlac.jpg" },
+                new Tatli() { TatliID = 4, Ad = "Sütlaç", Adet = 1, Fiyat = 40, Aciklama = "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", PicturePath = "~Sutlac.jpg" },
 
-                new Tatli() { TatliID = 5, Ad = "İrmik Helvası", Adet = 1, Fiyat = 35, Aciklama = "Dondurmalı İrmik helvası", PicturePath = "~/wwwroot/Pictures/Tatlilar/irmikhelvasi.jpg" }
+                new Tatli() { TatliID = 5, Ad = "İrmik Helvası", Adet = 1, Fiyat = 35, Aciklama = "Dondurmalı İrmik helvası", PicturePath = "irmikhelvasi.jpg" }
             );
         }
     }

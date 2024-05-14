@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC_Project_Group_4.Models.Concrete.Menu>
+﻿@model MenuVM
 
 @{
     ViewData["Title"] = "MenuListele";
@@ -21,28 +21,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MenuID)
+                @Html.DisplayNameFor(model => model.Menu.MenuID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ad)
+                @Html.DisplayNameFor(model => model.Menu.Ad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fiyat)
+                @Html.DisplayNameFor(model => model.Menu.Fiyat)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aciklama)
+                @Html.DisplayNameFor(model => model.Menu.Aciklama)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PicturePath)
+                @Html.DisplayNameFor(model => model.Menu.PicturePath)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Adet)
+                @Html.DisplayNameFor(model => model.Menu.Adet)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Menuler) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.MenuID)
