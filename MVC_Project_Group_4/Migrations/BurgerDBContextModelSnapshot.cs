@@ -378,7 +378,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Klasik Burger Menu",
                             Adet = 1,
                             Fiyat = 350m,
-                            PicturePath = "~/wwwroot/Pictures/Menuler/Klasik_burger_menu.jpg"
+                            PicturePath = "Klasik_burger_menu.jpg"
                         },
                         new
                         {
@@ -387,7 +387,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Pastırmalı Burger Menu",
                             Adet = 1,
                             Fiyat = 350m,
-                            PicturePath = "~/wwwroot/Pictures/Menuler/Benim_3_lum.jpg"
+                            PicturePath = "Benim_3_lum.jpg"
                         },
                         new
                         {
@@ -396,7 +396,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "2'li Fırsat Menü",
                             Adet = 1,
                             Fiyat = 350m,
-                            PicturePath = "~/wwwroot/Pictures/Menuler/Bjk_Menusu.jpg"
+                            PicturePath = "Bjk_Menusu.jpg"
                         },
                         new
                         {
@@ -405,7 +405,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "3'lü Jumbo Menü",
                             Adet = 1,
                             Fiyat = 450m,
-                            PicturePath = "~/wwwroot/Pictures/Menuler/3_lu_big_king.jpg"
+                            PicturePath = "3_lu_big_king.jpg"
                         },
                         new
                         {
@@ -414,7 +414,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "CheeseBurger & SoğanHalkası Menü",
                             Adet = 1,
                             Fiyat = 300m,
-                            PicturePath = "~/wwwroot/Pictures/Menuler/chicken_menu.jpg"
+                            PicturePath = "chicken_menu.jpg"
                         });
                 });
 
@@ -492,14 +492,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "30c8d79a-9eee-42d8-912b-a431b392fc5a",
+                            ConcurrencyStamp = "561e7c65-aa64-46d1-a7b7-e6d00f77ea1a",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "2efd2ea2-e60a-4c5e-b224-b5d56b55140e",
+                            ConcurrencyStamp = "a563f7a5-c033-4c0a-a346-3e1cebd6895c",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -759,15 +759,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "63adc6ac-2296-4fd5-81af-6bdbf83ba4b6",
+                            ConcurrencyStamp = "d377d0fd-7873-4b35-a09f-6ec18a4b6340",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKYSlv2U3nGnezgmJ/8qceYZ4RzEsxYIIl8PFz9Ko/3gcz0DJHBQUdRzmn4HtHbRbw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOrhUSlLAHY25VKzwHIMZg8/E5zpC3Ex9M8hdGBAgo1OQAI2wa0lcOO9cRjBVrxbNg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dc6db2a3-ccba-40af-a9ee-eb7249530046",
+                            SecurityStamp = "460dc8c8-ef27-4554-954a-db8ee007c9f7",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });

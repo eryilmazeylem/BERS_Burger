@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<MVC_Project_Group_4.Models.Concrete.Menu>
 
 @{
-    ViewData["Title"] = "Menuler";
+    ViewData["Title"] = "MenuListele";
 }
 
-<h1>Menuler</h1>
+<h1>MenuListele</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -49,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.Aciklama)
             </td>
             <td>
-               @*  @Html.DisplayFor(modelItem => item.PicturePath) *@
+              @*   @Html.DisplayFor(modelItem => item.PicturePath) *@
                     <img src="~/Pictures/Menuler/@item.PicturePath" width="120px" height="90px" />
             </td>
             <td>

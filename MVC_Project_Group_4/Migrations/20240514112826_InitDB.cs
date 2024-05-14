@@ -423,14 +423,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "30c8d79a-9eee-42d8-912b-a431b392fc5a", "Yonetici", "YONETICI" },
-                    { 2, "2efd2ea2-e60a-4c5e-b224-b5d56b55140e", "Uye", "UYE" }
+                    { 1, "561e7c65-aa64-46d1-a7b7-e6d00f77ea1a", "Yonetici", "YONETICI" },
+                    { 2, "a563f7a5-c033-4c0a-a346-3e1cebd6895c", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "63adc6ac-2296-4fd5-81af-6bdbf83ba4b6", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEKYSlv2U3nGnezgmJ/8qceYZ4RzEsxYIIl8PFz9Ko/3gcz0DJHBQUdRzmn4HtHbRbw==", null, false, "dc6db2a3-ccba-40af-a9ee-eb7249530046", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "d377d0fd-7873-4b35-a09f-6ec18a4b6340", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEOrhUSlLAHY25VKzwHIMZg8/E5zpC3Ex9M8hdGBAgo1OQAI2wa0lcOO9cRjBVrxbNg==", null, false, "460dc8c8-ef27-4554-954a-db8ee007c9f7", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",
@@ -481,11 +481,11 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "MenuID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
                 values: new object[,]
                 {
-                    { 1, "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek", "Klasik Burger Menu", 1, 350m, "~/wwwroot/Pictures/Menuler/Klasik_burger_menu.jpg" },
-                    { 2, "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek", "Pastırmalı Burger Menu", 1, 350m, "~/wwwroot/Pictures/Menuler/Benim_3_lum.jpg" },
-                    { 3, "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek", "2'li Fırsat Menü", 1, 350m, "~/wwwroot/Pictures/Menuler/Bjk_Menusu.jpg" },
-                    { 4, "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek", "3'lü Jumbo Menü", 1, 450m, "~/wwwroot/Pictures/Menuler/3_lu_big_king.jpg" },
-                    { 5, "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek", "CheeseBurger & SoğanHalkası Menü", 1, 300m, "~/wwwroot/Pictures/Menuler/chicken_menu.jpg" }
+                    { 1, "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek", "Klasik Burger Menu", 1, 350m, "Klasik_burger_menu.jpg" },
+                    { 2, "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek", "Pastırmalı Burger Menu", 1, 350m, "Benim_3_lum.jpg" },
+                    { 3, "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek", "2'li Fırsat Menü", 1, 350m, "Bjk_Menusu.jpg" },
+                    { 4, "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek", "3'lü Jumbo Menü", 1, 450m, "3_lu_big_king.jpg" },
+                    { 5, "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek", "CheeseBurger & SoğanHalkası Menü", 1, 300m, "chicken_menu.jpg" }
                 });
 
             migrationBuilder.InsertData(

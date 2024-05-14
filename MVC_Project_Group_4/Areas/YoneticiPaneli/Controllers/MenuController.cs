@@ -22,7 +22,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
 
 
-        public IActionResult Menuler()
+        public IActionResult MenuListele()
         {
 
             return View(db.Menuler.ToList());
