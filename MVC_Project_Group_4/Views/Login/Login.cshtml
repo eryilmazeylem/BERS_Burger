@@ -7,7 +7,6 @@
 
 <h1>Login</h1>
 
-<h4>Login_VM</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,23 +14,23 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="EMail" class="control-label"></label>
-                <input asp-for="EMail" class="form-control" />
+                <input asp-for="EMail" class="form-control" placeholder="E-Posta" />
                 <span asp-validation-for="EMail" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" type="password" />
+                <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
+                <input type="submit" value="Login" class="btn btn-primary mx-2" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class=" btn btn-primary mx-2" asp-action="Register">Kayıt Ol</a>
 </div>
 
 @section Scripts {

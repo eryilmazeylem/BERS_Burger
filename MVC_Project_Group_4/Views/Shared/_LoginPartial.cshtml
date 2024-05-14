@@ -3,39 +3,45 @@
 @inject UserManager<Uye> UserManager
 @inject SignInManager<Uye> SignInManager
 
-<ul class="navbar-nav">
+<div class="navbar-nav">
 
     @if (SignInManager.IsSignedIn(User))
     {
-        <li>Merhaba @UserManager.GetUserName(User)</li>
+        <div class="navbar-item mx-3">Merhaba @UserManager.GetUserName(User)</div>
 
         @if (User.IsInRole("Yonetici"))
         {
-            <li class="navbar-item">
-                <a asp-area="YonetimPaneli" asp-controller="YoneticiPanel" asp-action="Index">Yönetim Paneline Git</a>
-            </li>
+            <div class="navbar-item mx-3">
+                <a class="btn btn-primary" asp-area="YoneticiPaneli" asp-controller="YoneticiPanel" asp-action="AnaSayfa">Yönetim Paneline Git</a>
+            </div>
         }
         else
         {
-            <li class="navbar-item">
-                <a asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Index">Üye Paneline Git</a>
-            </li>
+            <div class="navbar-item mx-3">
+                <a class="btn btn-primary" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Index">Üye Paneline Git</a>
+            </div>
 
         }
-        <li class="navbar-item">
-            @*   <form asp-action="LogOut" asp-controller="Login" >
+        <div class="navbar-item mx-3">
+         @*      <form asp-action="LogOut" asp-controller="Login" >
         <input type="submit" value="LogOut" />
-        </form> *@
-            <a asp-controller="Login" asp-action="LogOut">Çıkış</a>
-        </li>
+        </form>  *@
+            <a class="btn btn-danger" asp-controller="Login" asp-action="LogOut">Çıkış</a>
+        </div>
     }
     else
     {
-        <li class="navbar-item">
-            <a asp-controller="Login" asp-action="Login">Login</a>
-            <a asp-controller="Login" asp-action="Register">Register</a>
-        </li>
+        <div class="navbar-item justify-content-end text-center mx-3">
+
+            <a class="btn btn-success" asp-controller="Login" asp-action="Login">Giriş Yap</a>
+
+            
+        </div>
+
+        <div class="navbar-item mx-3">
+            <a class="btn btn-primary" asp-controller="Login" asp-action="Register">Kayıt Ol</a>
+        </div>
 
     }
 
-</ul>
+</div>

@@ -44,7 +44,8 @@ namespace MVC_Project_Group_4.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
+           
+          
         //[HttpPost]
         public async Task<IActionResult> LogOut()
         {

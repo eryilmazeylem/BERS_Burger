@@ -4,42 +4,42 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>Register</h1>
+<h1>Kayıt Ekranı</h1>
 
 <hr />
-<div class="row">
+<div class="row my-3">
     <div class="col-md-4">
         <form asp-action="Register">
   
-            <div class="form-group">
+            <div class="form-group my-1">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" placeholder="E-Posta" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group my-1">
                 <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+                <input asp-for="Address" class="form-control" placeholder="Adres" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group my-1">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" class="form-control" placeholder="Şifre" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group my-1">
                 <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Şifre Tekrarı" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group my-1">
+                <input type="submit" value="Oluştur" class="btn btn-primary mx-2" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="my-3">
+    <a asp-action="Login">Zaten Hesabınız Var mı? Giriş Yap</a>
 </div>
 
 @section Scripts {
