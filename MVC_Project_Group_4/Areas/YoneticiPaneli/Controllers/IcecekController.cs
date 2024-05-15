@@ -29,7 +29,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult IcecekEkle()
         {
-            return View(vm);
+            return View(vm.IcecekEkleVM);
         }
 
         [HttpPost]
