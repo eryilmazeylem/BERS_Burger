@@ -1,0 +1,81 @@
+﻿@* @model IEnumerable<MVC_Project_Group_4.Models.Concrete.EkstraMalzeme> *@
+
+@model EkstraMalzemeVM
+
+@{
+    ViewData["Title"] = "EkstraMalzemeListele";
+}
+
+<h1>EkstraMalzemeListele</h1>
+
+@if (TempData["infoguncelle"] is not null)
+{
+    <div class="alert alert-success text-center mb-2"> @TempData["infoguncelle"]</div>
+}
+@if (TempData["infosil"] is not null)
+{
+    <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
+}
+
+<p>
+    <a asp-action="EkstraMalzemeEkle" class="btn btn-primary">Ekstra Malzeme Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EkstraMalzeme.EkstraMalzemeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EkstraMalzeme.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EkstraMalzeme.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EkstraMalzeme.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EkstraMalzeme.PicturePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EkstraMalzeme.Adet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.EkstraMalzemeler) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EkstraMalzemeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+               @*  @Html.DisplayFor(modelItem => item.PicturePath) *@
+                    <img src="~/Pictures/Ek_Urunler/@item.PicturePath" width="120px" height="90px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adet)
+            </td>
+            <td>
+               @*  @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
+                    <a class="btn btn-warning" asp-route-id="@item.EkstraMalzemeID" asp-controller="EkUrun" asp-action="EkstraMalzemeGuncelle">Güncelle</a>
+               
+            </td>
+            <td>
+                  @*   @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+                    <a class="btn btn-danger" asp-route-id="@item.EkstraMalzemeID" asp-controller="EkUrun" asp-action="EkstraMalzemeSil" onclick="return confirm('Emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
