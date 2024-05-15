@@ -207,7 +207,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "CheeseBurger",
                             Adet = 1,
                             Fiyat = 150m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/CheeseBurger.jpg"
+                            PicturePath = "CheeseBurger.jpg"
                         },
                         new
                         {
@@ -216,7 +216,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "BigKing",
                             Adet = 1,
                             Fiyat = 180m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Big_King.jpg"
+                            PicturePath = "Big_King.jpg"
                         },
                         new
                         {
@@ -225,7 +225,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Whooper",
                             Adet = 1,
                             Fiyat = 180m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Whoper.jpg"
+                            PicturePath = "Whoper.jpg"
                         },
                         new
                         {
@@ -234,7 +234,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "TripleWhooper",
                             Adet = 1,
                             Fiyat = 300m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Triple_Whopper.jpg"
+                            PicturePath = "Triple_Whopper.jpg"
                         },
                         new
                         {
@@ -243,7 +243,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Jr BigMac",
                             Adet = 1,
                             Fiyat = 100m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/jr_bigmac.jpg"
+                            PicturePath = "jr_bigmac.jpg"
                         },
                         new
                         {
@@ -252,7 +252,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Pastırmalı Burger",
                             Adet = 1,
                             Fiyat = 230m,
-                            PicturePath = "~/wwwroot/Pictures/Hamburgerler/Pastırmalı_burger.jpg"
+                            PicturePath = "Pastırmalı_burger.jpg"
                         });
                 });
 
@@ -492,14 +492,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "3cc2a981-0b62-4f99-b5ff-7c99990ce971",
+                            ConcurrencyStamp = "d8ebd358-df0a-467d-aadc-8c9241e4b780",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "75d28138-bf17-42c6-a022-bea159b053a5",
+                            ConcurrencyStamp = "96ccdd83-fdd1-4aa9-bfea-e94a300b51a1",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -759,15 +759,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "8d3f7529-39c5-4bb0-9faf-a99fbc0c4d4a",
+                            ConcurrencyStamp = "bec7c6d1-6ac6-44ef-93fe-68f4338c23e3",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJlbegpIUA+OxfMM3hLR9HdIv9NFkzsvojHeNo/EjyLvAnEkoOE08rHZWlBimIcrxg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGuNXXuutNPEMOHNZo9tR978OiaI/0o+cJXYRc2LSIIlaTJgCr5mhawWXs5SgyRDKA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "68a47594-f038-4a77-8c74-395ec49737ed",
+                            SecurityStamp = "cb0edbac-a035-4f74-9a1c-b495eb6fc375",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });

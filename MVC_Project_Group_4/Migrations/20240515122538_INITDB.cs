@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Project_Group_4.Migrations
 {
     /// <inheritdoc />
-    public partial class ınıtdb : Migration
+    public partial class INITDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -423,14 +423,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "3cc2a981-0b62-4f99-b5ff-7c99990ce971", "Yonetici", "YONETICI" },
-                    { 2, "75d28138-bf17-42c6-a022-bea159b053a5", "Uye", "UYE" }
+                    { 1, "d8ebd358-df0a-467d-aadc-8c9241e4b780", "Yonetici", "YONETICI" },
+                    { 2, "96ccdd83-fdd1-4aa9-bfea-e94a300b51a1", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "8d3f7529-39c5-4bb0-9faf-a99fbc0c4d4a", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEJlbegpIUA+OxfMM3hLR9HdIv9NFkzsvojHeNo/EjyLvAnEkoOE08rHZWlBimIcrxg==", null, false, "68a47594-f038-4a77-8c74-395ec49737ed", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "bec7c6d1-6ac6-44ef-93fe-68f4338c23e3", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEGuNXXuutNPEMOHNZo9tR978OiaI/0o+cJXYRc2LSIIlaTJgCr5mhawWXs5SgyRDKA==", null, false, "cb0edbac-a035-4f74-9a1c-b495eb6fc375", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",
@@ -456,12 +456,12 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "HamburgerID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
                 values: new object[,]
                 {
-                    { 1, "120g Burger köftesi ile cheddar peynirinin muhteşem uyumu...", "CheeseBurger", 1, 150m, "~/wwwroot/Pictures/Hamburgerler/CheeseBurger.jpg" },
-                    { 2, "150g Dana Burger köftesi + Göbek Salata + domates + turşu + BigKing Sos", "BigKing", 1, 180m, "~/wwwroot/Pictures/Hamburgerler/Big_King.jpg" },
-                    { 3, "120g Dana Eti + Göbek Salata + domates + turşu + soğan", "Whooper", 1, 180m, "~/wwwroot/Pictures/Hamburgerler/Whoper.jpg" },
-                    { 4, "360g Burger Göbek Salata + domates + turşu + soğan", "TripleWhooper", 1, 300m, "~/wwwroot/Pictures/Hamburgerler/Triple_Whopper.jpg" },
-                    { 5, "90g Burger köftesi + domates + mayonez + ketçap + turşu", "Jr BigMac", 1, 100m, "~/wwwroot/Pictures/Hamburgerler/jr_bigmac.jpg" },
-                    { 6, "150g Burger köftesi + Pastırma + domates + mayonez + ketçap + turşu", "Pastırmalı Burger", 1, 230m, "~/wwwroot/Pictures/Hamburgerler/Pastırmalı_burger.jpg" }
+                    { 1, "120g Burger köftesi ile cheddar peynirinin muhteşem uyumu...", "CheeseBurger", 1, 150m, "CheeseBurger.jpg" },
+                    { 2, "150g Dana Burger köftesi + Göbek Salata + domates + turşu + BigKing Sos", "BigKing", 1, 180m, "Big_King.jpg" },
+                    { 3, "120g Dana Eti + Göbek Salata + domates + turşu + soğan", "Whooper", 1, 180m, "Whoper.jpg" },
+                    { 4, "360g Burger Göbek Salata + domates + turşu + soğan", "TripleWhooper", 1, 300m, "Triple_Whopper.jpg" },
+                    { 5, "90g Burger köftesi + domates + mayonez + ketçap + turşu", "Jr BigMac", 1, 100m, "jr_bigmac.jpg" },
+                    { 6, "150g Burger köftesi + Pastırma + domates + mayonez + ketçap + turşu", "Pastırmalı Burger", 1, 230m, "Pastırmalı_burger.jpg" }
                 });
 
             migrationBuilder.InsertData(
