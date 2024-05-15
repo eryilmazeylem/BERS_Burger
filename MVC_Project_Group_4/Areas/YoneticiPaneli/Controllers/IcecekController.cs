@@ -112,7 +112,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             ıcecek.Aciklama = ıcecekEkleVM.Aciklama;
             ıcecek.Fiyat = ıcecekEkleVM.Fiyat;
 
-            FileInfo fi = new FileInfo("wwwroot/Pictures/Menuler/" + ıcecek.PicturePath);
+            FileInfo fi = new FileInfo("wwwroot/Pictures/Icecekler/" + ıcecek.PicturePath);
             fi.Delete();
 
             Guid guid = Guid.NewGuid();
@@ -121,7 +121,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
             dosyaAdi += ıcecekEkleVM.PicturePath.FileName;
 
-            string dosyaYolu = "wwwRoot/Pictures/Menuler/";
+            string dosyaYolu = "wwwRoot/Pictures/Icecekler/";
 
             ıcecek.PicturePath = dosyaAdi;
 
