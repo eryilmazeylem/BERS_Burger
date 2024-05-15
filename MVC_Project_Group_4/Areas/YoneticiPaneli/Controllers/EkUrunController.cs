@@ -20,10 +20,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
         }
 
         
-        public IActionResult EkUrunListele()
-        {
-            = db.EkstraMalzemeler.ToList();
-            return View();
-        }
+       
     }
 }
