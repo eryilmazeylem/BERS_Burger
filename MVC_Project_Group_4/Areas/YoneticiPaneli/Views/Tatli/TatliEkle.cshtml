@@ -1,18 +1,18 @@
-﻿@model IcecekEkleVM
+﻿@model TatliEkleVM
 
 @{
-    ViewData["Title"] = "IcecekEkle";
+    ViewData["Title"] = "TatliEkle";
 }
 
-<h1>IcecekEkle</h1>
+<h1>TatliEkle</h1>
 
-<h4>Icecek</h4>
+<h4>Tatli</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="IcecekEkle" enctype="multipart/form-data">
+        <form asp-action="TatliEkle" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+           
             <div class="form-group">
                 <label asp-for="Ad" class="control-label"></label>
                 <input asp-for="Ad" class="form-control" />
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="PicturePath" class="control-label"></label>
-                <input asp-for="PicturePath" class="form-control" />
+                <input asp-for="PicturePath" class="form-control" type="file" />
                 <span asp-validation-for="PicturePath" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -46,7 +46,7 @@
 </div>
 
 <div>
-    <a asp-action="IcecekListele">Listeye Geri Dön</a>
+    <a asp-action="TatliListele">Listeye Geri Dön</a>
 </div>
 
 @section Scripts {

@@ -21,7 +21,7 @@ namespace MVC_Project_Group_4.Data.EntityConfigurations
 
                 new Tatli() { TatliID = 3, Ad = "Çikolatalı Cookie", Adet = 1, Fiyat = 35, Aciklama = "Çikolata parçacıklı muhteşem kurabiyelerimiz", PicturePath = "Cikolatali_cookie.jpg" },
 
-                new Tatli() { TatliID = 4, Ad = "Sütlaç", Adet = 1, Fiyat = 40, Aciklama = "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", PicturePath = "~Sutlac.jpg" },
+                new Tatli() { TatliID = 4, Ad = "Sütlaç", Adet = 1, Fiyat = 40, Aciklama = "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", PicturePath = "Sutlac.jpg" },
 
                 new Tatli() { TatliID = 5, Ad = "İrmik Helvası", Adet = 1, Fiyat = 35, Aciklama = "Dondurmalı İrmik helvası", PicturePath = "irmikhelvasi.jpg" }
             );
