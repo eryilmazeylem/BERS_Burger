@@ -1,0 +1,80 @@
+﻿@model TatliVM
+
+@{
+    ViewData["Title"] = "TatliListele";
+}
+
+<h1>TatliListele</h1>
+
+@if (TempData["infoguncelle"] is not null)
+{
+    <div class="alert alert-success text-center mb-2"> @TempData["infoguncelle"]</div>
+}
+@if (TempData["infosil"] is not null)
+{
+    <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
+}
+
+<p>
+    <a asp-action="TatliEkle" class="btn btn-primary">Tatlı Ekle</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tatli.TatliID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tatli.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tatli.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tatli.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tatli.PicturePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tatli.Adet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tatlilar) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TatliID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.PicturePath) *@
+                    <img src="~/Pictures/Tatlilar/@item.PicturePath" width="120px" height="90px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adet)
+            </td>
+            <td>
+                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
+                    <a class="btn btn-warning" asp-route-id="@item.TatliID" asp-controller="Tatli" asp-action="TatliGuncelle">Güncelle</a>
+                
+            </td>
+            <td>
+                @*     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+                    <a class="btn btn-danger" asp-route-id="@item.TatliID" asp-controller="Tatli" asp-action="TatliSil" onclick="return confirm('Emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -492,7 +492,7 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "c2adcd30-5b93-4d7b-b517-d0feced199f1",
+                            ConcurrencyStamp = "3cc2a981-0b62-4f99-b5ff-7c99990ce971",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
@@ -669,7 +669,7 @@ namespace MVC_Project_Group_4.Migrations
                             Ad = "Sütlaç",
                             Adet = 1,
                             Fiyat = 40m,
-                            PicturePath = "~Sutlac.jpg"
+                            PicturePath = "Sutlac.jpg"
                         },
                         new
                         {
@@ -759,15 +759,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "2cadcc24-3cdc-4c17-a1eb-29f1d9e39add",
+                            ConcurrencyStamp = "8d3f7529-39c5-4bb0-9faf-a99fbc0c4d4a",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJx0YkDj5ebjRt0w9Wo++KJ068GpDutpquDM3JneepYfOl/OZoq7bzwTGSwiz+P7VA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJlbegpIUA+OxfMM3hLR9HdIv9NFkzsvojHeNo/EjyLvAnEkoOE08rHZWlBimIcrxg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c089e2e5-a491-46f5-ae49-44d5e0401994",
+                            SecurityStamp = "68a47594-f038-4a77-8c74-395ec49737ed",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
