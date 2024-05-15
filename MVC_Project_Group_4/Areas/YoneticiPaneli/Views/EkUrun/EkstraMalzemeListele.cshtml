@@ -8,8 +8,17 @@
 
 <h1>EkstraMalzemeListele</h1>
 
+@if (TempData["infoguncelle"] is not null)
+{
+    <div class="alert alert-success text-center mb-2"> @TempData["infoguncelle"]</div>
+}
+@if (TempData["infosil"] is not null)
+{
+    <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
+}
+
 <p>
-    <a asp-action="EkstraMalzemeEkle">Create New</a>
+    <a asp-action="EkstraMalzemeEkle" class="btn btn-primary">Ekstra Malzeme Ekle</a>
 </p>
 <table class="table">
     <thead>
