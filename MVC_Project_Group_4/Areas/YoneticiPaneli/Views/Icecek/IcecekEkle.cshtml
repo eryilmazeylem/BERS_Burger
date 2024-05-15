@@ -1,0 +1,54 @@
+﻿@model IcecekVM
+
+@{
+    ViewData["Title"] = "IcecekEkle";
+}
+
+<h1>IcecekEkle</h1>
+
+<h4>Icecek</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="IcecekEkle" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="IcecekEkleVM.Ad" class="control-label"></label>
+                <input asp-for="IcecekEkleVM.Ad" class="form-control" />
+                <span asp-validation-for="IcecekEkleVM.Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IcecekEkleVM.Fiyat" class="control-label"></label>
+                <input asp-for="IcecekEkleVM.Fiyat" class="form-control" />
+                <span asp-validation-for="IcecekEkleVM.Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IcecekEkleVM.Aciklama" class="control-label"></label>
+                <input asp-for="IcecekEkleVM.Aciklama" class="form-control" />
+                <span asp-validation-for="IcecekEkleVM.Aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IcecekEkleVM.PicturePath" class="control-label"></label>
+                <input asp-for="IcecekEkleVM.PicturePath" class="form-control" />
+                <span asp-validation-for="IcecekEkleVM.PicturePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IcecekEkleVM.Adet" class="control-label"></label>
+                <input asp-for="IcecekEkleVM.Adet" class="form-control" />
+                <span asp-validation-for="IcecekEkleVM.Adet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="IcecekListele">Listeye Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

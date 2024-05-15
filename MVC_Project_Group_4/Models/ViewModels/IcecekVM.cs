@@ -6,5 +6,6 @@ namespace MVC_Project_Group_4.Models.ViewModels
     {
         public IcecekEkleVM IcecekEkleVM { get; set; }
         public List<Icecek> Icecekler { get; set; }
+        public Icecek Icecek { get; set; }
     }
 }
