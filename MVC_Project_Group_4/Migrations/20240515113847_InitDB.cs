@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Project_Group_4.Migrations
 {
     /// <inheritdoc />
-    public partial class ınıtdb : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -423,14 +423,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "3cc2a981-0b62-4f99-b5ff-7c99990ce971", "Yonetici", "YONETICI" },
-                    { 2, "75d28138-bf17-42c6-a022-bea159b053a5", "Uye", "UYE" }
+                    { 1, "ae4ef25e-8faf-4448-b85d-7080c815f226", "Yonetici", "YONETICI" },
+                    { 2, "e247d91d-dc74-4c0c-9a9a-2da7ac7f6bff", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "8d3f7529-39c5-4bb0-9faf-a99fbc0c4d4a", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEJlbegpIUA+OxfMM3hLR9HdIv9NFkzsvojHeNo/EjyLvAnEkoOE08rHZWlBimIcrxg==", null, false, "68a47594-f038-4a77-8c74-395ec49737ed", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "32e0b3a3-03e3-484e-ac38-224ccb0fc331", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEDjjNA2a3tIfH5kqAOtHebsofto/+YNOmppIir0ObCW0QAblqwuf/m+OBbAPLCe0+g==", null, false, "d07dda3f-32be-4918-877a-00b1a26ab9d5", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",
@@ -496,7 +496,7 @@ namespace MVC_Project_Group_4.Migrations
                     { 1, "Çikolatalı ve dondurmalı enfes sufle", "Sufle", 1, 50m, "Cikolatali_sufle.jpg" },
                     { 2, "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir", "Elmalı Tatlı", 1, 35m, "Elmali_tatli.jpg" },
                     { 3, "Çikolata parçacıklı muhteşem kurabiyelerimiz", "Çikolatalı Cookie", 1, 35m, "Cikolatali_cookie.jpg" },
-                    { 4, "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", "Sütlaç", 1, 40m, "~Sutlac.jpg" },
+                    { 4, "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", "Sütlaç", 1, 40m, "Sutlac.jpg" },
                     { 5, "Dondurmalı İrmik helvası", "İrmik Helvası", 1, 35m, "irmikhelvasi.jpg" }
                 });
 
