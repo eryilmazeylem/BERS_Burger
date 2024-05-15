@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Project_Group_4.Migrations
 {
     /// <inheritdoc />
-    public partial class INITDB : Migration
+    public partial class initdb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -423,32 +423,32 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "b0ae25e0-638f-401c-82b6-129c7492ed31", "Yonetici", "YONETICI" },
-                    { 2, "6bf72df0-5fb0-4276-879f-40bbb71ba647", "Uye", "UYE" }
+                    { 1, "d0657e43-35b9-4801-8d46-5285657229cd", "Yonetici", "YONETICI" },
+                    { 2, "c89d52e8-c096-4576-8121-0fe0ea6c82cd", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "f58a2819-ff54-4542-b078-3906cda67985", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEDywmih/19vG7bpKDOl10s+VxbiliLanGtJgPSRhpqq+3M3qyrEyOSRzj3zznMTCvw==", null, false, "0502cf7b-3297-4234-bf14-18e68ab2a4ed", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "732584fe-4a7e-404b-aed8-90a7edf8b6a4", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEMI3FwvtB2BECmTUYkrPwNVEfH89AN20WgBdU5z+G8WMgDwPJ+yIYsq1CzjUZDnUwg==", null, false, "9af14648-5e8a-482f-9b78-9421d2403e27", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",
                 columns: new[] { "EkstraMalzemeID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
                 values: new object[,]
                 {
-                    { 1, "Taza Marul", "Marul", 1, 2.5m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/marul.jpg" },
-                    { 2, "Ayaş domatesi", "Domates", 1, 3.5m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Domates.jpg " },
-                    { 3, "Kornişon Turşusu", "Turşu", 1, 2.5m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Tursu.jpg " },
-                    { 4, "Karamelize Soğan", "Soğan", 1, 1.2m, " ~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/sogan.jpg" },
-                    { 5, "1 paket mayonez", "Mayonez", 1, 0.5m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Mayonez.jpg " },
-                    { 6, "1 paket ketçap", "Ketçap", 1, 0.5m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Ketcap.jpg " },
-                    { 7, "Özel Baharat Soslu Tırtıklı Patates Kızartması", "Tırtıklı Patates Kızartması", 1, 20m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Tirtikli_patates_kizartmasi.jpg " },
-                    { 8, "6 Adet Kızarmış Soğan Halkası", "6'lı Soğan Halkası", 1, 30m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Sogan_Halkasi.jpg " },
-                    { 9, "1 paket Barbekü Sos", "Barbekü Sos", 1, 1m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Barbaku_sos.jpg" },
-                    { 10, "1 paket Ranch Sos", "Ranch Sos", 1, 1m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Ranche_sos.jpg" },
-                    { 11, "Mevsim Yeşillikleri ile yapılmış taze salata", "Mini Salata", 1, 10m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Mini_Salata.jpg" },
-                    { 12, "Dana Pastırma", "Pastırma", 3, 50m, "~/wwwroot/Pictures/Hamburgerler/Ek_Urunler/Pastirma.jpg" }
+                    { 1, "Taza Marul", "Marul", 1, 2.5m, "marul.jpg" },
+                    { 2, "Ayaş domatesi", "Domates", 1, 3.5m, "Domates.jpg " },
+                    { 3, "Kornişon Turşusu", "Turşu", 1, 2.5m, "Tursu.jpg " },
+                    { 4, "Karamelize Soğan", "Soğan", 1, 1.2m, "sogan.jpg" },
+                    { 5, "1 paket mayonez", "Mayonez", 1, 0.5m, "Mayonez.jpg " },
+                    { 6, "1 paket ketçap", "Ketçap", 1, 0.5m, "Ketcap.jpg " },
+                    { 7, "Özel Baharat Soslu Tırtıklı Patates Kızartması", "Tırtıklı Patates Kızartması", 1, 20m, "Tirtikli_patates_kizartmasi.jpg " },
+                    { 8, "6 Adet Kızarmış Soğan Halkası", "6'lı Soğan Halkası", 1, 30m, "Sogan_Halkasi.jpg " },
+                    { 9, "1 paket Barbekü Sos", "Barbekü Sos", 1, 1m, "Barbaku_sos.jpg" },
+                    { 10, "1 paket Ranch Sos", "Ranch Sos", 1, 1m, "Ranche_sos.jpg" },
+                    { 11, "Mevsim Yeşillikleri ile yapılmış taze salata", "Mini Salata", 1, 10m, "Mini_Salata.jpg" },
+                    { 12, "Dana Pastırma", "Pastırma", 3, 50m, "Pastirma.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -469,11 +469,11 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "IcecekID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
                 values: new object[,]
                 {
-                    { 1, "Kutu İçecek", "Coca-Cola", 1, 30m, "~/wwwroot/Pictures/Icecekler/Coca_cola.jpg" },
-                    { 2, "Kutu İçecek", "Coca-Cola-Zero", 1, 30m, "~/wwwroot/Pictures/Icecekler/Coca_cola_zero.jpg" },
-                    { 3, "Kutu İçecek", "Fanta", 1, 30m, "~/wwwroot/Pictures/Icecekler/Fanta.jpg" },
-                    { 4, "Kutu İçecek", "Sprite", 1, 30m, "~/wwwroot/Pictures/Icecekler/Sprite.jpg" },
-                    { 5, "Büyük Ayran", "Ayran", 1, 30m, "~/wwwroot/Pictures/Icecekler/Buyuk_Ayran.jpg" }
+                    { 1, "Kutu İçecek", "Coca-Cola", 1, 30m, "Coca_cola.jpg" },
+                    { 2, "Kutu İçecek", "Coca-Cola-Zero", 1, 30m, "Coca_cola_zero.jpg" },
+                    { 3, "Kutu İçecek", "Fanta", 1, 30m, "Fanta.jpg" },
+                    { 4, "Kutu İçecek", "Sprite", 1, 30m, "Sprite.jpg" },
+                    { 5, "Büyük Ayran", "Ayran", 1, 30m, "Buyuk_Ayran.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -493,11 +493,11 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "TatliID", "Aciklama", "Ad", "Adet", "Fiyat", "PicturePath" },
                 values: new object[,]
                 {
-                    { 1, "Çikolatalı ve dondurmalı enfes sufle", "Sufle", 1, 50m, "~/wwwroot/Pictures/Tatlilar/Cikolatali_sufle.jpg" },
-                    { 2, "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir", "Elmalı Tatlı", 1, 35m, "~/wwwroot/Pictures/Tatlilar/Elmali_tatli.jpg" },
-                    { 3, "Çikolata parçacıklı muhteşem kurabiyelerimiz", "Çikolatalı Cookie", 1, 35m, "~/wwwroot/Pictures/Tatlilar/Cikolatali_cookie.jpg" },
-                    { 4, "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", "Sütlaç", 1, 40m, "~/wwwroot/Pictures/Tatlilar/Sutlac.jpg" },
-                    { 5, "Dondurmalı İrmik helvası", "İrmik Helvası", 1, 35m, "~/wwwroot/Pictures/Tatlilar/irmikhelvasi.jpg" }
+                    { 1, "Çikolatalı ve dondurmalı enfes sufle", "Sufle", 1, 50m, "Cikolatali_sufle.jpg" },
+                    { 2, "Nefis Püresi ile beraber elmalı tatlı damak zevkinize birebir", "Elmalı Tatlı", 1, 35m, "Elmali_tatli.jpg" },
+                    { 3, "Çikolata parçacıklı muhteşem kurabiyelerimiz", "Çikolatalı Cookie", 1, 35m, "Cikolatali_cookie.jpg" },
+                    { 4, "Leziz fırınlanmış sütlaça hayır diyemezsiniz...", "Sütlaç", 1, 40m, "~Sutlac.jpg" },
+                    { 5, "Dondurmalı İrmik helvası", "İrmik Helvası", 1, 35m, "irmikhelvasi.jpg" }
                 });
 
             migrationBuilder.InsertData(
