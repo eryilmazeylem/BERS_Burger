@@ -21,6 +21,11 @@
                 <a class="btn btn-primary" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Index">Üye Paneline Git</a>
             </div>
 
+         @*    <script>
+             
+                window.location.href = '@Url.Action("Index", "UyePanel", new { area = "UyePaneli" })';
+            </script> *@
+
         }
         <div class="navbar-item mx-3">
          @*      <form asp-action="LogOut" asp-controller="Login" >
@@ -32,7 +37,7 @@
     else
     {
         <div class="navbar-item justify-content-end text-center mx-3">
-
+           
             <a class="btn btn-success" asp-controller="Login" asp-action="Login">Giriş Yap</a>
 
             

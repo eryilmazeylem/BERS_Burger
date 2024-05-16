@@ -28,5 +28,8 @@ namespace MVC_Project_Group_4.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+     
+
     }
 }
