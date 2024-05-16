@@ -9,5 +9,10 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
         {
             return View();
         }
+
+        public IActionResult Hakkimizda()
+        {
+            return View();
+        }
     }
 }
