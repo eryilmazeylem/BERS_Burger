@@ -14,7 +14,8 @@ namespace MVC_Project_Group_4.Models.Concrete
         public int Adet { get; set; }
         public DateTime SiparisTarihi {  get; set; }
 
-        
+        public int UyeId { get; set; }
+
 
 
         public ICollection<SiparisMenu>? SiparisMenu { get; set; }

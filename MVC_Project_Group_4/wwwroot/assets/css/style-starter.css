@@ -12387,7 +12387,9 @@ button.owl-next {
 .w3l-menublock #tab1:checked ~ #content1,
 .w3l-menublock #tab2:checked ~ #content2,
 .w3l-menublock #tab3:checked ~ #content3,
-.w3l-menublock #tab4:checked ~ #content4 {
+.w3l-menublock #tab4:checked ~ #content4, 
+.w3l-menublock #tab5:checked ~ #content5
+{
   display: block; }
 
 h3.title-small span {
