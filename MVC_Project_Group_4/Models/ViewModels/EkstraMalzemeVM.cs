@@ -6,7 +6,7 @@ namespace MVC_Project_Group_4.Models.ViewModels
     {
         public EkstraMalzemeEkleVM EkstraMalzemeEkleVM { get; set; }
 
-        public List<EkstraMalzeme> EkstraMalzemeler { get; set; }
+        public List<EkstraMalzeme>? EkstraMalzemeler { get; set; } = new List<EkstraMalzeme>();
 
         public EkstraMalzeme EkstraMalzeme { get; set; }
     }

@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC_Project_Group_4.Data.Context;
 using MVC_Project_Group_4.Models.Abstract;
+using MVC_Project_Group_4.Models.Concrete;
+using MVC_Project_Group_4.Models.ViewModels;
 
 namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 {
+    [Area("UyePaneli")]
     public class SiparisController : Controller
     {
         private readonly BurgerDBContext db;
@@ -12,9 +15,8 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
         {
             this.db = db;
         }
-        static List<Urun> SepeteEklenenUrunler = new List<Urun>();
 
-
+        UrunlerVM vm = new UrunlerVM();
 
 
         public IActionResult Index()
@@ -25,53 +27,58 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         }
 
+
+
+        [HttpPost]
         public IActionResult HamburgerDetay(int id)
         {
-           var Hamburger = db.Hamburgerler.FirstOrDefault(x=>x.HamburgerID==id);
-            
-           SepeteEklenenUrunler.Add(Hamburger);
+            Hamburger hamburger = new Hamburger();
 
-            return View();
+            hamburger = db.Hamburgerler.FirstOrDefault(x=>x.HamburgerID==id);
+            
+            vm.Hamburgerler.Add(hamburger);
+
+            return View(vm);
         
         }
-
+        
         public IActionResult IcecekDetay(int id)
         {
-            var Icecek = db.Icecekler.FirstOrDefault(x => x.IcecekID == id);
+            Icecek icecek = db.Icecekler.FirstOrDefault(x => x.IcecekID == id);
 
-            SepeteEklenenUrunler.Add(Icecek);
+            vm.Icecekler.Add(icecek);
 
-            return View();
+            return View(vm);
 
         }
-
+        
         public IActionResult TatliDetay(int id)
         {
-            var Tatli = db.Tatlilar.FirstOrDefault(x => x.TatliID == id);
+            Tatli tatli = db.Tatlilar.FirstOrDefault(x => x.TatliID == id);
 
-            SepeteEklenenUrunler.Add(Tatli);
+            vm.Tatlilar.Add(tatli);
 
-            return View();
+            return View(vm);
 
         }
-
+       
         public IActionResult EkMalzemeDetay(int id)
         {
-            var Ekmalzeme = db.EkstraMalzemeler.FirstOrDefault(x => x.EkstraMalzemeID == id);
+            EkstraMalzeme ekMalzeme = db.EkstraMalzemeler.FirstOrDefault(x => x.EkstraMalzemeID == id);
 
-            SepeteEklenenUrunler.Add(Ekmalzeme);
+            vm.EkstraMalzemeler.Add(ekMalzeme);
 
-            return View();
+            return View(vm);
 
         }
-
+        
         public IActionResult MenuDetay(int id)
         {
-            var Menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
+            Menu menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
 
-            SepeteEklenenUrunler.Add(Menu);
+            vm.Menuler.Add(menu);
 
-            return View();
+            return View(vm);
 
         }
 

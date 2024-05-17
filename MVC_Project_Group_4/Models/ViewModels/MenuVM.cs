@@ -19,7 +19,7 @@ namespace MVC_Project_Group_4.Models.ViewModels
 
 
 
-        public List<Menu> Menuler { get; set; } = new List<Menu>();
+        public List<Menu>? Menuler { get; set; } = new List<Menu>();
 
         public Menu Menu { get; set; }
 

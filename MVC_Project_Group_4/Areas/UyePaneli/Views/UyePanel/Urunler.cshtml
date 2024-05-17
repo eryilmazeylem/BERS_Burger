@@ -22,7 +22,7 @@
             <section id="content5" class="tab-content text-left">
 
                 <div class="row menu-body">
-                    <!-- Section starts: Hamburgers -->
+                    <!-- Section starts: Menuler -->
                     <div class="col-lg-6 menu-section pr-lg-5">
                         <!-- Item starts -->
                         @foreach (var item in Model.Menuler)
@@ -88,7 +88,7 @@
             <section id="content1" class="tab-content text-left">
 
                 <div class="row menu-body">
-                    <!-- Section starts: Menus -->
+                    <!-- Section starts: Hamburgerler -->
                     <div class="col-lg-6 menu-section pr-lg-5">
                         <!-- Item starts -->
                         @foreach (var item in Model.Hamburgerler)
@@ -107,8 +107,11 @@
                                         <p>@item.Aciklama</p>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <form>
-                                            <button type="submit" class="btn btn-outline-warning" asp-controller="Siparis" asp-action="HamburgerDetay" asp-route-id="@item.HamburgerID">+</button>
+
+                                        <form asp-area="UyePaneli" asp-controller="Siparis" asp-action="HamburgerDetay">
+
+                                            <button type="submit" class="btn btn-outline-warning" asp-route-id="@item.HamburgerID">+</button>
+
                                         </form>
                                         
 

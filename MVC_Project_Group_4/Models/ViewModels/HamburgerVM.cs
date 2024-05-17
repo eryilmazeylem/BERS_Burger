@@ -6,7 +6,7 @@ namespace MVC_Project_Group_4.Models.ViewModels
     {
         public HamburgerEkleVM HamburgerEkleVM { get; set; }
 
-        public List<Hamburger>? Hamburgerler { get; set; }
+        public List<Hamburger>? Hamburgerler { get; set; } = new List<Hamburger>();
 
         public Hamburger Hamburger { get; set; }
     }
