@@ -42,7 +42,7 @@ namespace MVC_Project_Group_4.Controllers
 
             await _signInManager.SignInAsync(uye, false);
 
-            return RedirectToAction("Index", "Home");
+            return Redirect("~/UyePaneli/UyePanel/Index");
         }
            
           

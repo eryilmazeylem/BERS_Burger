@@ -1,10 +1,4 @@
-﻿@{
-    ViewData["Title"] = "_UyeLayout";
-}
-
-
-
-<!--
+﻿<!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 -->
@@ -15,7 +9,7 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Burger Bun - Restaurant Category Responsive Web Template | Home : W3layouts</title>
+    <title>Burger Bun - Restaurant Category Responsive Web Template | Menu : W3layouts</title>
 
     <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 
@@ -23,7 +17,6 @@ Author URL: http://w3layouts.com
     <link rel="stylesheet" href="~/assets/css/style-starter.css">
 </head>
 <body>
-    @RenderBody()
     <!--header-->
     <header id="site-header" class="fixed-top">
         <div class="container">
@@ -46,13 +39,13 @@ Author URL: http://w3layouts.com
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" asp-action="Index">Ana Sayfa <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @@about__active">
                             <a class="nav-link" asp-action="Hakkimizda">Hakkımızda</a>
                         </li>
-                        <li class="nav-item @@menu__active">
+                        <li class="nav-item active">
                             <a class="nav-link" asp-action="Urunler">Ürünler</a>
                         </li>
                         <li class="nav-item">
@@ -101,129 +94,19 @@ Author URL: http://w3layouts.com
         </div>
     </header>
     <!--/header-->
-    <!-- banner section -->
-    <section id="home" class="w3l-banner py-5">
-        <div class="container py-lg-5 py-md-4 mt-lg-0 mt-md-5 mt-4">
-            <div class="row align-items-center py-lg-5 py-4 mt-4">
-                <div class="col-lg-6 col-sm-12">
-
-                    <h2 class="mb-4">Efsane Hamburger</h2>
-                    <h3 class="">Hemen Sipariş Ver. </h3>
-                    <p>
-
-
-                    </p>
-                    <div class="mt-md-5 mt-4">
-                        <a class="btn btn-primary btn-style mr-2" asp-action="Urunler"> Menü </a>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                </div>
+    <section class="w3l-about-breadcrumb">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+            <div class="container py-lg-5 py-md-3">
+                <h2 class="title">Ürünlerimiz</h2>
             </div>
         </div>
     </section>
-    <!-- //banner section -->
-    <!-- //middle -->
-    <!--  Work gallery section -->
-    <div class="w3l-gallery2" id="gallery">
-        <div class="burger galleryks py-5">
-            <div class="container py-lg-4 py-md-3">
 
-                <h3 class="title-big mb-lg-5 mb-4 text-center">Nefis Lezzetlerimiz</h3>
-                <div class="row no-gutters masonry">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g1.jpg" class="js-img-viwer d-block"
-                           data-id="lion">
-                            <img src="~/assets/images/g1.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g2.jpg" class="js-img-viwer d-block"
-                           data-id="camel">
-                            <img src="~/assets/images/g2.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g3.jpg" class="js-img-viwer d-block"
-                           data-id="hippopotamus">
-                            <img src="~/assets/images/g3.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g4.jpg" class="js-img-viwer d-block"
-                           data-id="koala">
-                            <img src="~/assets/images/g4.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g5.jpg" class="js-img-viwer d-block"
-                           data-id="bear">
-                            <img src="~/assets/images/g5.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g6.jpg" class="js-img-viwer d-block"
-                           data-id="rhinoceros">
-                            <img src="~/assets/images/g6.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g7.jpg" class="js-img-viwer d-block"
-                           data-id="hippopotamus">
-                            <img src="~/assets/images/g7.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="~/assets/images/g8.jpg" class="js-img-viwer d-block"
-                           data-id="koala">
-                            <img src="~/assets/images/g8.jpg" class="img-fluid radius-image-full" alt="burger gallery" />
-                            <div class="content-overlay"></div>
-                            <div class="content-details fadeIn-top">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  //Work gallery section -->
+   
     <!-- footer -->
     <footer class="py-5">
         <div class="container py-xl-4 ">
@@ -297,6 +180,8 @@ Author URL: http://w3layouts.com
         <p>© 2024 Burger Bers. All rights reserved | Design by BERS </p>
     </div>
     <!-- //copyright -->
+    <!-- //footer -->
+    
     <!-- move top -->
     <button onclick="topFunction()" id="movetop" title="Go to top">
         <span class="fa fa-level-up" aria-hidden="true"></span>

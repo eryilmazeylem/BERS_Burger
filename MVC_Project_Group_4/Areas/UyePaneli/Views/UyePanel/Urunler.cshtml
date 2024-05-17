@@ -1,0 +1,214 @@
+﻿@using MVC_Project_Group_4.Models.ViewModels
+@model UrunlerVM
+
+
+@{
+
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+
+
+<div class="w3l-menublock py-5">
+    <!-- menu block -->
+    <div id="w3l-menublock" class="text-center py-lg-4 py-md-3">
+        <div class="container">
+
+            <input id="tab1" type="radio" name="tabs" checked>
+            <label class="tabtle" for="tab1">Hamburgerler</label>
+
+            <input id="tab2" type="radio" name="tabs">
+            <label class="tabtle" for="tab2">Yan Ürünler</label>
+
+            <input id="tab3" type="radio" name="tabs">
+            <label class="tabtle" for="tab3">İçecekler</label>
+
+            <input id="tab4" type="radio" name="tabs">
+            <label class="tabtle" for="tab4">Tatlılar</label>
+
+            <input id="tab5" type="radio" name="tabs">
+            <label class="tabtle" for="tab5">Menüler</label>
+
+            <section id="content1" class="tab-content text-left">
+                <!-- <h3 class="title-small text-center">Coffee - <span>We make the delicious coffee</span></h3> -->
+                <div class="row menu-body">
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pr-lg-5">
+                        <!-- Item starts -->
+                        @foreach (var item in Model.Hamburgerler)
+                        {
+                            <div class="menu-item">
+                                <div>
+                                    <div class="row border-dot no-gutters">
+                                        <div class="col-8 menu-item-name">
+                                            <h6>@item.Ad</h6>
+                                        </div>
+                                        <div class="col-4 menu-item-price text-right">
+                                            <h6>@item.Fiyat TL</h6>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-description">
+                                        <p>@item.Aciklama</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+
+                    </div>
+                    <!-- Section ends: Appetizers -->
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pl-lg-5 text-center">
+                        <img src="~/assets/images/burger1.png" alt="" class="radius-image img-fluid">
+                    </div>
+                    <!-- Section ends: Appetizers -->
+
+            </section>
+
+            <section id="content2" class="tab-content text-left">
+                <!-- <h3 class="title-small text-center">Hot Beverages - <span>Coffee and Cappuccino</span></h3> -->
+                <div class="row menu-body">
+                    <!-- Section starts: Drinks -->
+                    <div class="col-lg-6 menu-section pl-lg-5 order-lg-2">
+                        <!-- Item starts -->
+                        @foreach (var item in Model.EkstraMalzemeler)
+                        {
+                            <div class="menu-item">
+                                <div>
+                                    <div class="row border-dot no-gutters">
+                                        <div class="col-8 menu-item-name">
+                                            <h6>@item.Ad</h6>
+                                        </div>
+                                        <div class="col-4 menu-item-price text-right">
+                                            <h6>@item.Fiyat TL</h6>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-description">
+                                        <p>@item.Aciklama</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        <!-- Item ends -->
+                    </div>
+                    <!-- Section ends: Drinks -->
+                    <!-- Section starts: Drinks -->
+                    <div class="col-lg-6 menu-section text-center pr-lg-5 order-lg-1">
+                        <img src="~/assets/images/snacks.png" alt="" class="radius-image img-fluid">
+                    </div>
+                    <!-- Section ends: Drinks -->
+                </div>
+            </section>
+
+            <section id="content3" class="tab-content text-left">
+                <!-- <h3 class="title-small text-center">Cold Beverages - <span>Coffee and Cappuccino</span></h3> -->
+                <div class="row menu-body">
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pr-lg-5">
+                        <!-- Item starts -->
+                        @foreach (var item in Model.Icecekler)
+                        {
+                            <div class="menu-item">
+                                <div>
+                                    <div class="row border-dot no-gutters">
+                                        <div class="col-8 menu-item-name">
+                                            <h6>@item.Ad</h6>
+                                        </div>
+                                        <div class="col-4 menu-item-price text-right">
+                                            <h6>@item.Fiyat TL</h6>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-description">
+                                        <p>@item.Aciklama</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        <!-- Item ends -->
+
+                    </div>
+                    <!-- Section ends: Appetizers -->
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pl-lg-5 text-center">
+                        <img src="~/assets/images/beverages.png" alt="" class="radius-image img-fluid">
+                    </div>
+                    <!-- Section ends: Appetizers -->
+            </section>
+
+            <section id="content4" class="tab-content text-left">
+                <!-- <h3 class="title-small text-center">Cold Beverages - <span>Coffee and Cappuccino</span></h3> -->
+                <div class="row menu-body">
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pr-lg-5">
+                        <!-- Item starts -->
+                        @foreach (var item in Model.Tatlilar)
+                        {
+                            <div class="menu-item">
+                                <div>
+                                    <div class="row border-dot no-gutters">
+                                        <div class="col-8 menu-item-name">
+                                            <h6>@item.Ad</h6>
+                                        </div>
+                                        <div class="col-4 menu-item-price text-right">
+                                            <h6>@item.Fiyat TL</h6>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-description">
+                                        <p>@item.Aciklama</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        <!-- Item ends -->
+
+                    </div>
+                    <!-- Section ends: Appetizers -->
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pl-lg-5 text-center">
+                        <img src="~/assets/images/beverages.png" alt="" class="radius-image img-fluid">
+                    </div>
+                    <!-- Section ends: Appetizers -->
+            </section>
+
+            <section id="content5" class="tab-content text-left">
+                <!-- <h3 class="title-small text-center">Cold Beverages - <span>Coffee and Cappuccino</span></h3> -->
+                <div class="row menu-body">
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pr-lg-5">
+                        <!-- Item starts -->
+                        @foreach (var item in Model.Menuler)
+                        {
+                            <div class="menu-item">
+                                <div>
+                                    <div class="row border-dot no-gutters">
+                                        <div class="col-8 menu-item-name">
+                                            <h6>@item.Ad</h6>
+                                        </div>
+                                        <div class="col-4 menu-item-price text-right">
+                                            <h6>@item.Fiyat TL</h6>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-description">
+                                        <p>@item.Aciklama</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        <!-- Item ends -->
+
+                    </div>
+                    <!-- Section ends: Appetizers -->
+                    <!-- Section starts: Appetizers -->
+                    <div class="col-lg-6 menu-section pl-lg-5 text-center">
+                        <img src="~/assets/images/beverages.png" alt="" class="radius-image img-fluid">
+                    </div>
+                    <!-- Section ends: Appetizers -->
+            </section>
+
+        </div>
+    </div>
+    <!-- menu block -->
+</div>

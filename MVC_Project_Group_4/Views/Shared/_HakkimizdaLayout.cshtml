@@ -47,7 +47,7 @@ Author URL: http://w3layouts.com
                         <li class="nav-item @@home__active">
                             <a class="nav-link" asp-action="Index">Ana Sayfa <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item @@about__active">
+                        <li class="nav-item active">
                             <a class="nav-link" asp-action="Hakkimizda">Hakkımızda</a>
                         </li>
                         <li class="nav-item @@menu__active">
@@ -56,6 +56,10 @@ Author URL: http://w3layouts.com
                     
                         <li class="nav-item">
                             <a><i style="font-size:24px" class="fa nav-link">&#xf07a;</i></a>
+                        </li>
+
+                        <li>
+                            <partial name="_LoginPartial"></partial>
                         </li>
                     
                         <!--/search-right-->
