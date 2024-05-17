@@ -1,4 +1,4 @@
-﻿
+﻿@* 
 @model LoginVM
 
 @{
@@ -6,7 +6,7 @@
 }
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LoginLogoutLayout.cshtml";
 }
 
 <h1>Login</h1>
@@ -35,10 +35,55 @@
 
 <div>
     <a class=" btn btn-primary mx-2" asp-action="Register">Kayıt Ol</a>
-</div>
+</div> *@
 
-@section Scripts {
+@* @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+ *@
+
+
+ @model LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@{
+    Layout = "~/Views/Shared/_LoginLogoutLayout.cshtml";
+}
+
+
+
+<hr />
+<div class="row justify-content-center my-5">
+    <div class="col-md-4  mt-5">
+        <form asp-action="Login" class="text-center"> 
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group my-1">
+                <label asp-for="EMail" class="control-label"></label>
+                <input asp-for="EMail" class="form-control" placeholder="E-Posta" />
+                <span asp-validation-for="EMail" class="text-danger"></span>
+            </div>
+            <div class="form-group my-1">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group my-1">
+                <input type="submit" value="Login" class="btn btn-primary  my-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@* @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+ *@

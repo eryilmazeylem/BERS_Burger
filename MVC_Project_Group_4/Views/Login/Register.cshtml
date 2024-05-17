@@ -1,20 +1,19 @@
-﻿@model RegisterVM
+﻿
+
+ @model RegisterVM
 
 @{
     ViewData["Title"] = "Register";
 }
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LoginLogoutLayout.cshtml";
 }
 
-
-<h1>Kayıt Ekranı</h1>
-
 <hr />
-<div class="row my-3">
-    <div class="col-md-4">
-        <form asp-action="Register">
-  
+
+<div class="row my-5 justify-content-center">
+    <div class="col-md-4 mt-5">
+        <form asp-action="Register" class="text-center"> 
             <div class="form-group my-1">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" placeholder="E-Posta" />
@@ -36,16 +35,12 @@
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group my-1">
-                <input type="submit" value="Oluştur" class="btn btn-primary mx-2" />
+                <input type="submit" value="Kayıt Ol" class="btn btn-primary mx-2" />
             </div>
         </form>
     </div>
 </div>
 
-<div class="my-3">
+<div class=" text-center"> 
     <a asp-action="Login">Zaten Hesabınız Var mı? Giriş Yap</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
