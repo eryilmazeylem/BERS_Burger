@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Project_Group_4.Migrations
 {
     /// <inheritdoc />
-    public partial class initdb : Migration
+    public partial class INITDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -282,11 +282,11 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     SiparisID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SiparisDetayAciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    SiparisDetayAciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true),
                     Boy = table.Column<int>(type: "int", nullable: false),
                     Adet = table.Column<int>(type: "int", nullable: false),
                     SiparisTarihi = table.Column<DateTime>(type: "datetime", nullable: false),
-                    UyeId = table.Column<int>(type: "int", nullable: true)
+                    UyeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -295,7 +295,8 @@ namespace MVC_Project_Group_4.Migrations
                         name: "FK_Siparisler_AspNetUsers_UyeId",
                         column: x => x.UyeId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -423,14 +424,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "2146cc16-130c-4949-94a8-2847ae50cf7d", "Yonetici", "YONETICI" },
-                    { 2, "fa58ab35-feb6-421e-8c6c-bc7665591776", "Uye", "UYE" }
+                    { 1, "7b22200b-2485-4edf-a57d-1faf25b92901", "Yonetici", "YONETICI" },
+                    { 2, "0c9f2efd-ba87-4fe0-ae2a-90b3bbafdfc6", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "20d01fda-57b1-44c1-8615-8b0ef9d04c4c", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEDRzh6h6XrCHzWc1ZNzUErwZCkY3Txovp/9hGe7Ox6NEkdYyk8N14vnIBJKcU0QqjA==", null, false, "29e5d8ce-6324-43b2-aa43-17ec77ed5dda", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "75fac617-a7ec-4db3-b7ad-8d3bcbac289b", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEJyTdzuuDFlfHp05g37q0TvCNwJW+H0cmwD66gjEENAejFs8GNUuvkkL2kZ/LrQzSA==", null, false, "ee4b3bc7-df3b-49fa-879f-d9c0a834c70a", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",

@@ -1,6 +1,4 @@
-﻿
-
-<!--
+﻿<!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 -->
@@ -19,7 +17,7 @@ Author URL: http://w3layouts.com
     <link rel="stylesheet" href="~/assets/css/style-starter.css">
 </head>
 <body>
-   
+
     <!--header-->
     <header id="site-header" class="fixed-top">
         <div class="container">
@@ -98,7 +96,20 @@ Author URL: http://w3layouts.com
     </header>
     <!--/header-->
 
-    @RenderBody()
+    <section class="w3l-about-breadcrumb">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+            <div class="container py-lg-5 py-md-3">
+                <h2 class="title">Ürünlerimiz</h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+   
 
     <!--  //Work gallery section -->
     <!-- footer -->

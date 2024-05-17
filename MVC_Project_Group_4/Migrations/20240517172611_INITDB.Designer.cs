@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Project_Group_4.Migrations
 {
     [DbContext(typeof(BurgerDBContext))]
-    [Migration("20240515134335_initdb")]
-    partial class initdb
+    [Migration("20240517172611_INITDB")]
+    partial class INITDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -495,14 +495,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "2146cc16-130c-4949-94a8-2847ae50cf7d",
+                            ConcurrencyStamp = "7b22200b-2485-4edf-a57d-1faf25b92901",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "fa58ab35-feb6-421e-8c6c-bc7665591776",
+                            ConcurrencyStamp = "0c9f2efd-ba87-4fe0-ae2a-90b3bbafdfc6",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -523,14 +523,13 @@ namespace MVC_Project_Group_4.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("SiparisDetayAciklama")
-                        .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("varchar");
 
                     b.Property<DateTime>("SiparisTarihi")
                         .HasColumnType("datetime");
 
-                    b.Property<int?>("UyeId")
+                    b.Property<int>("UyeId")
                         .HasColumnType("int");
 
                     b.HasKey("SiparisID");
@@ -762,15 +761,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "20d01fda-57b1-44c1-8615-8b0ef9d04c4c",
+                            ConcurrencyStamp = "75fac617-a7ec-4db3-b7ad-8d3bcbac289b",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDRzh6h6XrCHzWc1ZNzUErwZCkY3Txovp/9hGe7Ox6NEkdYyk8N14vnIBJKcU0QqjA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJyTdzuuDFlfHp05g37q0TvCNwJW+H0cmwD66gjEENAejFs8GNUuvkkL2kZ/LrQzSA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "29e5d8ce-6324-43b2-aa43-17ec77ed5dda",
+                            SecurityStamp = "ee4b3bc7-df3b-49fa-879f-d9c0a834c70a",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
@@ -981,7 +980,9 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     b.HasOne("MVC_Project_Group_4.Models.Concrete.Uye", "Uye")
                         .WithMany("Siparisler")
-                        .HasForeignKey("UyeId");
+                        .HasForeignKey("UyeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Uye");
                 });

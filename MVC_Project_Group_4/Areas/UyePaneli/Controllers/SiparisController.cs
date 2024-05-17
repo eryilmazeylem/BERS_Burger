@@ -27,18 +27,24 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         }
 
+        public IActionResult Sepet() 
+        {
+
+            return View();
+
+        }
 
 
         [HttpPost]
         public IActionResult HamburgerDetay(int id)
         {
-            Hamburger hamburger = new Hamburger();
+            HamburgerVM hamburgerVM = new HamburgerVM();
 
-            hamburger = db.Hamburgerler.FirstOrDefault(x=>x.HamburgerID==id);
+            hamburgerVM.Hamburger = db.Hamburgerler.FirstOrDefault(x=>x.HamburgerID==id);
             
-            vm.Hamburgerler.Add(hamburger);
+            hamburgerVM.Hamburgerler.Add(hamburgerVM.Hamburger);
 
-            return View(vm);
+           return RedirectToAction("Sepet");
         
         }
         

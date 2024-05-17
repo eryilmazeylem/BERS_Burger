@@ -108,12 +108,13 @@
                                     </div>
                                     <div class="d-flex justify-content-end">
 
-                                        <form asp-area="UyePaneli" asp-controller="Siparis" asp-action="HamburgerDetay">
+                                        <form method="post">
 
-                                            <button type="submit" class="btn btn-outline-warning" asp-route-id="@item.HamburgerID">+</button>
+                                            <button type="submit" class="btn btn-outline-warning" asp-route-id="@item.HamburgerID" asp-controller="Siparis" asp-action="HamburgerDetay">+</button>
 
                                         </form>
-                                        
+
+                                           
 
                                     </div>
                                 </div>

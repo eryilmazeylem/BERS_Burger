@@ -18,6 +18,25 @@ namespace MVC_Project_Group_4.Models.Concrete
         public int UyeId { get; set; }
 
 
+        public List<EkstraMalzeme> EkstraMalzemeler { get; set; } = new List<EkstraMalzeme>();
+        public Menu Menu{ get; set; }
+        public List<Tatli> Tatlilar { get; set; } = new List<Tatli>();
+        public List<Hamburger> Hamburgerler { get; set; } = new List<Hamburger>();
+        public List<Icecek> Icecekler { get; set; } = new List<Icecek>();
+
+        public List<Menu> Menuler { get; set; } = new List<Menu>();
+
+
+
+
+
+
+
+
+
+
+
+
 
         public ICollection<SiparisMenu>? SiparisMenu { get; set; }
 
@@ -25,30 +44,36 @@ namespace MVC_Project_Group_4.Models.Concrete
 
 
 
-        /*
-        public decimal ToplamFiyat              
+
+        public decimal ToplamFiyat
         {
-            get                             
+            get
             {
                 decimal toplam = 0;
 
+                foreach(var menu in Menuler)
+                {
+
                 if (Boy == Boy.Orta)
                 {
-                    toplam +=  * 1.1m; 
+                    toplam += menu.Fiyat * 1.1m;
 
                 }
                 else if (Boy == Boy.Buyuk)
                 {
-                    toplam += Menu.Fiyat * 1.2m;
+                    toplam += menu.Fiyat * 1.2m;
 
                 }
                 else
                 {
-                    toplam = Menu.Fiyat;
+                    toplam = menu.Fiyat;
 
                 }
 
-                toplam += ToplamEkstraMalzemeFiyatiGetir();
+                }
+
+
+                toplam += ToplamEkstraMalzemeFiyatiGetir() + ToplamHamburgerFiyatiGetir() + ToplamIcecekFiyatiGetir() + ToplamTatliFiyatiGetir();
 
                 toplam *= Adet;
 
@@ -71,19 +96,68 @@ namespace MVC_Project_Group_4.Models.Concrete
         }
 
 
+        public decimal ToplamMenuFiyatiGetir() // Menu FİYATLARINI TOPLAYAN METOD
+        {
+            decimal toplam = 0;
+
+            foreach (Menu menu in Menuler)
+            {
+                toplam += menu.Fiyat;
+            }
+            return toplam;
+        }
+
+
+        public decimal ToplamIcecekFiyatiGetir() // ICECEK FİYATLARINI TOPLAYAN METOD
+        {
+            decimal toplam = 0;
+
+            foreach (Icecek icecek in Icecekler)
+            {
+                toplam += icecek.Fiyat;
+            }
+            return toplam;
+        }
+
+
+        public decimal ToplamTatliFiyatiGetir() // TATLI FİYATLARINI TOPLAYAN METOD
+        {
+            decimal toplam = 0;
+
+            foreach (Tatli tatli in Tatlilar)
+            {
+                toplam += tatli.Fiyat;
+            }
+            return toplam;
+        }
+
+        public decimal ToplamHamburgerFiyatiGetir() // HAMBURGER FİYATLARINI TOPLAYAN METOD
+        {
+            decimal toplam = 0;
+
+            foreach (Hamburger hamburger in Hamburgerler)
+            {
+                toplam += hamburger.Fiyat;
+            }
+            return toplam;
+        }
+
         public override string ToString()
         {
-            string bilgi = string.Empty;
+            string siparis = string.Empty;
 
-            bilgi += Adet + " Adet " + Menu + " " + Boy + " ";
+            siparis += Adet + " Adet " + Menu + " " + Boy + " ";
 
             string ekstraMalzemeIsimleri = EkstraMalzemeleriGetir();
+            string HamburgerIsimleri = HamburgerleriGetir();
+            string iceceklerIsimleri = IcecekleriGetir();
+            string tatliIsimleri = TatlilariGetir();
 
-            bilgi += ekstraMalzemeIsimleri;
+            siparis += HamburgerIsimleri + ekstraMalzemeIsimleri + tatliIsimleri + iceceklerIsimleri;
 
-            bilgi += " => " + Toplam;
+            siparis += " => " + ToplamFiyat;
 
-            return bilgi;
+            return siparis;
         }
 
         private string EkstraMalzemeleriGetir()
@@ -99,7 +173,63 @@ namespace MVC_Project_Group_4.Models.Concrete
             return ekstraMalzemeler;
 
         }
-        */
+
+        private string MenuleriGetir()
+        {
+            string menuler = string.Empty;
+
+            foreach (Menu menu in Menuler)
+            {
+
+                menuler += menu.Ad + ", ";
+            }
+
+            return menuler;
+
+        }
+
+        private string IcecekleriGetir()
+        {
+            string icecekler = string.Empty;
+
+            foreach (Icecek icecek in Icecekler)
+            {
+
+                icecekler += icecek.Ad + ", ";
+            }
+
+            return icecekler;
+
+        }
+
+        private string HamburgerleriGetir()
+        {
+            string hamburgerler = string.Empty;
+
+            foreach (Hamburger hamburger in Hamburgerler)
+            {
+
+                hamburgerler += hamburger.Ad + ", ";
+            }
+
+            return hamburgerler;
+
+        }
+
+        private string TatlilariGetir()
+        {
+            string tatlilar = string.Empty;
+
+            foreach (Tatli tatli in Tatlilar)
+            {
+
+                tatlilar += tatli.Ad + ", ";
+            }
+
+            return tatlilar;
+
+        }
+
     }
 }
 
