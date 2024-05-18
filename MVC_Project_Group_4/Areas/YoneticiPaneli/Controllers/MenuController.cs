@@ -31,6 +31,8 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
         public IActionResult MenuListele()
         {
             vm.Menuler = db.Menuler.Include(x => x.MenuDetay).ThenInclude(x=>x.EkstraMalzeme).Include(x=>x.MenuDetay).ThenInclude(x=>x.Hamburger).ToList();
+
+   
             return View(vm);
         }
 

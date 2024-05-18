@@ -44,3 +44,9 @@
 <div class=" text-center"> 
     <a asp-action="Login">Zaten Hesabınız Var mı? Giriş Yap</a>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");
+    }
+}
