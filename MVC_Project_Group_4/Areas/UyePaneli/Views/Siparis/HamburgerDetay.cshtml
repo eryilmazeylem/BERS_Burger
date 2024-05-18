@@ -2,12 +2,12 @@
 @model HamburgerVM
 
 @{
-    ViewData["Title"] = "HamburgerDetay";
+    
     Layout = "~/Views/Shared/_DetayLayout.cshtml";
 }
 
 
-<div>
+<div class="font-">
     <h4>Hamburger</h4>
     <hr />
     <dl class="row">
@@ -44,13 +44,17 @@
         </dd>
     </dl>
 </div>
-<div>
-    <form method="post">
+<div class="my-2">
+    <form method="post" >
         <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success" asp-route-id="@Model.Hamburger.HamburgerID">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
     </form>
 
-    <a asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
+    
+    
+</div>
+<div>
+    <a class="btn btn-outline-warning" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
 </div>

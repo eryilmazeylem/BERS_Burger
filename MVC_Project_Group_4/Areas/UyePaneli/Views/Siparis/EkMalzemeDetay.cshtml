@@ -1,52 +1,52 @@
 ﻿@using MVC_Project_Group_4.Models.ViewModels
-@model MenuVM
+@model EkstraMalzemeVM
 
 @{
-   
     Layout = "~/Views/Shared/_DetayLayout.cshtml";
 }
 
 
 
 <div>
-    <h4>Menu</h4>
+    <h4>EkstraMalzeme</h4>
     <hr />
     <dl class="row">
+
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Menu.Ad)
+            @Html.DisplayNameFor(model => Model.EkstraMalzeme.Ad)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Menu.Ad)
+            @Html.DisplayFor(model => Model.EkstraMalzeme.Ad)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Menu.Fiyat)
+            @Html.DisplayNameFor(model => Model.EkstraMalzeme.Fiyat)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Menu.Fiyat)
+            @Html.DisplayFor(model => Model.EkstraMalzeme.Fiyat)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Menu.Aciklama)
+            @Html.DisplayNameFor(model => Model.EkstraMalzeme.Aciklama)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Menu.Aciklama)
+            @Html.DisplayFor(model => Model.EkstraMalzeme.Aciklama)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Menu.PicturePath)
+            @Html.DisplayNameFor(model => Model.EkstraMalzeme.PicturePath)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Menu.PicturePath)
+            @Html.DisplayFor(model => Model.EkstraMalzeme.PicturePath)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Menu.Adet)
+            @Html.DisplayNameFor(model => Model.EkstraMalzeme.Adet)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Menu.Adet)
+            @Html.DisplayFor(model => Model.EkstraMalzeme.Adet)
         </dd>
     </dl>
 </div>
 <div class="my-2">
     <form method="post">
-        <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success" asp-route-id="@Model.Menu.MenuID">
+        <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success" asp-route-id="@Model.EkstraMalzeme.EkstraMalzemeID">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
