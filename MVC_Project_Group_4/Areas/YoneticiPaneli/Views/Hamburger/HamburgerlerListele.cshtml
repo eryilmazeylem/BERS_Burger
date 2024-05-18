@@ -1,8 +1,15 @@
 ﻿@model HamburgerVM
 
 @{
-    ViewData["Title"] = "HamburgerlerListele";
+    ViewData["Title"] = "Hamburger Listele";
 }
+
+<div class="text-center mb-4">
+    <h1 class="mb-4">Hamburgerler</h1>
+    <p>
+        <a asp-action="HamburgerOlustur" class="btn btn-primary">Yeni Hamburger Olustur</a>
+    </p>
+</div>
 
 @if (TempData["infoguncelle"] is not null)
 {
@@ -13,66 +20,87 @@
     <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
 }
 
-
-<p>
-    <a asp-action="HamburgerOlustur" class="btn btn-primary">Yeni Hamburger Olustur</a>
-</p>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Hamburger.HamburgerID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hamburger.Ad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hamburger.Fiyat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hamburger.Aciklama)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hamburger.PicturePath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hamburger.Adet)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Hamburgerler)
-        {
+<hr />
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-dark">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HamburgerID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fiyat)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Aciklama)
-                </td>
-                <td>
-                    
-                    <img src="~/Pictures/Hamburgerler/@item.PicturePath" width="120px" height="90px" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adet)
-                </td>
-                <td>
-
-                    <a asp-action="HamburgerGuncelle" class="btn btn-warning" asp-route-id="@item.HamburgerID">Güncelle</a>
-
-                </td>
-                <td>
-
-                    <a asp-action="HamburgerSil" class="btn btn-danger" asp-route-id="@item.HamburgerID">Sil</a>
-                </td>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Ad
+                </th>
+                <th>
+                    Fiyat
+                </th>
+                <th>
+                    Açıklama
+                </th>
+                <th>
+                    Fotoğraf
+                </th>
+                <th>
+                    Adet
+                </th>
+                <th></th>
+                <th></th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Hamburgerler)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HamburgerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fiyat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama)
+                    </td>
+                    <td>
+
+                        <img src="~/Pictures/Hamburgerler/@item.PicturePath" class="img-fluid" alt="@item.Ad" style="max-width: 120px; max-height: 90px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adet)
+                    </td>
+                    <td>
+                    
+                        <a  asp-action="HamburgerGuncelle" class="btn btn-warning" asp-controller="Hamburger" asp-route-id="@item.HamburgerID">Güncelle</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Hamburger" asp-action="HamburgerSil" class="btn btn-danger" asp-route-id="@item.HamburgerID" onclick="return confirm('Emin misiniz?')">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .table {
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
         }
-    </tbody>
-</table>
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+</style>

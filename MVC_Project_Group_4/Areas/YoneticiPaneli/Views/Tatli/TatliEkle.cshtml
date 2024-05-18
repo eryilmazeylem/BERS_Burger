@@ -1,54 +1,61 @@
 ﻿@model TatliEkleVM
 
 @{
-    ViewData["Title"] = "TatliEkle";
+    ViewData["Title"] = "Tatlı Ekle";
 }
 
-<h1>TatliEkle</h1>
+<div class="container my-4">
+    <div class="text-center mb-4">
+        <h1>Tatlı Ekle</h1>
+    </div>
 
-<h4>Tatli</h4>
-<hr />
+
 <div class="row">
-    <div class="col-md-4">
+        <div class="col-md-4 offset-md-4 border p-4 rounded">
         <form asp-action="TatliEkle" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           
-            <div class="form-group">
+
+                <div class="mb-3">
                 <label asp-for="Ad" class="control-label"></label>
                 <input asp-for="Ad" class="form-control" />
                 <span asp-validation-for="Ad" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Fiyat" class="control-label"></label>
                 <input asp-for="Fiyat" class="form-control" />
                 <span asp-validation-for="Fiyat" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Aciklama" class="control-label"></label>
                 <input asp-for="Aciklama" class="form-control" />
                 <span asp-validation-for="Aciklama" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="PicturePath" class="control-label"></label>
                 <input asp-for="PicturePath" class="form-control" type="file" />
                 <span asp-validation-for="PicturePath" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Adet" class="control-label"></label>
                 <input asp-for="Adet" class="form-control" />
                 <span asp-validation-for="Adet" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <div class="text-center mb-3">
+                <input type="submit" value="Tatlı Ekle" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+    <div class="text-center mt-2">
     <a asp-action="TatliListele">Listeye Geri Dön</a>
 </div>
 
+    <style>
+        .form-label {
+            font-weight: bold;
+        }
+    </style>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

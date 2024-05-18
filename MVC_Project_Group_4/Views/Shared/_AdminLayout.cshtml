@@ -3,34 +3,51 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Admin Paneli</title>
+    <title>@ViewData["Title"] Admin Paneli</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVC_Project_Group_4.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Burger Bun - Restaurant Category Responsive Web Template | About : W3layouts</title>
+
+    <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style-starter.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVC_Project_Group_4</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="YoneticiPaneli" asp-controller="YoneticiPanel" asp-action="AnaSayfa">AnaSayfa</a>
-                        </li>
-                    </ul>
+    <header id="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <h1>
+                        <a class="navbar-brand text-dark" asp-area="YoneticiPaneli" asp-controller="YoneticiPanel" asp-action="AnaSayfa">
+                            <img src="~/assets/images/burger.png" alt="burger logo" width="35px" /> Bers Burger
+                        </a>
+                    </h1>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item @@home__active">
+                                <a class="nav-link text-dark" asp-area="YoneticiPaneli" asp-controller="YoneticiPanel" asp-action="AnaSayfa">AnaSayfa</a>
+                            </li>
+                    </div>
+
                 </div>
-            </div>
-            <div>
-                <div class="navbar-item mx-3">
-                    <a class="btn btn-danger" asp-controller="Login" asp-action="LogOut">Çıkış</a>
+                <div>
+                    <div class="navbar-item mx-3">
+                        <a class="btn btn-danger" asp-controller="Login" asp-action="LogOut">Çıkış</a>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -38,7 +55,7 @@
         </main>
     </div>
 
-  
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

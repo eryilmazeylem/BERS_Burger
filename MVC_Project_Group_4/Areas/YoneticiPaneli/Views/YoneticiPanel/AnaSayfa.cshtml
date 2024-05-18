@@ -1,16 +1,12 @@
-﻿@* @{
-    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
-}
+﻿@* 
 
-   
 <div class="card-group ">
-
     <div class="card " style="width: 18rem;">
         <img src="~/Pictures/Menuler/Benim_3_lum.jpg" class="card-img-top" alt="..." >
         <div class="card-body">
-            <h5 class="card-title">Menuler</h5>
+            <h5 class="card-title">Menüler</h5>
 
-            <a asp-controller="Menu" asp-action="MenuListele" class="btn btn-primary">List</a>
+            <a asp-controller="Menu" asp-action="MenuListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -18,15 +14,15 @@
         <div class="card-body">
             <h5 class="card-title">Ek Urunler</h5>
 
-            <a asp-controller="EkUrun" asp-action="EkstraMalzemeListele" class="btn btn-primary">List</a>
+            <a asp-controller="EkUrun" asp-action="EkstraMalzemeListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
         <img src="~/Pictures/Icecekler/Coca_cola.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Icecekler</h5>
+            <h5 class="card-title">İçecekler</h5>
 
-            <a asp-controller="Icecek" asp-action="IcecekListele" class="btn btn-primary">List</a>
+            <a asp-controller="Icecek" asp-action="IcecekListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -34,7 +30,7 @@
         <div class="card-body">
             <h5 class="card-title">Tatlılar</h5>
 
-            <a asp-controller="Tatli" asp-action="TatliListele" class="btn btn-primary">List</a>
+            <a asp-controller="Tatli" asp-action="TatliListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -42,60 +38,58 @@
         <div class="card-body">
             <h5 class="card-title">Hamburgerler</h5>
 
-            <a asp-controller="Hamburger" asp-action="HamburgerlerListele" class="btn btn-primary">List</a>
+            <a asp-controller="Hamburger" asp-action="HamburgerlerListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
 </div>
 
  *@
 
-
-            @{
-    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
-}
-
-   
-<div class="card-group ">
-
-       <div class="card mx-2" style="width: 18rem;">
-        <img src="~/Pictures/Menuler/Benim_3_lum.jpg" class="card-img-top" alt="..." >
+<div class="d-flex  justify-content-start">
+    <div class="card m-3 fixed-size-card" style="width: 18rem;">
+        <img src="~/Pictures/Menuler/Benim_3_lum.jpg" class="card-img-top fixed-size-img" alt="...">
         <div class="card-body">
             <h5 class="card-title">Menuler</h5>
-
-            <a asp-controller="Menu" asp-action="MenuListele" class="btn btn-primary">List</a>
+            <a asp-controller="Menu" asp-action="MenuListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
-       <div class="card mx-2" style="width: 18rem;">
-        <img src="~/Pictures/Ek_Urunler/Tirtikli_patates_kizartmasi.jpg" class="card-img-top" alt="...">
+    <div class="card m-3 fixed-size-card" style="width: 18rem;">
+        <img src="~/Pictures/Ek_Urunler/Tirtikli_patates_kizartmasi.jpg" class="card-img-top fixed-size-img" alt="...">
         <div class="card-body">
             <h5 class="card-title">Ek Urunler</h5>
-
-            <a asp-controller="EkUrun" asp-action="EkstraMalzemeListele" class="btn btn-primary">List</a>
+            <a asp-controller="EkUrun" asp-action="EkstraMalzemeListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
-       <div class="card mx-2" style="width: 18rem;">
-        <img src="~/Pictures/Icecekler/Coca_cola.jpg" class="card-img-top" alt="...">
+    <div class="card m-3 fixed-size-card" style="width: 18rem;">
+        <img src="~/Pictures/Icecekler/Coca_cola.jpg" class="card-img-top fixed-size-img" alt="...">
         <div class="card-body">
             <h5 class="card-title">Icecekler</h5>
-
-            <a asp-controller="Icecek" asp-action="IcecekListele" class="btn btn-primary">List</a>
+            <a asp-controller="Icecek" asp-action="IcecekListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
-       <div class="card mx-2" style="width: 18rem;">
-        <img src="~/Pictures/Tatlilar/Sutlac.jpg" class="card-img-top" alt="...">
+    <div class="card m-3 fixed-size-card" style="width: 18rem;">
+        <img src="~/Pictures/Tatlilar/Sutlac.jpg" class="card-img-top fixed-size-img" alt="...">
         <div class="card-body">
             <h5 class="card-title">Tatlılar</h5>
-
-            <a asp-controller="Tatli" asp-action="TatliListele" class="btn btn-primary">List</a>
+            <a asp-controller="Tatli" asp-action="TatliListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
-       <div class="card mx-2" style="width: 18rem;">
-        <img src="~/Pictures/Hamburgerler/Big_King.jpg" class="card-img-top" alt="...">
+    <div class="card m-3 fixed-size-card" style="width: 18rem;">
+        <img src="~/Pictures/Hamburgerler/Big_King.jpg" class="card-img-top fixed-size-img" alt="...">
         <div class="card-body">
             <h5 class="card-title">Hamburgerler</h5>
-
-            <a asp-controller="Hamburger" asp-action="HamburgerlerListele" class="btn btn-primary">List</a>
+            <a asp-controller="Hamburger" asp-action="HamburgerlerListele" class="btn btn-primary">Listele</a>
         </div>
     </div>
 </div>
 
+<style>
+    .fixed-size-card {
+        height: 400px; /* Card'ın sabit yüksekliği */
+    }
+
+    .fixed-size-img {
+        height: 200px; /* Görselin sabit yüksekliği */
+        object-fit: cover; /* Görselin kartı tamamen kaplamasını sağlar */
+    }
+</style>

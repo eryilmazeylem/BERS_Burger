@@ -1,10 +1,16 @@
 ﻿@model IcecekVM
 
 @{
-    ViewData["Title"] = "IcecekListele";
+    ViewData["Title"] = "İçecek Listele";
 }
 
-<h1>IcecekListele</h1>
+<div class="text-center mb-4">
+    <h1 class="mb-4">İçecekler</h1>
+    <p>
+        <a asp-action="IcecekEkle" class="btn btn-primary">Yeni İcecek Ekle</a>
+    </p>
+</div>
+
 
 @if (TempData["infoguncelle"] is not null)
 {
@@ -15,31 +21,31 @@
 <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
 }
 
-<p>
-    <a asp-action="IcecekEkle"class="btn btn-primary" >Yeni İcecek Ekle</a>
-</p>
-<table class="table">
-    <thead>
+<hr />
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Icecek.IcecekID)
+                ID
             </th>
           
             <th>
-                @Html.DisplayNameFor(model => model.Icecek.Ad)
+                Ad
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Icecek.Fiyat)
+               Fiyat
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Icecek.Aciklama)
+                Açıklama
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Icecek.PicturePath)
+                Fotoğraf
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Icecek.Adet)
+                Adet
             </th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -61,7 +67,8 @@
             </td>
                 <td>
                     @*   @Html.DisplayFor(modelItem => item.PicturePath) *@
-                    <img src="~/Pictures/Icecekler/@item.PicturePath" width="120px" height="90px" />
+                   @*  <img src="~/Pictures/Icecekler/@item.PicturePath" width="120px" height="90px" /> *@
+                        <img src="~/Pictures/Icecekler/@item.PicturePath" class="img-fluid" alt="@item.Ad" style="max-width: 120px; max-height: 90px;" />
                 </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Adet)
@@ -80,3 +87,25 @@
 }
     </tbody>
 </table>
+</div>
+
+<style>
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .table {
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+</style>

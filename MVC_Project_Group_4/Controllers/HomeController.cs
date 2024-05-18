@@ -18,6 +18,10 @@ namespace MVC_Project_Group_4.Controllers
             return View();
         }
 
+        public IActionResult Hakkimizda()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
