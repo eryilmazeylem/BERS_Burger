@@ -27,7 +27,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         }
 
-        public IActionResult Sepet() 
+        public IActionResult Sepet(HamburgerVM hamburgerVM) 
         {
 
             return View();
@@ -44,7 +44,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             
             hamburgerVM.Hamburgerler.Add(hamburgerVM.Hamburger);
 
-           return RedirectToAction("Sepet");
+           return View(hamburgerVM);
         
         }
         
@@ -80,11 +80,13 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
         
         public IActionResult MenuDetay(int id)
         {
-            Menu menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
+            MenuVM menuVM = new MenuVM();
 
-            vm.Menuler.Add(menu);
+            menuVM.Menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
 
-            return View(vm);
+            menuVM.Menuler.Add(menuVM.Menu);
+
+            return View(menuVM);
 
         }
 

@@ -18,23 +18,13 @@ namespace MVC_Project_Group_4.Models.Concrete
         public int UyeId { get; set; }
 
 
-        public List<EkstraMalzeme> EkstraMalzemeler { get; set; } = new List<EkstraMalzeme>();
-        public Menu Menu{ get; set; }
-        public List<Tatli> Tatlilar { get; set; } = new List<Tatli>();
-        public List<Hamburger> Hamburgerler { get; set; } = new List<Hamburger>();
-        public List<Icecek> Icecekler { get; set; } = new List<Icecek>();
+        //public List<EkstraMalzeme> EkstraMalzemeler { get; set; } = new List<EkstraMalzeme>();
+        //public Menu Menu{ get; set; }
+        //public List<Tatli> Tatlilar { get; set; } = new List<Tatli>();
+        //public List<Hamburger> Hamburgerler { get; set; } = new List<Hamburger>();
+        //public List<Icecek> Icecekler { get; set; } = new List<Icecek>();
 
-        public List<Menu> Menuler { get; set; } = new List<Menu>();
-
-
-
-
-
-
-
-
-
-
+        //public List<Menu> Menuler { get; set; } = new List<Menu>();
 
 
 
@@ -44,191 +34,190 @@ namespace MVC_Project_Group_4.Models.Concrete
 
 
 
+        //public decimal ToplamFiyat
+        //{
+        //    get
+        //    {
+        //        decimal toplam = 0;
 
-        public decimal ToplamFiyat
-        {
-            get
-            {
-                decimal toplam = 0;
+        //        foreach(var menu in Menuler)
+        //        {
 
-                foreach(var menu in Menuler)
-                {
+        //        if (Boy == Boy.Orta)
+        //        {
+        //            toplam += menu.Fiyat * 1.1m;
 
-                if (Boy == Boy.Orta)
-                {
-                    toplam += menu.Fiyat * 1.1m;
+        //        }
+        //        else if (Boy == Boy.Buyuk)
+        //        {
+        //            toplam += menu.Fiyat * 1.2m;
 
-                }
-                else if (Boy == Boy.Buyuk)
-                {
-                    toplam += menu.Fiyat * 1.2m;
+        //        }
+        //        else
+        //        {
+        //            toplam = menu.Fiyat;
 
-                }
-                else
-                {
-                    toplam = menu.Fiyat;
+        //        }
 
-                }
-
-                }
-
-
-                toplam += ToplamEkstraMalzemeFiyatiGetir() + ToplamHamburgerFiyatiGetir() + ToplamIcecekFiyatiGetir() + ToplamTatliFiyatiGetir();
-
-                toplam *= Adet;
-
-                return toplam;
-
-            }
-
-        }
+        //        }
 
 
-        public decimal ToplamEkstraMalzemeFiyatiGetir() // EK MALZEME FİYATLARINI TOPLAYAN METOD
-        {
-            decimal toplam = 0;
+        //        toplam += ToplamEkstraMalzemeFiyatiGetir() + ToplamHamburgerFiyatiGetir() + ToplamIcecekFiyatiGetir() + ToplamTatliFiyatiGetir();
 
-            foreach (EkstraMalzeme ekstra in EkstraMalzemeler)
-            {
-                toplam += ekstra.Fiyat;
-            }
-            return toplam;
-        }
+        //        toplam *= Adet;
 
+        //        return toplam;
 
-        public decimal ToplamMenuFiyatiGetir() // Menu FİYATLARINI TOPLAYAN METOD
-        {
-            decimal toplam = 0;
+        //    }
 
-            foreach (Menu menu in Menuler)
-            {
-                toplam += menu.Fiyat;
-            }
-            return toplam;
-        }
+        //}
 
 
-        public decimal ToplamIcecekFiyatiGetir() // ICECEK FİYATLARINI TOPLAYAN METOD
-        {
-            decimal toplam = 0;
+        //public decimal ToplamEkstraMalzemeFiyatiGetir() // EK MALZEME FİYATLARINI TOPLAYAN METOD
+        //{
+        //    decimal toplam = 0;
 
-            foreach (Icecek icecek in Icecekler)
-            {
-                toplam += icecek.Fiyat;
-            }
-            return toplam;
-        }
+        //    foreach (EkstraMalzeme ekstra in EkstraMalzemeler)
+        //    {
+        //        toplam += ekstra.Fiyat;
+        //    }
+        //    return toplam;
+        //}
 
 
-        public decimal ToplamTatliFiyatiGetir() // TATLI FİYATLARINI TOPLAYAN METOD
-        {
-            decimal toplam = 0;
+        //public decimal ToplamMenuFiyatiGetir() // Menu FİYATLARINI TOPLAYAN METOD
+        //{
+        //    decimal toplam = 0;
 
-            foreach (Tatli tatli in Tatlilar)
-            {
-                toplam += tatli.Fiyat;
-            }
-            return toplam;
-        }
+        //    foreach (Menu menu in Menuler)
+        //    {
+        //        toplam += menu.Fiyat;
+        //    }
+        //    return toplam;
+        //}
 
-        public decimal ToplamHamburgerFiyatiGetir() // HAMBURGER FİYATLARINI TOPLAYAN METOD
-        {
-            decimal toplam = 0;
 
-            foreach (Hamburger hamburger in Hamburgerler)
-            {
-                toplam += hamburger.Fiyat;
-            }
-            return toplam;
-        }
+        //public decimal ToplamIcecekFiyatiGetir() // ICECEK FİYATLARINI TOPLAYAN METOD
+        //{
+        //    decimal toplam = 0;
 
-        public override string ToString()
-        {
-            string siparis = string.Empty;
+        //    foreach (Icecek icecek in Icecekler)
+        //    {
+        //        toplam += icecek.Fiyat;
+        //    }
+        //    return toplam;
+        //}
 
-            siparis += Adet + " Adet " + Menu + " " + Boy + " ";
 
-            string ekstraMalzemeIsimleri = EkstraMalzemeleriGetir();
-            string HamburgerIsimleri = HamburgerleriGetir();
-            string iceceklerIsimleri = IcecekleriGetir();
-            string tatliIsimleri = TatlilariGetir();
+        //public decimal ToplamTatliFiyatiGetir() // TATLI FİYATLARINI TOPLAYAN METOD
+        //{
+        //    decimal toplam = 0;
 
-            siparis += HamburgerIsimleri + ekstraMalzemeIsimleri + tatliIsimleri + iceceklerIsimleri;
+        //    foreach (Tatli tatli in Tatlilar)
+        //    {
+        //        toplam += tatli.Fiyat;
+        //    }
+        //    return toplam;
+        //}
 
-            siparis += " => " + ToplamFiyat;
+        //public decimal ToplamHamburgerFiyatiGetir() // HAMBURGER FİYATLARINI TOPLAYAN METOD
+        //{
+        //    decimal toplam = 0;
 
-            return siparis;
-        }
+        //    foreach (Hamburger hamburger in Hamburgerler)
+        //    {
+        //        toplam += hamburger.Fiyat;
+        //    }
+        //    return toplam;
+        //}
 
-        private string EkstraMalzemeleriGetir()
-        {
-            string ekstraMalzemeler = string.Empty;
+        //public override string ToString()
+        //{
+        //    string siparis = string.Empty;
 
-            foreach (EkstraMalzeme ekstra in EkstraMalzemeler)
-            {
+        //    siparis += Adet + " Adet " + Menu + " " + Boy + " ";
 
-                ekstraMalzemeler += ekstra.Ad + ", ";
-            }
+        //    string ekstraMalzemeIsimleri = EkstraMalzemeleriGetir();
+        //    string HamburgerIsimleri = HamburgerleriGetir();
+        //    string iceceklerIsimleri = IcecekleriGetir();
+        //    string tatliIsimleri = TatlilariGetir();
 
-            return ekstraMalzemeler;
+        //    siparis += HamburgerIsimleri + ekstraMalzemeIsimleri + tatliIsimleri + iceceklerIsimleri;
 
-        }
+        //    siparis += " => " + ToplamFiyat;
 
-        private string MenuleriGetir()
-        {
-            string menuler = string.Empty;
+        //    return siparis;
+        //}
 
-            foreach (Menu menu in Menuler)
-            {
+        //private string EkstraMalzemeleriGetir()
+        //{
+        //    string ekstraMalzemeler = string.Empty;
 
-                menuler += menu.Ad + ", ";
-            }
+        //    foreach (EkstraMalzeme ekstra in EkstraMalzemeler)
+        //    {
 
-            return menuler;
+        //        ekstraMalzemeler += ekstra.Ad + ", ";
+        //    }
 
-        }
+        //    return ekstraMalzemeler;
 
-        private string IcecekleriGetir()
-        {
-            string icecekler = string.Empty;
+        //}
 
-            foreach (Icecek icecek in Icecekler)
-            {
+        //private string MenuleriGetir()
+        //{
+        //    string menuler = string.Empty;
 
-                icecekler += icecek.Ad + ", ";
-            }
+        //    foreach (Menu menu in Menuler)
+        //    {
 
-            return icecekler;
+        //        menuler += menu.Ad + ", ";
+        //    }
 
-        }
+        //    return menuler;
 
-        private string HamburgerleriGetir()
-        {
-            string hamburgerler = string.Empty;
+        //}
 
-            foreach (Hamburger hamburger in Hamburgerler)
-            {
+        //private string IcecekleriGetir()
+        //{
+        //    string icecekler = string.Empty;
 
-                hamburgerler += hamburger.Ad + ", ";
-            }
+        //    foreach (Icecek icecek in Icecekler)
+        //    {
 
-            return hamburgerler;
+        //        icecekler += icecek.Ad + ", ";
+        //    }
 
-        }
+        //    return icecekler;
 
-        private string TatlilariGetir()
-        {
-            string tatlilar = string.Empty;
+        //}
 
-            foreach (Tatli tatli in Tatlilar)
-            {
+        //private string HamburgerleriGetir()
+        //{
+        //    string hamburgerler = string.Empty;
 
-                tatlilar += tatli.Ad + ", ";
-            }
+        //    foreach (Hamburger hamburger in Hamburgerler)
+        //    {
 
-            return tatlilar;
+        //        hamburgerler += hamburger.Ad + ", ";
+        //    }
 
-        }
+        //    return hamburgerler;
+
+        //}
+
+        //private string TatlilariGetir()
+        //{
+        //    string tatlilar = string.Empty;
+
+        //    foreach (Tatli tatli in Tatlilar)
+        //    {
+
+        //        tatlilar += tatli.Ad + ", ";
+        //    }
+
+        //    return tatlilar;
+
+        //}
 
     }
 }

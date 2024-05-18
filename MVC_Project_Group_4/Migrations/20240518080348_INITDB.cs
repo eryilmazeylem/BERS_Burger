@@ -424,14 +424,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "7b22200b-2485-4edf-a57d-1faf25b92901", "Yonetici", "YONETICI" },
-                    { 2, "0c9f2efd-ba87-4fe0-ae2a-90b3bbafdfc6", "Uye", "UYE" }
+                    { 1, "bc673970-78f7-4509-ab10-3658e6f8499c", "Yonetici", "YONETICI" },
+                    { 2, "289c62de-6a3b-4c04-8f3f-96a9c908861d", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "75fac617-a7ec-4db3-b7ad-8d3bcbac289b", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEJyTdzuuDFlfHp05g37q0TvCNwJW+H0cmwD66gjEENAejFs8GNUuvkkL2kZ/LrQzSA==", null, false, "ee4b3bc7-df3b-49fa-879f-d9c0a834c70a", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "7534ad62-b793-4f8a-8fd0-d696b8919cc2", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEO9nUfEkxYgDsg4HTIOpP649TS5nsZZkqQpnS0hKqCTqqvM2xG91hRmk90+hkHbNvg==", null, false, "d1e176a6-34cb-4e96-abb8-c6dacc969805", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",

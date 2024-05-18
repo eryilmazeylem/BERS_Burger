@@ -1,0 +1,56 @@
+﻿@using MVC_Project_Group_4.Models.ViewModels
+@model HamburgerVM
+
+@{
+    ViewData["Title"] = "HamburgerDetay";
+    Layout = "~/Views/Shared/_DetayLayout.cshtml";
+}
+
+
+<div>
+    <h4>Hamburger</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Hamburger.Ad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Hamburger.Ad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Hamburger.Fiyat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Hamburger.Fiyat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Hamburger.Aciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Hamburger.Aciklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Hamburger.PicturePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Hamburger.PicturePath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Hamburger.Adet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Hamburger.Adet)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form method="post">
+        <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success" asp-route-id="@Model.Hamburger.HamburgerID">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            Sepete Ekle
+        </button>
+    </form>
+
+    <a asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
+</div>

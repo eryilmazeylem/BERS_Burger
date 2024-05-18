@@ -1,0 +1,56 @@
+﻿@using MVC_Project_Group_4.Models.ViewModels
+@model MenuVM
+
+@{
+    ViewData["Title"] = "MenuDetay";
+    Layout = "~/Views/Shared/_DetayLayout.cshtml";
+}
+
+
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Menu.Ad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Menu.Ad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Menu.Fiyat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Menu.Fiyat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Menu.Aciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Menu.Aciklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Menu.PicturePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Menu.PicturePath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Menu.Adet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Menu.Adet)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form method="post">
+        <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success" asp-route-id="@Model.Menu.MenuID">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            Sepete Ekle
+        </button>
+    </form>
+
+    <a asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
+</div>
