@@ -23,7 +23,7 @@ Author URL: http://w3layouts.com
         <div class="container">
             <nav class="navbar navbar-expand-lg stroke px-0">
                 <h1>
-                    <a class="navbar-brand" asp-action="Index">
+                    <a class="navbar-brand" asp-controller="UyePanel" asp-action="Index">
                         <img src="~/assets/images/burger.png" alt="burger logo" width="35px" /> Bers Burger
                     </a>
                 </h1>
@@ -41,13 +41,13 @@ Author URL: http://w3layouts.com
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" asp-action="Index">Ana Sayfa <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" asp-controller="UyePanel" asp-action="Index">Ana Sayfa <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @@about__active">
-                            <a class="nav-link" asp-action="Hakkimizda">Hakkımızda</a>
+                            <a class="nav-link" asp-controller="UyePanel" asp-action="Hakkimizda">Hakkımızda</a>
                         </li>
                         <li class="nav-item @@menu__active">
-                            <a class="nav-link" asp-action="Urunler">Ürünler</a>
+                            <a class="nav-link" asp-controller="UyePanel" asp-action="Urunler">Ürünler</a>
                         </li>
                         <li class="nav-item">
                             <a><i style="font-size:24px" class="fa nav-link">&#xf07a;</i></a>
@@ -99,7 +99,7 @@ Author URL: http://w3layouts.com
     <section class="w3l-about-breadcrumb">
         <div class="breadcrumb-bg breadcrumb-bg-about py-5">
             <div class="container py-lg-5 py-md-3">
-                <h2 class="title">Ürünlerimiz</h2>
+                <h2 class="title">Alışveriş Sepetiniz</h2>
             </div>
         </div>
     </section>
@@ -334,3 +334,4 @@ Author URL: http://w3layouts.com
 </body>
 
 </html>
+

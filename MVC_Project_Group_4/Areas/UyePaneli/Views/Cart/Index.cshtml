@@ -1,14 +1,17 @@
 ﻿ @using MVC_Project_Group_4.Models.Concrete
 @model Cart
+@{
+    Layout = "_SepetLayout";
+}
 
 @if (ViewBag.userSession is null)
 {
 
-
+    @*
     <div class="container pb-lg-0">
         <div class="row">
             <div class="col-md-12">
-                <h2>Alışveriş Sepeti</h2>
+
                 <hr />
 
                 @if (Model.CartLines.Count > 0)
@@ -26,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            @
                             @foreach (var item in Model.CartLines)
                             {
                                 <tr>
@@ -54,7 +57,7 @@
                                 <td>
                                     @Model.Total().ToString("c")
                                 </td>
-                                
+
                             </tr>
                         </tfoot>
                     </table>
@@ -62,7 +65,10 @@
                 }
                 else
                 {
-                    
+                    <div class="alert alert-warning" role="alert">
+                       <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        Alışveriş Sepetinizde Ürün Bulunmamaktadır.
+                        </div>
                 }
 
             </div>
@@ -73,5 +79,200 @@
         </div>
     </div>
 
+} *@
+
+    <div class="container pb-lg-0">
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+
+                @if (Model.CartLines.Count > 0)
+                {
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Adet</th>
+                                <th>İsim</th>
+                                <th>Fiyat</th>
+                                <th>Toplam Fiyat</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartLines)
+                            {
+                                <tr>
+                                    <td>
+                                        @{
+                                            if (item.Menu != null)
+                                            {
+                                                <img src="~/Pictures/Menuler/@item.Menu.PicturePath" width="50px" />
+                                            }
+                                            else if (item.Hamburger != null)
+                                            {
+                                                <img src="~/Pictures/Hamburgerler/@item.Hamburger.PicturePath" width="50px" />
+                                            }
+                                            else if (item.Icecek != null)
+                                            {
+                                                <img src="~/Pictures/Icecekler/@item.Icecek.PicturePath" width="50px" />
+                                            }
+                                            else if (item.Tatli != null)
+                                            {
+                                                <img src="~/Pictures/Tatlilar/@item.Tatli.PicturePath" width="50px" />
+                                            }
+                                            else if (item.EkstraMalzeme != null)
+                                            {
+                                                <img src="~/Pictures/Ek_Urunler/@item.EkstraMalzeme.PicturePath" width="50px" />
+                                            }
+                                        }
+                                    </td>
+                                    <td>@item.Quantity</td>
+                                    <td>
+                                        @{
+                                            if (item.Menu != null)
+                                            {
+                                                @item.Menu.Ad
+                                            }
+                                            else if (item.Hamburger != null)
+                                            {
+                                                @item.Hamburger.Ad
+                                            }
+                                            else if (item.Icecek != null)
+                                            {
+                                                @item.Icecek.Ad
+                                            }
+                                            else if (item.Tatli != null)
+                                            {
+                                                @item.Tatli.Ad
+                                            }
+                                            else if (item.EkstraMalzeme != null)
+                                            {
+                                                @item.EkstraMalzeme.Ad
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+                                            if (item.Menu != null)
+                                            {
+                                                @item.Menu.Fiyat
+                                            }
+                                            else if (item.Hamburger != null)
+                                            {
+                                                @item.Hamburger.Fiyat
+                                            }
+                                            else if (item.Icecek != null)
+                                            {
+                                                @item.Icecek.Fiyat
+                                            }
+                                            else if (item.Tatli != null)
+                                            {
+                                                @item.Tatli.Fiyat
+                                            }
+                                            else if (item.EkstraMalzeme != null)
+                                            {
+                                                @item.EkstraMalzeme.Fiyat
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+                                            if (item.Menu != null)
+                                            {
+                                                @((item.Menu.Fiyat * item.Quantity).ToString("c"))
+                                            }
+                                            else if (item.Hamburger != null)
+                                            {
+                                                @((item.Hamburger.Fiyat * item.Quantity).ToString("c"))
+                                            }
+                                            else if (item.Icecek != null)
+                                            {
+                                                @((item.Icecek.Fiyat * item.Quantity).ToString("c"))
+                                            }
+                                            else if (item.Tatli != null)
+                                            {
+                                                @((item.Tatli.Fiyat * item.Quantity).ToString("c"))
+                                            }
+                                            else if (item.EkstraMalzeme != null)
+                                            {
+                                                @((item.EkstraMalzeme.Fiyat * item.Quantity).ToString("c"))
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+                                            if (item.Menu != null)
+                                            {
+                                                <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Menu.MenuID" asp-route-type="MenuDetay"><i class="fa fa-trash-o" aria-hidden="true" onclick="return confirm('Emin misiniz?')">Siparişi Sil</i></a>
+                                            }
+                                            else if (item.Hamburger != null)
+                                            {
+                                                <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Hamburger.HamburgerID" asp-route-type="HamburgerDetay" onclick="return confirm('Emin misiniz?')"><i class="fa fa-trash-o" aria-hidden="true">Siparişi Sil</i></a>
+                                            }
+                                            else if (item.Icecek != null)
+                                            {
+                                                <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Icecek.IcecekID" asp-route-type="IcecekDetay" onclick="return confirm('Emin misiniz?')"><i class="fa fa-trash-o" aria-hidden="true">Siparişi Sil</i></a>
+                                            }
+                                            else if (item.Tatli != null)
+                                            {
+                                                <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Tatli.TatliID" asp-route-type="TatliDetay" onclick="return confirm('Emin misiniz?')"><i class="fa fa-trash-o" aria-hidden="true">Siparişi Sil</i></a>
+                                            }
+                                            else if (item.EkstraMalzeme != null)
+                                            {
+                                                <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.EkstraMalzeme.EkstraMalzemeID" asp-route-type="EkMalzemeDetay" onclick="return confirm('Emin misiniz?')"><i class="fa fa-trash-o" aria-hidden="true">Siparişi Sil</i></a>
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td>
+                                    @Model.Total().ToString("c")
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" asp-area="" asp-action="" asp-controller="" onclick="return confirm('Siparişinizi Oluşturuyoruz.Emin misiniz?')"><i class="fa fa-trash-o" aria-hidden="true">Sipariş Ver</i></a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                }
+                else
+                {
+                    <div class="alert alert-warning" role="alert">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        Alışveriş Sepetinizde Ürün Bulunmamaktadır.
+                    </div>
+                }
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-outline-info" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
+        </div>
+    </div>
 }
 
+<style>
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .table {
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+</style>
