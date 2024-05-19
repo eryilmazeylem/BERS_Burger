@@ -18,6 +18,7 @@ namespace MVC_Project_Group_4.Controllers
 
         public IActionResult Login()
         {
+
             return View();
         }
 
@@ -37,10 +38,12 @@ namespace MVC_Project_Group_4.Controllers
 
                 if (!_userManager.CheckPasswordAsync(uye, login.Password).Result)
                 {
+
                     //sifre kontrolu...
                     ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
                     return View();
                 }
+
 
                 await _signInManager.SignInAsync(uye, false);
 
@@ -53,6 +56,7 @@ namespace MVC_Project_Group_4.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
+
             return RedirectToAction("Index", "Home");
             //return Redirect("~/Home/Index");
             //return LocalRedirect("~/localhost:5168/Home/Index");

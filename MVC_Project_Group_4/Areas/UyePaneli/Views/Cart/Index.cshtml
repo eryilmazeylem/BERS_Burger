@@ -1,57 +1,77 @@
 ﻿ @using MVC_Project_Group_4.Models.Concrete
 @model Cart
 
+@if (ViewBag.userSession is null)
+{
 
-    
+
+    <div class="container pb-lg-0">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Alışveriş Sepeti</h2>
+                <hr />
+
+                @if (Model.CartLines.Count > 0)
+                {
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Adet</th>
+                                <th>İsim</th>
+                                <th>Fiyat</th>
+                                <th>Toplam Fiyat</th>
 
 
-<div class="container pb-lg-0">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Alışveriş Sepeti</h2>
-            <hr />
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Adet</th>
-                        <th>İsim</th>
-                        <th>Fiyat</th>
-                        <th>Toplam Fiyat</th>
-                    </tr>
-                </thead>
-                <tbody>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model.CartLines)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/Pictures/Menuler/@item.Menu.PicturePath" width="50px" />
+                                    </td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Menu.Ad</td>
+                                    <td>@item.Menu.Fiyat</td>
+                                    <td>
+                                        @((item.Menu.Fiyat * item.Quantity).ToString("c"))
+
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Menu.MenuID"><i class="fa fa-trash-o" aria-hidden="true">Siparisi Sil</i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                        <tfoot>
+
+                            <tr>
+                                <td colspan="4"></td>
+                                <td>
+                                    @Model.Total().ToString("c")
+                                </td>
+                                
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                }
+                else
+                {
                     
-                    @foreach(var item in Model.CartLines)
-                    {
-                        <tr>
-                            <td>
-                                <img src="~/Pictures/Menuler/@item.Menu.PicturePath" width="50px"/>
-                            </td>
-                            <td>@item.Quantity</td>
-                            <td>@item.Menu.Ad</td>
-                            <td>@item.Menu.Fiyat</td>
-                            <td>@((item.Menu.Fiyat*item.Quantity).ToString("c"))
+                }
 
-                            </td>
-                        </tr>
-                    }
-                   
-                </tbody>
-                <tfoot>
+            </div>
+        </div>
+        <div>
 
-                    <tr>
-                        <td colspan="4"></td>
-                        <td>
-                            @Model.Total().ToString("c")
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+            <a class="btn btn-outline-info" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
         </div>
     </div>
-    <div >
 
-    <a class="btn btn-outline-info" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
-    </div>
-</div>
+}
+

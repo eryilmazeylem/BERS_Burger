@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MVC_Project_Group_4.Data.Context;
-using MVC_Project_Group_4.Extensions;
 using MVC_Project_Group_4.Models.Concrete;
 using Newtonsoft.Json;
 namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 {
+    [Authorize(Roles ="Uye")]
     [Area("UyePaneli")]
     public class CartController : Controller
     {
@@ -18,6 +19,9 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         public IActionResult Index()
         {
+
+            ViewBag.userSession = HttpContext.Session.GetString("Email");
+
             return View(GetCart());
         }
 
@@ -45,6 +49,10 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         }
 
+
+
+
+
         public IActionResult RemoveFromCart(int id)
         {
             var menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
@@ -56,6 +64,10 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             }
             return RedirectToAction("Index");
         }
+
+
+
+
 
         public Cart GetCart() //Session her kullanıcıya özel oluşturulan bir depo.
         {
