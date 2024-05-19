@@ -24,33 +24,36 @@ namespace MVC_Project_Group_4.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM login)
         {
-            var uye = _userManager.FindByEmailAsync(login.EMail).Result;
-
-            if (uye == null)
+            if (ModelState.IsValid)
             {
-                //eposta kontrolu...
-                ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
-                return View();
+                var uye = _userManager.FindByEmailAsync(login.EMail).Result;
+
+                if (uye == null)
+                {
+                    //eposta kontrolu...
+                    ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
+                    return View();
+                }
+
+                if (!_userManager.CheckPasswordAsync(uye, login.Password).Result)
+                {
+                    //sifre kontrolu...
+                    ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
+                    return View();
+                }
+
+                await _signInManager.SignInAsync(uye, false);
+
+                return Redirect("~/UyePaneli/UyePanel/Index");
             }
-
-            if (!_userManager.CheckPasswordAsync(uye, login.Password).Result)
-            {
-                //sifre kontrolu...
-                ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
-                return View();
-            }
-
-            await _signInManager.SignInAsync(uye, false);
-
-            return Redirect("~/UyePaneli/UyePanel/Index");
+            return View(login);
         }
-           
-          
+
         //[HttpPost]
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
             //return Redirect("~/Home/Index");
             //return LocalRedirect("~/localhost:5168/Home/Index");
         }
@@ -64,7 +67,7 @@ namespace MVC_Project_Group_4.Controllers
         public async Task<IActionResult> Register(RegisterVM register)
         {
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 Uye uye = new Uye();
 

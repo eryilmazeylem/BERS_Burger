@@ -1,5 +1,5 @@
 ﻿@using MVC_Project_Group_4.Models.ViewModels
-@model HamburgerVM
+@model IcecekVM
 
 @{
     
@@ -7,52 +7,52 @@
 }
 
 
-<div class="font-">
-    <h4>Hamburger</h4>
+
+<div>
+    <h4>Icecek</h4>
     <hr />
     <dl class="row">
-
+   
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Hamburger.Ad)
+            @Html.DisplayNameFor(model => Model.Icecek.Ad)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Hamburger.Ad)
+            @Html.DisplayFor(model => Model.Icecek.Ad)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Hamburger.Fiyat)
+            @Html.DisplayNameFor(model => Model.Icecek.Fiyat)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Hamburger.Fiyat)
+            @Html.DisplayFor(model => Model.Icecek.Fiyat)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Hamburger.Aciklama)
+            @Html.DisplayNameFor(model => Model.Icecek.Aciklama)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Hamburger.Aciklama)
+            @Html.DisplayFor(model => Model.Icecek.Aciklama)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Hamburger.PicturePath)
+            @Html.DisplayNameFor(model => Model.Icecek.PicturePath)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Hamburger.PicturePath)
+            @Html.DisplayFor(model => Model.Icecek.PicturePath)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Hamburger.Adet)
+            @Html.DisplayNameFor(model => Model.Icecek.Adet)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Hamburger.Adet)
+            @Html.DisplayFor(model => Model.Icecek.Adet)
         </dd>
     </dl>
 </div>
 <div class="my-2">
-    <form method="post" >
-        <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success" asp-route-id="@Model.Hamburger.HamburgerID">
+    <form asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" method="post">
+        <button type="submit" class="btn btn-success" asp-route-id="@Model.Icecek.IcecekID">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
     </form>
 
-    
     
 </div>
 <div>

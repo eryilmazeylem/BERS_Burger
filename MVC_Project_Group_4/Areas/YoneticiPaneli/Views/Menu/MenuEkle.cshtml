@@ -1,74 +1,110 @@
-﻿@using MVC_Project_Group_4.Models.ViewModels
+﻿
 @model MenuVM
 
 @{
-    ViewData["Title"] = "MenuEkle";
+    ViewData["Title"] = "Menüler";
 }
 
-<h1>MenuEkle</h1>
-
-<h4>Menu</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="MenuEkle" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div class="form-group">
-                <label asp-for="MenuEkle.Ad" class="control-label"></label>
-                <input asp-for="MenuEkle.Ad" class="form-control" />
-                <span asp-validation-for="MenuEkle.Ad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.Fiyat" class="control-label"></label>
-                <input asp-for="MenuEkle.Fiyat" class="form-control" />
-                <span asp-validation-for="MenuEkle.Fiyat" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.Aciklama" class="control-label"></label>
-                <input asp-for="MenuEkle.Aciklama" class="form-control" />
-                <span asp-validation-for="MenuEkle.Aciklama" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.PicturePath" class="control-label"></label>
-                <input asp-for="MenuEkle.PicturePath" class="form-control" type="file" />
-                <span asp-validation-for="MenuEkle.PicturePath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.Adet" class="control-label"></label>
-                <input asp-for="MenuEkle.Adet" class="form-control" />
-                <span asp-validation-for="MenuEkle.Adet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.IcecekID" class="control-label"></label>
-                <select  asp-for="MenuEkle.IcecekID" class="form-control" asp-items="Model.Icecekler"></select>
-               
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.TatliID" class="control-label"></label>
-                <select asp-for="MenuEkle.TatliID" class="form-control" asp-items="Model.Tatlilar" ></select>
-               
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.HamburgerID" class="control-label"></label>
-                <select asp-for="MenuEkle.HamburgerID" class="form-control" asp-items="Model.Hamburgerler"></select>
-                
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuEkle.EkstraMalzemeID" class="control-label"></label>
-                <select asp-for="MenuEkle.EkstraMalzemeID" class="form-control" asp-items="Model.EkMalzemeler" ></select>
-            </div>
-                
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container my-4">
+    <div class="text-center mb-4">
+        <h1>Yeni Menü Ekle</h1>
     </div>
-</div>
 
-<div>
+    @if (TempData["infoguncelle"] is not null)
+    {
+        <div class="alert alert-success text-center mb-2">@TempData["infoguncelle"]</div>
+    }
+    @if (TempData["infosil"] is not null)
+    {
+        <div class="alert alert-danger text-center mb-2">@TempData["infosil"]</div>
+    }
+
+    <form asp-action="MenuEkle" enctype="multipart/form-data" method="post" class="border p-4 rounded">
+        <div class="row">
+            <div class="col-md-6">
+            
+             
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.Ad" class="form-label">Ad</label>
+                    <input asp-for="MenuEkle.Ad" class="form-control">
+                    <span asp-validation-for="MenuEkle.Ad" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.Fiyat" class="form-label">Fiyat</label>
+                    <input asp-for="MenuEkle.Fiyat" class="form-control">
+                    <span asp-validation-for="MenuEkle.Fiyat" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.Aciklama" class="form-label">Açıklama</label>
+                    <textarea asp-for="MenuEkle.Aciklama" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="MenuEkle.Aciklama" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.PicturePath" class="form-label">Resim Yolu</label>
+                    <input asp-for="MenuEkle.PicturePath" class="form-control">
+                    <span asp-validation-for="MenuEkle.PicturePath" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.Adet" class="form-label">Adet</label>
+                    <input asp-for="MenuEkle.Adet" class="form-control" type="number">
+                    <span asp-validation-for="MenuEkle.Adet" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.IcecekID" class="form-label">İçecek</label>
+                    <select asp-for="MenuEkle.IcecekID" class="form-control" asp-items="Model.Icecekler"></select>
+                    
+
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.TatliID" class="form-label">Tatlılar</label>
+                    <select asp-for="MenuEkle.TatliID" class="form-control" asp-items="Model.Tatlilar"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.HamburgerID" class="form-label">Hamburgerler</label>
+                    <select asp-for="MenuEkle.HamburgerID" class="form-control" asp-items="Model.Hamburgerler"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.EkstraMalzemeID" class="form-label">Ek Malzemeler</label>
+                    <select asp-for="MenuEkle.EkstraMalzemeID" class="form-control" asp-items="Model.EkMalzemeler"></select>
+                </div>
+
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <input type="submit" value="Menü Ekle" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div class="text-center mt-2">
     <a asp-action="MenuListele">Listeye Geri Dön</a>
 </div>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .form-label {
+        font-weight: bold;
+    }
+    .form-control {
+        border-radius: 0.25rem;
+    }
+    .btn-primary {
+        padding: 0.5rem 2rem;
+    }
+    .alert {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

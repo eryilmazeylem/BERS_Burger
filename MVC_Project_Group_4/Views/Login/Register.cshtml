@@ -13,7 +13,7 @@
 
 <div class="row my-5 justify-content-center">
     <div class="col-md-4 mt-5">
-        <form asp-action="Register" class="text-center">
+        <form asp-action="Register" class="text-center"> 
             <div class="form-group my-1">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" placeholder="E-Posta" />
@@ -26,12 +26,21 @@
             </div>
             <div class="form-group my-1">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" placeholder="Şifre" />
+               @*  <input asp-for="Password" class="form-control" placeholder="Şifre" /> *@
+                <div class="input-group">
+                    <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" id="passwordField" />
+                    <button type="button" class="btn btn-outline-secondary" id="togglePassword" onclick="togglePasswordVisibility('passwordField', 'togglePassword')">Göster</button>
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
+
             <div class="form-group my-1">
                 <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" placeholder="Şifre Tekrarı" />
+               @*  <input asp-for="ConfirmPassword" class="form-control" placeholder="Şifre Tekrarı" /> *@
+                <div class="input-group">
+                    <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Şifre Tekrarı" id="confirmPasswordField" /> 
+                    <button type="button" class="btn btn-outline-secondary" id="toggleConfirmPassword" onclick="togglePasswordVisibility('confirmPasswordField', 'toggleConfirmPassword')">Göster</button>
+                </div>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group my-1">
@@ -41,6 +50,26 @@
     </div>
 </div>
 
-<div class=" text-center">
+<div class=" text-center"> 
     <a asp-action="Login">Zaten Hesabınız Var mı? Giriş Yap</a>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");
+    }
+}
+
+<script>
+    function togglePasswordVisibility(fieldId, buttonId) {
+        var passwordField = document.getElementById(fieldId);
+        var toggleButton = document.getElementById(buttonId);
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleButton.textContent = "Gizle";
+        } else {
+            passwordField.type = "password";
+            toggleButton.textContent = "Göster";
+        }
+    }
+</script>

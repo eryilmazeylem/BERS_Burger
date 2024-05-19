@@ -1,15 +1,15 @@
 ﻿@model EkstraMalzemeEkleVM
 
 @{
-    ViewData["Title"] = "EkstraMalzemeGuncelle";
+    ViewData["Title"] = "Ekstra Malzeme Guncelle";
 }
 
-<h1>Ekstra Malzeme Güncelle</h1>
+<h1 class="text-center">Ekstra Malzeme Güncelle</h1>
 
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 offset-md-4 border p-4 rounded">
         <form asp-action="EkstraMalzemeGuncelle" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
           
@@ -38,17 +38,22 @@
                 <input asp-for="Adet" class="form-control" />
                 <span asp-validation-for="Adet" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Kaydet" class="btn btn-primary" onclick="return confirm('Emin misiniz?')" />
+            <div class="form-group text-center">
+                <input type="submit" value="Güncelle" class="btn btn-primary" onclick="return confirm('Emin misiniz?')" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="EkstraMalzemeListele">Listeye Dön</a>
+<div class="text-center mt-2">
+    <a asp-action="EkstraMalzemeListele">Listeye Geri Dön</a>
 </div>
 
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

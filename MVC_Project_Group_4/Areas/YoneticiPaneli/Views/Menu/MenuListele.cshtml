@@ -1,7 +1,7 @@
-﻿@model MenuVM
+﻿@* @model MenuVM
 
 @{
-    ViewData["Title"] = "MenuListele";
+    ViewData["Title"] = "Menüler";
 }
 
 <h1>MenuListele</h1>
@@ -13,7 +13,7 @@
 {
     <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
 }
-<p>
+<p >
     <a asp-action="MenuEkle" class="btn btn-primary">Yeni Menü Ekle</a>
 </p>
 <hr />
@@ -58,22 +58,109 @@
                
             </td>
             <td>
-              @*   @Html.DisplayFor(modelItem => item.PicturePath) *@
+             
                     <img src="~/Pictures/Menuler/@item.PicturePath" width="120px" height="90px" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Adet)
             </td>
             <td>
-                @* @Html.ActionLink("Güncelle", "MenuGuncelle", new { id=item.MenuID }) | *@
+          
                     <a class="btn btn-warning" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuGuncelle" >Güncelle</a>
               
             </td>
             <td>
-                    @*  @Html.ActionLink("Sil", "MenuSil", new { id=item.MenuID } ) *@
+               
                     <a class="btn btn-danger" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuSil" onclick="return confirm('Emin misiniz?')">Sil</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+ *@
+
+ @model MenuVM
+
+@{
+    ViewData["Title"] = "Menüler";
+}
+
+
+<div class="text-center mb-4">
+    <h1 class="mb-4">Menüler</h1>
+    <p>
+        <a asp-action="MenuEkle" class="btn btn-primary">Yeni Menü Ekle</a>
+    </p>
+</div>
+
+@if (TempData["infoguncelle"] is not null)
+{
+    <div class="alert alert-success text-center mb-2"> @TempData["infoguncelle"]</div>
+}
+@if (TempData["infosil"] is not null)
+{
+    <div class="alert alert-danger text-center mb-2"> @TempData["infosil"]</div>
+}
+
+
+
+<hr />
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>MenüID</th>
+                <th>Menü Adı</th>
+                <th>Fiyat</th>
+                <th>Açıklama</th>
+                <th>Fotoğraf</th>
+                <th>Adet</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Menuler)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.MenuID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ad)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fiyat)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Aciklama)</td>
+                    <td>
+                        <img src="~/Pictures/Menuler/@item.PicturePath" class="img-fluid" alt="@item.Ad" style="max-width: 120px; max-height: 90px;" />
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Adet)</td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuGuncelle">Güncelle</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuSil" onclick="return confirm('Emin misiniz?')">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .table {
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+</style>

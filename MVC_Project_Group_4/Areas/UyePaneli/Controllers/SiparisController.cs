@@ -50,31 +50,38 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
         
         public IActionResult IcecekDetay(int id)
         {
-            Icecek icecek = db.Icecekler.FirstOrDefault(x => x.IcecekID == id);
 
-            vm.Icecekler.Add(icecek);
+            IcecekVM ıcecekVM = new IcecekVM();
 
-            return View(vm);
+            ıcecekVM.Icecek = db.Icecekler.FirstOrDefault(x => x.IcecekID == id);
+
+            ıcecekVM.Icecekler.Add(ıcecekVM.Icecek);
+
+            return View(ıcecekVM);
 
         }
         
         public IActionResult TatliDetay(int id)
         {
-            Tatli tatli = db.Tatlilar.FirstOrDefault(x => x.TatliID == id);
+            TatliVM tatliVM = new TatliVM();
 
-            vm.Tatlilar.Add(tatli);
+            tatliVM.Tatli = db.Tatlilar.FirstOrDefault(x => x.TatliID == id);
 
-            return View(vm);
+            tatliVM.Tatlilar.Add(tatliVM.Tatli);
+
+            return View(tatliVM);
 
         }
        
         public IActionResult EkMalzemeDetay(int id)
         {
-            EkstraMalzeme ekMalzeme = db.EkstraMalzemeler.FirstOrDefault(x => x.EkstraMalzemeID == id);
+            EkstraMalzemeVM ekstraMalzemeVM = new EkstraMalzemeVM();
 
-            vm.EkstraMalzemeler.Add(ekMalzeme);
+            ekstraMalzemeVM.EkstraMalzeme = db.EkstraMalzemeler.FirstOrDefault(x => x.EkstraMalzemeID == id);
 
-            return View(vm);
+            ekstraMalzemeVM.EkstraMalzemeler.Add(ekstraMalzemeVM.EkstraMalzeme);
+
+            return View(ekstraMalzemeVM);
 
         }
        
