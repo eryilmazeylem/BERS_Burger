@@ -12,12 +12,13 @@ namespace MVC_Project_Group_4.Models.Concrete
 
         public Hamburger()
         {
-            EkstraMalzemeleriGetir();
+           
         }
 
         public Hamburger(BurgerDBContext db)
         {
             this.db = db;
+            EkstraMalzemeleriGetir();
         }
 
         public int HamburgerID { get; set; }
