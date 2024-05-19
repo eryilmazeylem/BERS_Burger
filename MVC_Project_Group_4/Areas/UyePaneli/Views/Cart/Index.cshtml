@@ -11,7 +11,7 @@
 
                 @if (Model.CartLines.Count > 0)
                 {
-                    <table class="table table-bordered">
+                <table class="table table-bordered " id="myTable">
                         <thead>
                             <tr>
                                 <th></th>
@@ -157,7 +157,7 @@
                                     @Model.Total().ToString("c")
                                 </td>
                                 <td>
-                                    <a class="btn btn-success" asp-area="UyePaneli" asp-action="SiparisOnay" asp-controller="Cart" onclick="return confirm('Siparişinizi Oluşturuyoruz.Emin misiniz?')"><i class="fa fa-shopping-cart" aria-hidden="true">Sipariş Ver</i></a>
+                                <a id="deleteTableBtn" class="btn btn-success" asp-area="UyePaneli" asp-action="SiparisOnay" asp-controller="Cart" onclick="return confirm('Siparişinizi Oluşturuyoruz.Emin misiniz?')"><i class="fa fa-shopping-cart" aria-hidden="true">Sipariş Ver</i></a>
                                 </td>
                             </tr>
                         </tfoot>
@@ -199,3 +199,26 @@
         padding: 0.5rem 1rem;
     }
 </style>
+
+<script>
+    // Tablonun silinmesi için fonksiyon
+    function deleteTable() 
+    {
+        const table = document.getElementById('myTable');
+
+
+        if (table) {
+            table.remove();
+
+        } 
+        
+        else
+        
+        {
+            alert('Tablo bulunamadı!');
+        }
+    }
+
+    // Butonun click olayına fonksiyonu bağlama
+    document.getElementById('deleteTableBtn').onclick = deleteTable;
+</script>

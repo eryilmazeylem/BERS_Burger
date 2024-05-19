@@ -40,7 +40,20 @@ namespace MVC_Project_Group_4.Controllers
 
             await _signInManager.SignInAsync(uye, false);
 
+            
+
+
+            if(User.IsInRole("Yonetici"))
+            {
+                return RedirectToAction("Index", "YoneticiPanel", new { area = "YoneticiPaneli" });
+            }
+            
+            
             return RedirectToAction("Index", "UyePanel", new { area = "UyePaneli" });
+
+            
+          
+
         }
   
         public async Task<IActionResult> LogOut()

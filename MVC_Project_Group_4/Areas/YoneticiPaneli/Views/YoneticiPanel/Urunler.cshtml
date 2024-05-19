@@ -4,7 +4,7 @@
 
 @{
 
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminMenuLayout.cshtml";
 }
 
 
@@ -40,13 +40,7 @@
                                     <div class="menu-item-description">
                                         <p>@item.Aciklama</p>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form>
-                                            <button type="submit" class="btn btn-outline-warning" asp-controller="Siparis" asp-action="MenuDetay" asp-route-id="@item.MenuID">+</button>
-                                        </form>
-
-
-                                    </div>
+                              
 
                                 </div>
                             </div>
@@ -106,17 +100,7 @@
                                     <div class="menu-item-description">
                                         <p>@item.Aciklama</p>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-
-                                        <form method="post">
-
-                                            <button type="submit" class="btn btn-outline-warning" asp-route-id="@item.HamburgerID" asp-controller="Siparis" asp-action="HamburgerDetay">+</button>
-
-                                        </form>
-
-                                           
-
-                                    </div>
+                          
                                 </div>
                             </div>
 
@@ -158,11 +142,7 @@
                                     <div class="menu-item-description">
                                         <p>@item.Aciklama</p>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form>
-                                            <button type="submit" class="btn btn-outline-warning" asp-controller="Siparis" asp-action="EkMalzemeDetay" asp-route-id="@item.EkstraMalzemeID">+</button>
-                                        </form>
-                                    </div>
+                             
                                 </div>
                             </div>
 
@@ -199,11 +179,7 @@
                                     <div class="menu-item-description">
                                         <p>@item.Aciklama</p>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form>
-                                            <button type="submit" class="btn btn-outline-warning" asp-controller="Siparis" asp-action="IcecekDetay" asp-route-id="@item.IcecekID">+</button>
-                                        </form>
-                                    </div>
+                        
                                 </div>
                             </div>
 
@@ -241,11 +217,7 @@
                                     <div class="menu-item-description">
                                         <p>@item.Aciklama</p>
                                     </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form>
-                                            <button type="submit" class="btn btn-outline-warning" asp-controller="Siparis" asp-action="TatliDetay" asp-route-id="@item.TatliID">+</button>
-                                        </form>
-                                    </div>
+                         
                                 </div>
                             </div>
 
