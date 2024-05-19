@@ -492,14 +492,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "8453d80f-2b7c-4c93-bdbd-3e402d7c9a22",
+                            ConcurrencyStamp = "afd4c9cd-ef77-4af4-acc2-e1f43a02a997",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "5a11f50b-8c1a-4b4c-b11c-3908582b8c04",
+                            ConcurrencyStamp = "44ac482b-db18-41aa-a694-31cd0860c4cf",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -758,15 +758,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "48c3ed35-1e9e-4b92-b248-c0357cf70551",
+                            ConcurrencyStamp = "38502917-75ce-464a-8e2f-c39dc7cc9765",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEI8zHx3M+DJ056EEQKXtdt59z0v6Gzcvi0ywieGQ4ciT/ecnwZKIWihQ8SNcBMueLw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN7yKA9rG0DjqPgh0mOoQUP3i2uuOelCNKCRiy3u9hgd0lfg8IkOQ8+Jsn+58DpB6A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0eb1f576-e710-4672-a3c0-4af29f1e97d8",
+                            SecurityStamp = "dc421bf5-2b1b-44e7-9df1-337bcecf4aa2",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
