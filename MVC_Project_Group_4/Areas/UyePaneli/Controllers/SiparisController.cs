@@ -77,7 +77,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             return View(vm);
 
         }
-        
+       
         public IActionResult MenuDetay(int id)
         {
             MenuVM menuVM = new MenuVM();

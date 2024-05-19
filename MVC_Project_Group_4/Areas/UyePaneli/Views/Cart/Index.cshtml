@@ -1,0 +1,57 @@
+﻿ @using MVC_Project_Group_4.Models.Concrete
+@model Cart
+
+
+    
+
+
+<div class="container pb-lg-0">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Alışveriş Sepeti</h2>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Adet</th>
+                        <th>İsim</th>
+                        <th>Fiyat</th>
+                        <th>Toplam Fiyat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    @foreach(var item in Model.CartLines)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/Pictures/Menuler/@item.Menu.PicturePath" width="50px"/>
+                            </td>
+                            <td>@item.Quantity</td>
+                            <td>@item.Menu.Ad</td>
+                            <td>@item.Menu.Fiyat</td>
+                            <td>@((item.Menu.Fiyat*item.Quantity).ToString("c"))
+
+                            </td>
+                        </tr>
+                    }
+                   
+                </tbody>
+                <tfoot>
+
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>
+                            @Model.Total().ToString("c")
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div >
+
+    <a class="btn btn-outline-info" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
+    </div>
+</div>

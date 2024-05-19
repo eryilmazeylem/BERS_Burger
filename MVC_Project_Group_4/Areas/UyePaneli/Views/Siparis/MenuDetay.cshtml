@@ -6,8 +6,6 @@
     Layout = "~/Views/Shared/_DetayLayout.cshtml";
 }
 
-
-
 <div>
     <h4>Menu</h4>
     <hr />
@@ -50,7 +48,22 @@
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
+        <input type="hidden" name="id" value="@Model.Menu.MenuID" />
     </form>
+
+    <a class="btn btn-primary">TestLink</a>
+
+
+
+   @*  @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        @Html.HiddenFor(i => i.Menu.MenuID)
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            Add To Cart
+        </button>
+    } *@
+
 
     <a asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
 </div>

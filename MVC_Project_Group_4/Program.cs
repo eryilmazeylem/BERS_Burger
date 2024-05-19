@@ -15,7 +15,8 @@ builder.Services.AddDbContext<BurgerDBContext>(x=>x.UseSqlServer(builder.Configu
 builder.Services
                 .AddIdentity<Uye, Rol>(x => x.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<BurgerDBContext>().AddRoles<Rol>();
-
+builder.Services.AddSession(x=>x.IdleTimeout=TimeSpan.FromHours(1));
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -24,6 +25,8 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -33,7 +36,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 
-
+app.UseSession();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
