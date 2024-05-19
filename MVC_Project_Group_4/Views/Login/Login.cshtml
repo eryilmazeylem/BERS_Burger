@@ -69,7 +69,11 @@
             </div>
             <div class="form-group my-1">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" />
+               @*  <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" /> *@
+                <div class="input-group">
+                    <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" id="passwordField" />
+                    <button type="button" class="btn btn-outline-secondary" id="togglePassword" onclick="togglePasswordVisibility()">Göster</button>
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group my-1">
@@ -84,3 +88,17 @@
         await Html.RenderPartialAsync("~/Views/Shared/_ValidationScriptsPartial.cshtml");
     }
 }
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("passwordField");
+        var toggleButton = document.getElementById("togglePassword");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleButton.textContent = "Gizle";
+        } else {
+            passwordField.type = "password";
+            toggleButton.textContent = "Göster";
+        }
+    }
+</script>
