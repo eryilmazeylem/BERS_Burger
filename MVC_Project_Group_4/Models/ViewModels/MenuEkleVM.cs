@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MVC_Project_Group_4.Models.Concrete;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVC_Project_Group_4.Models.ViewModels
@@ -38,11 +39,15 @@ namespace MVC_Project_Group_4.Models.ViewModels
 
         public SelectList? Icecekler { get; set; }
 
+        public SelectList? Boylar { get; set; }
+
 
         public int SelectedHamburgerID { get; set; }
         public int SelectedEkMalzemeID { get; set; }
         public int SelectedTatliID { get; set; }
         public int SelectedIcecekID { get; set; }
+
+        public Boy SelectedBoy { get; set; }
 
 
 

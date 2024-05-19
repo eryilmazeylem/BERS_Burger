@@ -1,4 +1,6 @@
-﻿namespace MVC_Project_Group_4.Models.Abstract
+﻿using MVC_Project_Group_4.Models.Concrete;
+
+namespace MVC_Project_Group_4.Models.Abstract
 {
     public abstract class Urun
     {

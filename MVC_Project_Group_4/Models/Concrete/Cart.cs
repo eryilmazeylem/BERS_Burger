@@ -149,7 +149,7 @@ namespace MVC_Project_Group_4.Models.Concrete
             return _cardlines.Sum(x =>
             {
                 if (x.Menu != null)
-                    return x.Menu.Fiyat * x.Quantity;
+                    return x.Menu.ToplamFiyat * x.Quantity;
                 if (x.Hamburger != null)
                     return x.Hamburger.Fiyat * x.Quantity;
                 if (x.Icecek != null)

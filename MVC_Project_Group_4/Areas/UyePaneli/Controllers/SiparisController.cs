@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MVC_Project_Group_4.Data.Context;
 using MVC_Project_Group_4.Models.Abstract;
 using MVC_Project_Group_4.Models.Concrete;
@@ -16,23 +17,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             this.db = db;
         }
 
-        UrunlerVM vm = new UrunlerVM();
-
-
-        public IActionResult Index()
-        {
-
-            return View();
-
-
-        }
-
-        public IActionResult Sepet(HamburgerVM hamburgerVM) 
-        {
-
-            return View();
-
-        }
+        MenuVM vm = new MenuVM();
 
 
         [HttpPost]
@@ -40,14 +25,14 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
         {
             HamburgerVM hamburgerVM = new HamburgerVM();
 
-            hamburgerVM.Hamburger = db.Hamburgerler.FirstOrDefault(x=>x.HamburgerID==id);
-            
+            hamburgerVM.Hamburger = db.Hamburgerler.FirstOrDefault(x => x.HamburgerID == id);
+
             hamburgerVM.Hamburgerler.Add(hamburgerVM.Hamburger);
 
-           return View(hamburgerVM);
-        
+            return View(hamburgerVM);
+
         }
-        
+
         public IActionResult IcecekDetay(int id)
         {
 
@@ -60,7 +45,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             return View(ıcecekVM);
 
         }
-        
+
         public IActionResult TatliDetay(int id)
         {
             TatliVM tatliVM = new TatliVM();
@@ -72,7 +57,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             return View(tatliVM);
 
         }
-       
+
         public IActionResult EkMalzemeDetay(int id)
         {
             EkstraMalzemeVM ekstraMalzemeVM = new EkstraMalzemeVM();
@@ -84,10 +69,28 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             return View(ekstraMalzemeVM);
 
         }
-       
+
         public IActionResult MenuDetay(int id)
         {
-            MenuVM menuVM = new MenuVM();
+            
+
+            var boylar = Enum.GetValues(typeof(Boy)).Cast<Boy>().Select(x => new SelectListItem
+            {
+                Value = ((int)x).ToString(),
+                Text = x.ToString()
+            }).ToList();
+
+
+
+            var menuVM = new MenuVM
+            {
+                MenuEkle = new MenuEkleVM
+                {
+
+                    Boylar = new SelectList(boylar, "Value", "Text")
+                }
+            };
+
 
             menuVM.Menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
 
@@ -96,6 +99,24 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             return View(menuVM);
 
         }
+
+        //[HttpPost]
+        //public IActionResult MenuDetay(int id, MenuVM vm)
+        //{
+
+
+        //    if (ModelState.IsValid)
+        //    {
+
+
+        //        Boy selectedBoy = menuEkle.SelectedBoy;
+
+        //        menu.Boy = selectedBoy;
+        //    }
+
+        //    return Redirect()
+
+        //}
 
     }
 }

@@ -116,6 +116,7 @@
                 <th>Açıklama</th>
                 <th>Fotoğraf</th>
                 <th>Adet</th>
+                <th>Boy</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -126,12 +127,13 @@
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.MenuID)</td>
                     <td>@Html.DisplayFor(modelItem => item.Ad)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Fiyat)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ToplamFiyat)</td>
                     <td>@Html.DisplayFor(modelItem => item.Aciklama)</td>
                     <td>
                         <img src="~/Pictures/Menuler/@item.PicturePath" class="img-fluid" alt="@item.Ad" style="max-width: 120px; max-height: 90px;" />
                     </td>
                     <td>@Html.DisplayFor(modelItem => item.Adet)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Boy)</td>
                     <td>
                         <a class="btn btn-warning btn-sm" asp-route-id="@item.MenuID" asp-controller="Menu" asp-action="MenuGuncelle">Güncelle</a>
                     </td>

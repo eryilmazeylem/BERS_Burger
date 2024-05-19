@@ -48,6 +48,13 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult MenuEkle()
         {
+
+            var boylar = Enum.GetValues(typeof(Boy)).Cast<Boy>().Select(x => new SelectListItem
+            {
+                Value = ((int)x).ToString(),
+                Text = x.ToString()
+            }).ToList();
+
             vm = new MenuVM
             {
                 MenuEkle = new MenuEkleVM
@@ -55,9 +62,13 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
                     Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad"),
                     EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad"),
                     Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad"),
-                    Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad")
+                    Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad"),
+
+                    Boylar = new SelectList(boylar, "Value", "Text")
                 }
             };
+
+            
 
             return View(vm);
         }
@@ -86,6 +97,10 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
                 fs.Close();
 
 
+                Boy selectedBoy = menuEkle.SelectedBoy;
+                menu.Boy = selectedBoy;
+
+
                 menuEkle.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
                 menuEkle.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
                 menuEkle.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
@@ -105,7 +120,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
                 if (menuEkle.MenuAciklama.Count > 0)
                 {
-                    menu.Aciklama += string.Join(", ", menuEkle.MenuAciklama);
+                    menu.Aciklama += string.Join(" + ", menuEkle.MenuAciklama);
                 }
 
 
@@ -119,6 +134,15 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             menuEkle.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
             menuEkle.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
             menuEkle.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
+            var boylar = Enum.GetValues(typeof(Boy)).Cast<Boy>().Select(b => new SelectListItem
+            {
+                Value = ((int)b).ToString(),
+                Text = b.ToString()
+            }).ToList();
+
+            menuEkle.Boylar = new SelectList(boylar, "Value", "Text");
+
+
             return View(vm);
 
         }
@@ -197,6 +221,14 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         public IActionResult MenuGuncelle(int id)
         {
+
+            var boylar = Enum.GetValues(typeof(Boy)).Cast<Boy>().Select(x => new SelectListItem
+            {
+                Value = ((int)x).ToString(),
+                Text = x.ToString()
+            }).ToList();
+
+
             MenuEkleVM vm = db.Menuler.Where(x => x.MenuID.Equals(id))
                 .Select(x => new MenuEkleVM()
                 {
@@ -204,9 +236,12 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
                     Ad = x.Ad,
                     Adet = x.Adet,
                     Fiyat = x.Fiyat,
+                    Boylar = new SelectList(boylar, "Value", "Text")
 
 
                 }).FirstOrDefault();
+
+        
 
 
             return View(vm);
@@ -241,6 +276,10 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             menuEkle.PicturePath.CopyTo(fs);
 
             fs.Close();
+
+            Boy selectedBoy = menuEkle.SelectedBoy;
+            menu.Boy = selectedBoy;
+
 
             try
             {

@@ -39,6 +39,11 @@
                 <input asp-for="Adet" class="form-control" />
                 <span asp-validation-for="Adet" class="text-danger"></span>
             </div>
+            <div class="mb-3">
+                <label asp-for="SelectedBoy" class="form-label">Boy</label>
+                <select asp-for="SelectedBoy" class="form-control" asp-items="Model.Boylar"></select>
+                <span asp-validation-for="SelectedBoy" class="text-danger"></span>
+            </div>
             <div class="form-group text-center">
                 <input type="submit" value="Güncelle" class="btn btn-primary" onclick="return confirm('Emin misiniz?')" />
             </div>

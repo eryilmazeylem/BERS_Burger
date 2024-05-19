@@ -2,7 +2,7 @@
 @model MenuVM
 
 @{
-   
+
     Layout = "~/Views/Shared/_DetayLayout.cshtml";
 }
 
@@ -10,45 +10,55 @@
     <h4>Menu</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => Model.Menu.Ad)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => Model.Menu.Ad)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => Model.Menu.Fiyat)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => Model.Menu.ToplamFiyat)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => Model.Menu.Fiyat)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => Model.Menu.ToplamFiyat)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => Model.Menu.Aciklama)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => Model.Menu.Aciklama)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => Model.Menu.PicturePath)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => Model.Menu.PicturePath)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => Model.Menu.Adet)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => Model.Menu.Adet)
         </dd>
+
+        <form>
+           
+            <label asp-for="MenuEkle.SelectedBoy" class="form-label">Boy Seciniz</label>
+
+            <select asp-for="MenuEkle.SelectedBoy" class="form-control" asp-items="Model.MenuEkle.Boylar" onselect=""></select>
+
+            <span asp-validation-for="MenuEkle.SelectedBoy" class="text-danger"></span>
+            
+        </form>
     </dl>
 </div>
 <div class="my-2">
     @* <form method="post">
-        <button" asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success">
-            <i  class="fa fa-cart-plus" aria-hidden="true"></i>
-            Sepete Ekle
-        </button>
-        <input type="hidden" name="id" value="@Model.Menu.MenuID" />
+    <button" asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success">
+    <i  class="fa fa-cart-plus" aria-hidden="true"></i>
+    Sepete Ekle
+    </button>
+    <input type="hidden" name="id" value="@Model.Menu.MenuID" />
     </form> *@
     <form method="post">
         <button type="submit" class="btn btn-success" asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart">
@@ -58,7 +68,7 @@
         <input type="hidden" name="type" value="MenuDetay" />
         <input type="hidden" name="id" value="@Model.Menu.MenuID" />
     </form>
-    
+
 </div>
 <div>
     <a class="btn btn-outline-warning" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>

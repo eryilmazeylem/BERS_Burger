@@ -156,7 +156,7 @@
                                         @{
                                             if (item.Menu != null)
                                             {
-                                                @item.Menu.Fiyat
+                                                @item.Menu.ToplamFiyat
                                             }
                                             else if (item.Hamburger != null)
                                             {
@@ -180,7 +180,7 @@
                                         @{
                                             if (item.Menu != null)
                                             {
-                                                @((item.Menu.Fiyat * item.Quantity).ToString("c"))
+                                                @((item.Menu.ToplamFiyat * item.Quantity).ToString("c"))
                                             }
                                             else if (item.Hamburger != null)
                                             {

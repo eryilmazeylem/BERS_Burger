@@ -54,24 +54,29 @@
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label asp-for="MenuEkle.SelectedIcecekID" class="form-label"></label>
+                    <label asp-for="MenuEkle.SelectedIcecekID" class="form-label">Icecekler</label>
                     <select asp-for="MenuEkle.SelectedIcecekID" class="form-control" asp-items="Model.MenuEkle.Icecekler"></select>
                     <span asp-validation-for="MenuEkle.SelectedIcecekID" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="MenuEkle.SelectedTatliID" class="form-label"></label>
+                    <label asp-for="MenuEkle.SelectedTatliID" class="form-label">Tatlılar</label>
                     <select asp-for="MenuEkle.SelectedTatliID" class="form-control" asp-items="Model.MenuEkle.Tatlilar"></select>
                     <span asp-validation-for="MenuEkle.SelectedTatliID" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="MenuEkle.SelectedHamburgerID" class="form-label"></label>
+                    <label asp-for="MenuEkle.SelectedHamburgerID" class="form-label">Hamburgerler</label>
                     <select asp-for="MenuEkle.SelectedHamburgerID" class="form-control" asp-items="Model.MenuEkle.Hamburgerler"></select>
                     <span asp-validation-for="MenuEkle.SelectedHamburgerID" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="MenuEkle.SelectedEkMalzemeID" class="form-label"></label>
+                    <label asp-for="MenuEkle.SelectedEkMalzemeID" class="form-label">Ek Malzemeler</label>
                     <select asp-for="MenuEkle.SelectedEkMalzemeID" class="form-control" asp-items="Model.MenuEkle.EkMalzemeler"></select>
                     <span asp-validation-for="MenuEkle.SelectedEkMalzemeID" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="MenuEkle.SelectedBoy" class="form-label">Boy</label>
+                    <select asp-for="MenuEkle.SelectedBoy" class="form-control" asp-items="Model.MenuEkle.Boylar"></select>
+                    <span asp-validation-for="MenuEkle.SelectedBoy" class="text-danger"></span>
                 </div>
 
             </div>

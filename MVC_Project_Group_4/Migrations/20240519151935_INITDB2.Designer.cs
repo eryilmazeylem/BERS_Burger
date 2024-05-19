@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Project_Group_4.Migrations
 {
     [DbContext(typeof(BurgerDBContext))]
-    [Migration("20240519143251_InitDB")]
-    partial class InitDB
+    [Migration("20240519151935_INITDB2")]
+    partial class INITDB2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -361,6 +361,10 @@ namespace MVC_Project_Group_4.Migrations
                     b.Property<int>("Adet")
                         .HasColumnType("int");
 
+                    b.Property<string>("Boy")
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar");
+
                     b.Property<decimal>("Fiyat")
                         .HasColumnType("money");
 
@@ -380,6 +384,7 @@ namespace MVC_Project_Group_4.Migrations
                             Aciklama = "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek",
                             Ad = "Klasik Burger Menu",
                             Adet = 1,
+                            Boy = "Kucuk",
                             Fiyat = 350m,
                             PicturePath = "Klasik_burger_menu.jpg"
                         },
@@ -495,14 +500,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "afd4c9cd-ef77-4af4-acc2-e1f43a02a997",
+                            ConcurrencyStamp = "680e19c8-ceac-4387-8733-9c876915c92c",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "44ac482b-db18-41aa-a694-31cd0860c4cf",
+                            ConcurrencyStamp = "00801de4-4d5c-4441-8b47-a5ad322ab8f9",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -761,15 +766,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "38502917-75ce-464a-8e2f-c39dc7cc9765",
+                            ConcurrencyStamp = "c0bee0ad-be98-401c-930f-4bb2dedbfaa3",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN7yKA9rG0DjqPgh0mOoQUP3i2uuOelCNKCRiy3u9hgd0lfg8IkOQ8+Jsn+58DpB6A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKp3+ZZtyGpVGfeVKSDkTNvMkW9RlAYsY02eulu3syegxvXh2qAiriRYeNPtaiPyAg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dc421bf5-2b1b-44e7-9df1-337bcecf4aa2",
+                            SecurityStamp = "bf599c59-caa7-4d48-b55c-550c7bca2ee9",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });
