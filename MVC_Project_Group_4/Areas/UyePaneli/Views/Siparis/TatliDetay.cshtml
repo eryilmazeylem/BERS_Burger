@@ -46,15 +46,18 @@
     </dl>
 </div>
 <div class="my-2">
-    <form >
-        <button type="submit" class="btn btn-success " asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart">
+ 
+    <form method="post">
+        <button type="submit" class="btn btn-success" asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
+        <input type="hidden" name="type" value="TatliDetay" />
         <input type="hidden" name="id" value="@Model.Tatli.TatliID" />
     </form>
 
-    
+
+
 </div>
 <div>
     <a class="btn btn-outline-warning" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>

@@ -45,14 +45,15 @@
     </dl>
 </div>
 <div class="my-2">
-    <form method="post" >
-        <button asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart" type="submit" class="btn btn-success">
+    
+    <form method="post">
+        <button type="submit" class="btn btn-success" asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
+        <input type="hidden" name="type" value="HamburgerDetay" />
         <input type="hidden" name="id" value="@Model.Hamburger.HamburgerID" />
     </form>
-
     
     
 </div>

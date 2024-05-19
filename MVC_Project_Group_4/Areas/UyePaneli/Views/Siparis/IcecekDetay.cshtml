@@ -46,11 +46,13 @@
     </dl>
 </div>
 <div class="my-2">
+
     <form method="post">
         <button type="submit" class="btn btn-success" asp-area="UyePaneli" asp-action="AddToCart" asp-controller="Cart">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             Sepete Ekle
         </button>
+        <input type="hidden" name="type" value="IcecekDetay" />
         <input type="hidden" name="id" value="@Model.Icecek.IcecekID" />
     </form>
 
