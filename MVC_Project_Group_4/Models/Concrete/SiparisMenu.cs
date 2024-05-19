@@ -8,9 +8,6 @@
 
         public int SiparisID { get; set; }
 
-
-
-
         public Menu? Menu { get; set; }
 
         public Siparis? Siparis { get; set; }

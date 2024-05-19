@@ -16,9 +16,6 @@
 
 
 
-
-
-
         public Menu? Menu { get; set; }
 
         public EkstraMalzeme? EkstraMalzeme { get; set; }
@@ -28,7 +25,6 @@
         public Icecek? Icecek { get; set; }
 
         public Tatli? Tatlı { get; set; }
-
 
 
 

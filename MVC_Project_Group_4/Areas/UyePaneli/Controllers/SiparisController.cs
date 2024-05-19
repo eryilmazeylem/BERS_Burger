@@ -100,23 +100,5 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         }
 
-        //[HttpPost]
-        //public IActionResult MenuDetay(int id, MenuVM vm)
-        //{
-
-
-        //    if (ModelState.IsValid)
-        //    {
-
-
-        //        Boy selectedBoy = menuEkle.SelectedBoy;
-
-        //        menu.Boy = selectedBoy;
-        //    }
-
-        //    return Redirect()
-
-        //}
-
     }
 }

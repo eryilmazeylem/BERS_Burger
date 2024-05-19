@@ -25,41 +25,30 @@ namespace MVC_Project_Group_4.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM login)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var uye = _userManager.FindByEmailAsync(login.EMail).Result;
-
-                if (uye == null)
-                {
-                    //eposta kontrolu...
-                    ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
-                    return View();
-                }
-
-                if (!_userManager.CheckPasswordAsync(uye, login.Password).Result)
-                {
-
-                    //sifre kontrolu...
-                    ModelState.AddModelError("Hata", "Kullanıcı adı veya şifre yanlış...");
-                    return View();
-                }
-
-
-                await _signInManager.SignInAsync(uye, false);
-
-                return Redirect("~/UyePaneli/UyePanel/Index");
+                return View(login);
             }
-            return View(login);
-        }
 
-        //[HttpPost]
+            var uye = await _userManager.FindByEmailAsync(login.EMail);
+
+            if (uye == null || !_userManager.CheckPasswordAsync(uye, login.Password).Result)
+            {
+                ModelState.AddModelError(string.Empty, "Kullanıcı adı veya şifre yanlış...");
+                return View(login);
+            }
+
+            await _signInManager.SignInAsync(uye, false);
+
+            return RedirectToAction("Index", "UyePanel", new { area = "UyePaneli" });
+        }
+  
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
-            //return Redirect("~/Home/Index");
-            //return LocalRedirect("~/localhost:5168/Home/Index");
+            
         }
 
         public IActionResult Register()

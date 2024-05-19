@@ -23,9 +23,9 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            //return RedirectToAction("Index", "Home");
+            
             return Redirect("~/Home/Index");
-            //return LocalRedirect("~/localhost:5168/Home/Index");
+          
         }
     }
 }

@@ -10,9 +10,7 @@ namespace MVC_Project_Group_4.Models.Abstract
 
         public string Aciklama { get; set; }
 
-
         public string PicturePath { get; set; }
-
 
         public int Adet { get; set; }
 

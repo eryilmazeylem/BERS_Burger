@@ -61,8 +61,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
             }
             return View(vm);
-
-
         }
 
         public IActionResult IcecekSil(int id)
@@ -90,7 +88,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             return RedirectToAction(nameof(IcecekListele));
 
         }
-
 
         public IActionResult IcecekGuncelle(int id)
         {

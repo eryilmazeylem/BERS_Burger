@@ -19,36 +19,15 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         public IActionResult Index()
         {
-
             return View(GetCart());
         }
 
 
         [HttpPost]
-        public IActionResult AddToCart(string type,int id)
-        {
-
-
-            //var menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
-
-
-            //if (menu != null)
-            //{
-            //    Cart _cart = new Cart();
-            //    string jsonCart = HttpContext.Session.GetString("Cart");
-            //    if (jsonCart != null)
-            //    {
-            //        _cart = JsonConvert.DeserializeObject<Cart>(jsonCart);
-            //    }
-
-            //    _cart.AddMenu(menu, 1);
-            //    HttpContext.Session.SetString("Cart", JsonConvert.SerializeObject(_cart));
-
-            //}
-            //return RedirectToAction("Index");
-
+        public IActionResult AddToCart(string type,int id,string size)
+        {    
             var product = GetProductByIdAndType(type,id);
-
+           
             if (product != null)
             {
                 Cart _cart = GetCart();
@@ -78,22 +57,7 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
             }
         }
 
-        //public IActionResult RemoveFromCart(int id)
-        //{
-
-        //    var menu = db.Menuler.FirstOrDefault(x => x.MenuID == id);
-
-        //    if (menu != null)
-        //    {
-        //        Cart _cart = GetCart();
-        //        _cart.RemoveProduct(menu);
-        //        HttpContext.Session.SetString("Cart", JsonConvert.SerializeObject(_cart));
-        //    }
-
-        //    return RedirectToAction("Index");
-
-        //}
-
+       
 
         public IActionResult RemoveFromCart(string type, int id)
         {
@@ -110,32 +74,8 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
         }
 
 
-        public Cart GetCart() //Session her kullanıcıya özel oluşturulan bir depo.
+        public Cart GetCart() 
         {
-            //var cartJson = HttpContext.Session.GetString("Cart");
-            //Console.WriteLine(cartJson);
-            //var cart = string.IsNullOrEmpty(cartJson) ? new Cart() : JsonConvert.DeserializeObject<Cart>(cartJson);
-
-            //if (string.IsNullOrEmpty(cartJson))
-            //{
-            //    Console.WriteLine("djfsdljgsldg");
-            //    HttpContext.Session.SetString("Cart", JsonConvert.SerializeObject(cart));
-            //}
-            // cartJson = HttpContext.Session.GetString("Cart");
-            //Console.WriteLine(cartJson);
-            //return cart;
-
-
-
-            //var cart = (Cart)Session["Cart"];
-            //if (cart == null)
-            //{
-            //    cart = new Cart();
-            //    Session["Cart"] = cart;
-            //}
-            //return cart;
-
-
             var cartJson = HttpContext.Session.GetString("Cart");
             var cart = string.IsNullOrEmpty(cartJson) ? new Cart() : JsonConvert.DeserializeObject<Cart>(cartJson);
 
@@ -148,8 +88,9 @@ namespace MVC_Project_Group_4.Areas.UyePaneli.Controllers
 
         }
 
-       
-
-
+        public IActionResult SiparisOnay()
+        {
+            return View();
+        }
     }
 }

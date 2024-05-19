@@ -1,6 +1,4 @@
-﻿
-
- @model RegisterVM
+﻿ @model RegisterVM
 
 @{
     ViewData["Title"] = "Register";
@@ -26,7 +24,7 @@
             </div>
             <div class="form-group my-1">
                 <label asp-for="Password" class="control-label"></label>
-               @*  <input asp-for="Password" class="form-control" placeholder="Şifre" /> *@
+              
                 <div class="input-group">
                     <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" id="passwordField" />
                     <button type="button" class="btn btn-outline-secondary" id="togglePassword" onclick="togglePasswordVisibility('passwordField', 'togglePassword')">Göster</button>
@@ -36,7 +34,7 @@
 
             <div class="form-group my-1">
                 <label asp-for="ConfirmPassword" class="control-label"></label>
-               @*  <input asp-for="ConfirmPassword" class="form-control" placeholder="Şifre Tekrarı" /> *@
+             
                 <div class="input-group">
                     <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Şifre Tekrarı" id="confirmPasswordField" /> 
                     <button type="button" class="btn btn-outline-secondary" id="toggleConfirmPassword" onclick="togglePasswordVisibility('confirmPasswordField', 'toggleConfirmPassword')">Göster</button>

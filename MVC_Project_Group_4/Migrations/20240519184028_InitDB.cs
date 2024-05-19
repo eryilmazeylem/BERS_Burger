@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MVC_Project_Group_4.Migrations
 {
     /// <inheritdoc />
-    public partial class INITDB : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -126,7 +126,7 @@ namespace MVC_Project_Group_4.Migrations
                 {
                     MenuID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Boy = table.Column<int>(type: "int", nullable: true),
+                    Boy = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: true),
                     Ad = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Fiyat = table.Column<decimal>(type: "money", nullable: false),
                     Aciklama = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
@@ -425,14 +425,14 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "128e2d57-e574-4dd1-89ce-1265c77d1c3f", "Yonetici", "YONETICI" },
-                    { 2, "c61a743e-144a-4d6c-bc44-00f648ce5676", "Uye", "UYE" }
+                    { 1, "4f1f4f5f-0f29-424d-86dc-d7f82954bd1c", "Yonetici", "YONETICI" },
+                    { 2, "72b055c3-34ee-4254-9961-538f6dea8852", "Uye", "UYE" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Adres", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Dunya", "5110901b-2521-4bc4-a933-9e4a0d923fd7", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEIonuK9u4+g+II/xytwBMVLwWWibb3rf6FGb7AI6IZzc/+qPkbWtM7edmxuI8XaXbg==", null, false, "4c1eb146-a68e-4525-abee-871d46213e87", false, "super@deneme.com" });
+                values: new object[] { 1, 0, "Dunya", "ee9c9546-abd4-40f0-a3e9-cd6ccd1a6c15", "super@deneme.com", false, false, null, "SUPER@DENEME.COM", "SUPER@DENEME.COM", "AQAAAAIAAYagAAAAEPvvHPYlgTcOqfXvC/yj1Yij16AZlVZ4ooUaYR+OT38nBHe9mRBmOfZAzaSpOEss4A==", null, false, "99c26007-70ce-41f0-b26e-8d5f70d94cf2", false, "super@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "EkstraMalzemeler",
@@ -483,11 +483,11 @@ namespace MVC_Project_Group_4.Migrations
                 columns: new[] { "MenuID", "Aciklama", "Ad", "Adet", "Boy", "Fiyat", "PicturePath" },
                 values: new object[,]
                 {
-                    { 1, "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek", "Klasik Burger Menu", 1, null, 350m, "Klasik_burger_menu.jpg" },
-                    { 2, "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek", "Pastırmalı Burger Menu", 1, null, 350m, "Benim_3_lum.jpg" },
-                    { 3, "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek", "2'li Fırsat Menü", 1, null, 350m, "Bjk_Menusu.jpg" },
-                    { 4, "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek", "3'lü Jumbo Menü", 1, null, 450m, "3_lu_big_king.jpg" },
-                    { 5, "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek", "CheeseBurger & SoğanHalkası Menü", 1, null, 300m, "chicken_menu.jpg" }
+                    { 1, "1 Adet Cheeseburger + Tırtıklı Patates Kızartması + 1 Adet Kutu İçecek", "Klasik Burger Menu", 1, "Kucuk", 350m, "Klasik_burger_menu.jpg" },
+                    { 2, "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek", "Pastırmalı Burger Menu", 1, "Kucuk", 350m, "Benim_3_lum.jpg" },
+                    { 3, "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek", "2'li Fırsat Menü", 1, "Kucuk", 350m, "Bjk_Menusu.jpg" },
+                    { 4, "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek", "3'lü Jumbo Menü", 1, "Kucuk", 450m, "3_lu_big_king.jpg" },
+                    { 5, "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek", "CheeseBurger & SoğanHalkası Menü", 1, "Kucuk", 300m, "chicken_menu.jpg" }
                 });
 
             migrationBuilder.InsertData(

@@ -36,15 +36,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             return View(vm);
         }
 
-        //public IActionResult MenuEkle()
-        //{
-        //    vm.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
-        //    vm.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
-        //    vm.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
-        //    vm.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
-
-        //    return View(vm);
-        //}
 
         public IActionResult MenuEkle()
         {
@@ -67,8 +58,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
                     Boylar = new SelectList(boylar, "Value", "Text")
                 }
             };
-
-            
 
             return View(vm);
         }
@@ -147,47 +136,7 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
         }
 
-        //[HttpPost]
-        //public IActionResult MenuEkle(MenuEkleVM menuEkle)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
 
-        //        vm.Menu.Ad = menuEkle.Ad;
-        //        vm.Menu.Fiyat = menuEkle.Fiyat;
-        //        vm.Menu.Adet = menuEkle.Adet;
-        //        vm.Menu.Aciklama = menuEkle.Aciklama;
-
-        //        Menu menu = new Menu();
-        //        menu.Ad = menuEkle.Ad;
-        //        menu.Fiyat = menuEkle.Fiyat;
-        //        menu.Aciklama = menuEkle.Aciklama;
-        //        menu.Adet = menuEkle.Adet;
-
-
-        //        Guid guid = Guid.NewGuid();
-        //        string dosyaAdi = guid.ToString();
-        //        dosyaAdi += menuEkle.PicturePath.FileName;
-        //        string dosyaYolu = "wwwRoot/Pictures/Menuler/";
-        //        menu.PicturePath = dosyaAdi;
-
-        //        FileStream fs = new FileStream(dosyaYolu + dosyaAdi, FileMode.Create);
-        //        menuEkle.PicturePath.CopyTo(fs);
-        //        fs.Close();
-
-        //        db.Menuler.Add(menu);
-        //        db.SaveChanges();
-        //        return RedirectToAction(nameof(MenuListele));
-        //    }
-
-
-        //    vm.Hamburgerler = new SelectList(db.Hamburgerler.ToList(), "HamburgerID", "Ad");
-        //    vm.EkMalzemeler = new SelectList(db.EkstraMalzemeler.ToList(), "EkstraMalzemeID", "Ad");
-        //    vm.Tatlilar = new SelectList(db.Tatlilar.ToList(), "TatliID", "Ad");
-        //    vm.Icecekler = new SelectList(db.Icecekler.ToList(), "IcecekID", "Ad");
-        //    return View(vm);
-
-        //}
 
         public IActionResult MenuSil(int id)
         {
@@ -240,9 +189,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
 
                 }).FirstOrDefault();
-
-        
-
 
             return View(vm);
         }
@@ -297,8 +243,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
             }
 
             return RedirectToAction(nameof(MenuListele));
-
-
 
         }
     }

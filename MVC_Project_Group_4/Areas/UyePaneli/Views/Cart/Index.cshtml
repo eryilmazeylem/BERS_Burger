@@ -4,83 +4,6 @@
     Layout = "_SepetLayout";
 }
 
-@if (ViewBag.userSession is null)
-{
-
-    @*
-    <div class="container pb-lg-0">
-        <div class="row">
-            <div class="col-md-12">
-
-                <hr />
-
-                @if (Model.CartLines.Count > 0)
-                {
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Adet</th>
-                                <th>İsim</th>
-                                <th>Fiyat</th>
-                                <th>Toplam Fiyat</th>
-
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @
-                            @foreach (var item in Model.CartLines)
-                            {
-                                <tr>
-                                    <td>
-                                        <img src="~/Pictures/Menuler/@item.Menu.PicturePath" width="50px" />
-                                    </td>
-                                    <td>@item.Quantity</td>
-                                    <td>@item.Menu.Ad</td>
-                                    <td>@item.Menu.Fiyat</td>
-                                    <td>
-                                        @((item.Menu.Fiyat * item.Quantity).ToString("c"))
-
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-danger" asp-area="UyePaneli" asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Menu.MenuID"><i class="fa fa-trash-o" aria-hidden="true">Siparisi Sil</i></a>
-                                    </td>
-                                </tr>
-                            }
-
-                        </tbody>
-                        <tfoot>
-
-                            <tr>
-                                <td colspan="4"></td>
-                                <td>
-                                    @Model.Total().ToString("c")
-                                </td>
-
-                            </tr>
-                        </tfoot>
-                    </table>
-
-                }
-                else
-                {
-                    <div class="alert alert-warning" role="alert">
-                       <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                        Alışveriş Sepetinizde Ürün Bulunmamaktadır.
-                        </div>
-                }
-
-            </div>
-        </div>
-        <div>
-
-            <a class="btn btn-outline-info" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
-        </div>
-    </div>
-
-} *@
-
     <div class="container pb-lg-0">
         <div class="row">
             <div class="col-md-12">
@@ -234,7 +157,7 @@
                                     @Model.Total().ToString("c")
                                 </td>
                                 <td>
-                                    <a class="btn btn-success" asp-area="" asp-action="" asp-controller="" onclick="return confirm('Siparişinizi Oluşturuyoruz.Emin misiniz?')"><i class="fa fa-trash-o" aria-hidden="true">Sipariş Ver</i></a>
+                                    <a class="btn btn-success" asp-area="UyePaneli" asp-action="SiparisOnay" asp-controller="Cart" onclick="return confirm('Siparişinizi Oluşturuyoruz.Emin misiniz?')"><i class="fa fa-shopping-cart" aria-hidden="true">Sipariş Ver</i></a>
                                 </td>
                             </tr>
                         </tfoot>
@@ -253,7 +176,7 @@
             <a class="btn btn-outline-info" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Urunler">Listeye Dön</a>
         </div>
     </div>
-}
+
 
 <style>
     h1 {

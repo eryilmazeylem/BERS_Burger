@@ -391,6 +391,7 @@ namespace MVC_Project_Group_4.Migrations
                             Aciklama = "1 Adet Pastırmalı Burger + Tırtıklı Patates + 1 Adet Kutu İçecek",
                             Ad = "Pastırmalı Burger Menu",
                             Adet = 1,
+                            Boy = "Kucuk",
                             Fiyat = 350m,
                             PicturePath = "Benim_3_lum.jpg"
                         },
@@ -400,6 +401,7 @@ namespace MVC_Project_Group_4.Migrations
                             Aciklama = "2 Adet Cheeseburger + Tırtıklı Patates + 2 Kutu İçecek",
                             Ad = "2'li Fırsat Menü",
                             Adet = 1,
+                            Boy = "Kucuk",
                             Fiyat = 350m,
                             PicturePath = "Bjk_Menusu.jpg"
                         },
@@ -409,6 +411,7 @@ namespace MVC_Project_Group_4.Migrations
                             Aciklama = "3 Adet TripleWhooper Burger + 2 Adet Tırtıklı Patates + 3 Adet Kutu İçecek",
                             Ad = "3'lü Jumbo Menü",
                             Adet = 1,
+                            Boy = "Kucuk",
                             Fiyat = 450m,
                             PicturePath = "3_lu_big_king.jpg"
                         },
@@ -418,6 +421,7 @@ namespace MVC_Project_Group_4.Migrations
                             Aciklama = "1 Adet CheeseBurger + 6'lı Soğan Halkası + Tırtıklı Patataes + 1adet kutu içecek",
                             Ad = "CheeseBurger & SoğanHalkası Menü",
                             Adet = 1,
+                            Boy = "Kucuk",
                             Fiyat = 300m,
                             PicturePath = "chicken_menu.jpg"
                         });
@@ -497,14 +501,14 @@ namespace MVC_Project_Group_4.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "680e19c8-ceac-4387-8733-9c876915c92c",
+                            ConcurrencyStamp = "4f1f4f5f-0f29-424d-86dc-d7f82954bd1c",
                             Name = "Yonetici",
                             NormalizedName = "YONETICI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "00801de4-4d5c-4441-8b47-a5ad322ab8f9",
+                            ConcurrencyStamp = "72b055c3-34ee-4254-9961-538f6dea8852",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -763,15 +767,15 @@ namespace MVC_Project_Group_4.Migrations
                             Id = 1,
                             AccessFailedCount = 0,
                             Adres = "Dunya",
-                            ConcurrencyStamp = "c0bee0ad-be98-401c-930f-4bb2dedbfaa3",
+                            ConcurrencyStamp = "ee9c9546-abd4-40f0-a3e9-cd6ccd1a6c15",
                             Email = "super@deneme.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@DENEME.COM",
                             NormalizedUserName = "SUPER@DENEME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKp3+ZZtyGpVGfeVKSDkTNvMkW9RlAYsY02eulu3syegxvXh2qAiriRYeNPtaiPyAg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPvvHPYlgTcOqfXvC/yj1Yij16AZlVZ4ooUaYR+OT38nBHe9mRBmOfZAzaSpOEss4A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bf599c59-caa7-4d48-b55c-550c7bca2ee9",
+                            SecurityStamp = "99c26007-70ce-41f0-b26e-8d5f70d94cf2",
                             TwoFactorEnabled = false,
                             UserName = "super@deneme.com"
                         });

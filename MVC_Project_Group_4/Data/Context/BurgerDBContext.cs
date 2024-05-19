@@ -55,15 +55,5 @@ namespace MVC_Project_Group_4.Data.Context
 
         public DbSet<SiparisMenu> SiparisMenuleri { get; set; }
 
-
-
-
-
-    
-
-        
-
-
-
     }
 }

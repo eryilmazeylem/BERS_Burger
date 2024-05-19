@@ -146,10 +146,6 @@ namespace MVC_Project_Group_4.Areas.YoneticiPaneli.Controllers
 
             return RedirectToAction(nameof(EkstraMalzemeListele));
 
-
-
-
-
         }
     }
 }

@@ -10,12 +10,12 @@ builder.Services.AddControllersWithViews();
 
 
 
-builder.Services.AddDbContext<BurgerDBContext>(x=>x.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
+builder.Services.AddDbContext<BurgerDBContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
 
 builder.Services
                 .AddIdentity<Uye, Rol>(x => x.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<BurgerDBContext>().AddRoles<Rol>();
-builder.Services.AddSession(x=>x.IdleTimeout=TimeSpan.FromHours(1));
+builder.Services.AddSession(x => x.IdleTimeout = TimeSpan.FromHours(1));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

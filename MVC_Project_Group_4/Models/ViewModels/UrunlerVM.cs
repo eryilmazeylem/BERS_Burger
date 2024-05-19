@@ -14,7 +14,5 @@ namespace MVC_Project_Group_4.Models.ViewModels
 
         public ICollection<Tatli>? Tatlilar { get; set; }
 
-
-
     }
 }

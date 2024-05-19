@@ -1,2 +1,0 @@
-﻿1-Menu listeleme ekranında açıklama kısmına ekmalzeme, içecek,tatlı ve hamburger gelecek!!
-2-resimlerin picture pathleri güncellenecek

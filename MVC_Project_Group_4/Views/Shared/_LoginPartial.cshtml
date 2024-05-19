@@ -15,20 +15,9 @@
                 <a class="btn btn-primary" asp-area="YoneticiPaneli" asp-controller="YoneticiPanel" asp-action="AnaSayfa">Yönetim Paneline Git</a>
             </div>
         }
-        else
-        {
-         @*    <div class="navbar-item mx-3">
-                <a class="btn btn-primary" asp-area="UyePaneli" asp-controller="UyePanel" asp-action="Index">Üye Paneline Git</a>
-            </div>
-             *@
-
        
-
-        }
         <div class="navbar-item mx-3">
-         @*      <form asp-action="LogOut" asp-controller="Login" >
-        <input type="submit" value="LogOut" />
-        </form>  *@
+       
             <a class="btn btn-danger"  asp-controller="Login" asp-action="LogOut">Çıkış</a>
         </div>
     }

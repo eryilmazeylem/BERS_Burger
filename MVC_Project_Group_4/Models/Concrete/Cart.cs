@@ -139,11 +139,7 @@ namespace MVC_Project_Group_4.Models.Concrete
             }
         }
 
-        //public decimal Total()
-        //{
-        //    return _cardlines.Sum(x=>x.Menu.Fiyat * x.Quantity);
-        //}
-
+     
         public decimal Total()
         {
             return _cardlines.Sum(x =>

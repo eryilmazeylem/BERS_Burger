@@ -8,15 +8,11 @@ namespace MVC_Project_Group_4.Models.Concrete
     {
         public int MenuID { get; set; }
 
-
         public Boy? Boy { get; set; }
-
-
 
         public ICollection<MenuDetay>? MenuDetay { get; set; }
 
         public ICollection<SiparisMenu>? SiparisMenu { get; set; }
-
 
 
         public decimal ToplamFiyat
@@ -24,9 +20,6 @@ namespace MVC_Project_Group_4.Models.Concrete
             get
             {
                 decimal toplam = 0;
-
-
-
 
                 if (Boy == Concrete.Boy.Orta)
                 {
